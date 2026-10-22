@@ -6,66 +6,45 @@ A complete, professional real-estate market analytics and price prediction web a
 
 ## 📖 Project Description
 
-The **House Price Prediction & Analysis System** is an interactive analytics dashboard designed to help buyers, real-estate investors, agents, and data analysts explore housing market trends and predict property values. 
+The **House Price Prediction & Analysis Dashboard** is an interactive analytics application designed to help buyers, real-estate investors, agents, and data analysts explore housing market trends and predict property values.
 
-The application loads housing data, cleans and preprocesses features, computes key housing metrics, provides interactive multi-variable filtering, dynamically generates market insights, and runs a Scikit-Learn regression pipeline (Random Forest) to deliver instant, customized property valuations.
+The application loads housing data, cleans and preprocesses features, computes key housing metrics, provides interactive multi-variable filtering, dynamically generates market insights, and trains a regression model (Random Forest via Scikit-Learn with a pure NumPy fallback) to deliver instant, customized property valuations.
 
 ---
 
-## ✨ Modern Executive UI & Features
+## ✨ Features
 
-- **Executive Analytics Dashboard Theme**:
-  - **Left Sidebar**: Deep royal navy background with branded header, clean active pill navigation tabs, and system info footer.
-  - **Header & Badge**: Executive title bar with project tracking badge.
-  - **Upload Panel & File Status**: Clean file upload container with real-time success confirmation badge.
-  - **8 Pastel KPI Stat Cards**: Color-coded KPI grid for Total Properties, Locations, Average Price, Highest Price, Lowest Price, Total Records, Missing Values, and Columns.
-  - **3-Panel Middle Section**:
-    - **🗂️ Dataset Preview**: Clean table showing key property attributes.
-    - **⚙️ Missing Values**: Real-time missing value count diagnostic table.
-    - **🛠️ Data Cleaning**: Interactive action buttons for checking missing values, median/mode imputations, and deduplication.
-  - **3-Panel Analytics Section**:
-    - **📊 Analysis**: Dynamic analysis selector with localized summary tables.
-    - **📈 Visualization**: Interactive chart type selector (Bar, Histogram, Scatter) powered by Plotly.
-    - **🥧 Distribution**: Interactive BHK / Price bracket donut chart.
-  - **Action Toolbar**: One-click buttons to download processed data, generate markdown/PDF reports, and open the prediction studio.
-  - **Multi-View Navigation**: Dedicated workspaces for **Dashboard**, **Load Data**, **Data Preview**, **Data Cleaning**, **Analysis**, **Visualization**, **Prediction**, and **Report**.
-- **100% Python Native**: No Node.js, React, Angular, or external web servers required.
-- **Robust Dataset Processing**:
-  - Automatically detects and maps column names (`Area`, `Bedrooms`, `Bathrooms`, `Location`, `Year Built`, `Parking`, `Furnishing`, `Price`).
-  - Cleans currency characters (`₹`, `$`, commas) and typecasts numerical features.
-  - Automatically deduplicates records and safely imputes missing values.
-  - Graceful degradation: never crashes if specific columns are absent.
-- **Dynamic Interactive Filters**:
-  - Multi-select filters for Location and Furnishing status.
-  - Range sliders for Bedrooms, Bathrooms, Price, Area, and Year Built.
+- **Professional Executive Analytics UI**:
+  - **Dark Navy Sidebar**: Modern branding header, quick section links, dataset upload panel, real-time dataset status badge, and filter controls.
+  - **Top 5 Pastel KPI Cards**: Color-coded KPI summary displaying Total Properties, Average Price, Highest Price, Lowest Price, and Average Area.
+  - **Market Insights Card**: Automatically computes data-driven market takeaways such as average valuations, top-priced localities, and bedroom premiums.
+- **Robust Dataset Ingestion & Preprocessing**:
+  - Upload custom CSV or Excel files, or load the built-in default housing dataset.
+  - Automatic column detection supporting varied schema naming conventions (`Area`, `Bedrooms`, `Bathrooms`, `Location`, `Year Built`, `Parking`, `Furnishing`, `Price`).
+  - Cleans currency formatting, converts types, removes duplicate entries, and safely imputes missing values.
+- **Interactive Multi-Variable Filters**:
+  - Filter by **Location** (multi-select).
+  - Range sliders for **Bedrooms**, **Bathrooms**, and **Price Range** (computed across the dataset to avoid out-of-range slider states).
   - One-click **Reset Filters** button.
-- **Top KPI Cards**:
-  - Total Properties, Average Price, Maximum Price, Minimum Price, and Average Area.
-- **📌 Key Insights Engine**:
-  - Automatically calculates data-driven insights (e.g., average market prices, top-tier localities, bedroom premiums, and average price per sqft).
-- **📊 Interactive Market Overview**:
-  - **Price Distribution**: Interactive histogram with boxplot marginals and zoom.
-  - **Average Price by Location**: Sorted horizontal bar chart with property count tooltips.
-  - **Area vs Price**: Scatter plot highlighting space-to-price correlations.
-  - **Bedrooms vs Average Price**: Multi-metric configuration comparison.
-- **🏡 Property Analysis**:
-  - Price per Square Foot calculation (`Price / Area`) with highest, lowest, and location-wise averages.
-  - Bedroom & Bathroom frequency distribution graphs.
-  - Historical Year Built vs Price trend visualization.
-- **🔗 Feature Correlation Matrix**:
-  - Interactive Plotly heatmap assessing collinearity across all numeric features.
-- **🤖 Machine Learning Price Prediction**:
-  - Trained using Scikit-Learn's `RandomForestRegressor`.
-  - Full `ColumnTransformer` preprocessing pipeline with median imputation, standard scaling, and one-hot encoding.
-  - Model metrics displayed: **R² Score**, **MAE**, and **RMSE**.
-  - Interactive prediction form dynamically tailored to the dataset.
-  - Prominent price estimation output formatted in Indian Lakhs/Crores (`₹ XX.XX Lakh / Cr`).
-  - Feature Importance bar chart visualizing factors driving property valuations.
-- **📋 Dataset Explorer & Export**:
-  - Tabular view of filtered listings with search capability.
-  - Instant CSV download button for filtered datasets.
-- **🔍 Data Quality Report**:
-  - Expandable diagnostic view displaying raw vs clean row counts, duplicate removals, schema data types, and column mapping statuses.
+- **Interactive Visualizations (Plotly)**:
+  - **Price Distribution**: Interactive histogram with boxplot marginals.
+  - **Average Price by Location**: Sorted horizontal bar chart.
+  - **Area vs Price**: Scatter plot highlighting space-to-price relationships.
+  - **Bedrooms vs Average Price**: Bar chart comparing valuations across BHK configurations.
+  - **Feature Correlation Heatmap**: Matrix examining correlations across all numerical attributes.
+- **Machine Learning Price Prediction**:
+  - Dynamic training pipeline using Scikit-Learn's `RandomForestRegressor` (with standard scaling, median imputation, and one-hot encoding), plus pure NumPy fallback.
+  - Stale cache prevention: model cache updates whenever dataset contents change.
+  - Strict target leakage prevention: target and target-derived columns (like `price_per_sqft`) are excluded from model features.
+  - Prediction input form with dataset-driven ranges for Area and Year Built.
+  - Prominent price estimation output formatted in Indian currency (`₹ Lakh` / `₹ Cr`) alongside exact valuation.
+  - Displays validation metrics: **R² Score**, **MAE**, and **RMSE**.
+  - Expandable Feature Importance chart showing factors influencing valuations.
+- **Dataset Explorer & Export**:
+  - Tabular view of the filtered dataset with record, column, missing, and duplicate counts.
+  - One-click **Download Processed Dataset** as CSV.
+- **Data Quality Diagnostics**:
+  - Expandable diagnostics section displaying raw vs clean row counts, duplicates removed, and a full column schema/type verification table.
 
 ---
 
@@ -73,23 +52,25 @@ The application loads housing data, cleans and preprocesses features, computes k
 
 | Technology | Purpose |
 |---|---|
-| **Python 3** | Core language |
+| **Python 3** | Core programming language |
 | **Streamlit** | Interactive web application framework |
-| **Pandas & NumPy** | Data manipulation and numeric computing |
-| **Plotly** | Responsive, interactive charts and heatmaps |
-| **Scikit-Learn** | Machine learning pipeline, regression model, and evaluation |
-| **Matplotlib & Seaborn** | Statistical charting support |
+| **Pandas & NumPy** | Data manipulation and numeric operations |
+| **Plotly** | Responsive, interactive data charts and heatmaps |
+| **Scikit-Learn** | Machine learning preprocessing and regression modeling |
+| **Joblib** | Model serialization and parallel processing utility |
+| **OpenPyXL** | Excel file reading support |
 
 ---
 
 ## 🚀 Installation & Setup
 
-### 1. Clone or Navigate to the Project Directory
+### 1. Clone the Repository
 ```bash
-cd "d:\house price analysis"
+git clone https://github.com/asridhswaroop-ops/Housepriceanalysis-.git
+cd Housepriceanalysis-
 ```
 
-### 2. Install Required Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -107,31 +88,29 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 ## 📂 Project Structure
 
 ```text
-house-price-analysis/
+Housepriceanalysis-/
 │
 ├── app.py                     # Main Streamlit web application
-├── requirements.txt           # Python dependency requirements
-├── README.md                  # Comprehensive documentation
+├── requirements.txt           # Pinned Python dependencies
+├── README.md                  # Project documentation
 │
 ├── data/
-│   ├── house_prices.csv       # Default housing dataset (1,500 listings)
+│   ├── house_prices.csv       # Default housing dataset
 │   └── generate_dataset.py    # Synthetic dataset generator script
-│
-├── models/
-│   └── model.pkl              # Saved trained machine learning pipeline
 │
 └── utils/
     ├── __init__.py            # Package initializer
-    ├── data_processing.py     # Dataset cleaning, mapping, KPI & insight logic
+    ├── data_processing.py     # Dataset cleaning, column mapping, KPIs & insights
+    ├── ui.py                  # Custom styling, header, and KPI components
     ├── visualization.py       # Plotly chart generation utilities
-    └── prediction.py          # Scikit-learn ML training and prediction pipeline
+    └── prediction.py          # ML training and prediction pipeline
 ```
 
 ---
 
 ## 📊 Dataset Format
 
-The system supports CSV files. Expected columns include:
+The system supports CSV and Excel files. Common expected columns include:
 
 | Column Name | Type | Description | Example |
 |---|---|---|---|
@@ -143,44 +122,6 @@ The system supports CSV files. Expected columns include:
 | `Year Built` | Numeric | Construction year | `2018` |
 | `Parking` | Categorical | Parking availability | `Yes` / `No` |
 | `Furnishing` | Categorical | Furnishing state | `Furnished`, `Semi-Furnished`, `Unfurnished` |
-| `Price` | Numeric | House valuation / selling price | `8500000` |
+| `Price` | Numeric | Property valuation / selling price | `8500000` |
 
-> **Note on Flexibility**: If your CSV uses alternative naming (such as `sqft`, `beds`, `baths`, `saleprice`, `city`), the system's column detection layer maps them to canonical features automatically. If a column is missing, the application cleanly adapts without crashing.
-
----
-
-## 🧠 Machine Learning Workflow
-
-```
-Raw CSV / User Input
-        │
-        ▼
-Column Identification & Data Cleaning
-        │
-        ▼
-Feature Extraction (Numerical & Categorical)
-        │
-        ├── Numerical Pipeline: SimpleImputer(median) -> StandardScaler()
-        └── Categorical Pipeline: SimpleImputer(mode) -> OneHotEncoder(handle_unknown='ignore')
-        │
-        ▼
-Random Forest Regressor (n_estimators=100)
-        │
-        ├── Train / Test Split (80% / 20%)
-        ├── Evaluation: R² Score, MAE, RMSE
-        └── Feature Importances Calculation
-        │
-        ▼
-Interactive Valuation Generator (User Inputs -> Predicted ₹ Valuation)
-```
-
----
-
-## 💡 Running Tests / Verification
-
-You can verify the backend modules directly from the command line:
-
-```bash
-python data/generate_dataset.py
-python -c "import app; print('App module loaded successfully!')"
-```
+If a dataset uses alternative column naming (such as `sqft`, `beds`, `baths`, `saleprice`), the system's column detection layer automatically maps them to canonical features.

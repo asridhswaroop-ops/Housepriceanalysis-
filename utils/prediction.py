@@ -28,25 +28,32 @@ MODEL_FILE = os.path.join(MODEL_DIR, "model.pkl")
 def get_feature_and_target_columns(df: pd.DataFrame, col_mapping: dict):
     """
     Identifies target column and separates candidate features into numerical and categorical.
-    Excludes identifiers, generated price_per_sqft, and target itself.
+    Strictly excludes target column, identifiers, and any columns derived from price
+    (such as price_per_sqft) to prevent target leakage into the regression model.
     """
     if "price" not in col_mapping or col_mapping["price"] not in df.columns:
         return None, [], []
 
     target_col = col_mapping["price"]
-    
+
+    # Canonical columns to exclude explicitly
     excluded_canonical = ["price", "id", "price_per_sqft"]
-    excluded_names = [col_mapping[k] for k in excluded_canonical if k in col_mapping]
-    
+    excluded_names = {col_mapping[k] for k in excluded_canonical if k in col_mapping}
+    excluded_names.add(target_col)
+
+    # Exclude ID, index, and any price-derived columns (e.g. price_per_sqft, sqft_price)
     for col in df.columns:
-        if "id" in col.lower() or col.lower() in ["index", "unnamed: 0"]:
-            excluded_names.append(col)
+        c_lower = col.strip().lower()
+        if "id" in c_lower or c_lower in ["index", "unnamed: 0"]:
+            excluded_names.add(col)
+        elif "price" in c_lower or "cost" in c_lower or "rate_per" in c_lower:
+            excluded_names.add(col)
 
     feature_cols = [c for c in df.columns if c not in excluded_names]
-    
+
     numeric_features = []
     categorical_features = []
-    
+
     for c in feature_cols:
         if pd.api.types.is_numeric_dtype(df[c]):
             numeric_features.append(c)

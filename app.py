@@ -4,21 +4,34 @@ Completely redesigned with Modern Executive Analytics UI Theme.
 """
 import io
 import os
-import streamlit as st
-import pandas as pd
+import re
 import numpy as np
+import pandas as pd
+import streamlit as st
 
 # Utility imports
+from utils.data_processing import (
+    clean_and_preprocess_dataset,
+    compute_insights,
+    compute_kpis,
+    format_inr,
+)
+from utils.prediction import (
+    predict_single_house_price,
+    train_house_price_model,
+)
 from utils.ui import (
     inject_custom_css,
     render_header,
-    render_kpi_row
+    render_kpi_row,
 )
-from utils.data_processing import (
-    clean_and_preprocess_dataset,
-    compute_kpis,
-    compute_insights,
-    format_inr
+from utils.visualization import (
+    plot_area_vs_price,
+    plot_bedrooms_vs_price,
+    plot_correlation_heatmap,
+    plot_feature_importance,
+    plot_price_by_location,
+    plot_price_distribution,
 )
 
 def find_column(df, candidates):
@@ -28,7 +41,6 @@ def find_column(df, candidates):
     """
     if df is None or df.empty:
         return None
-    import re
     normalized_cols = {col.strip().lower().replace("_", " "): col for col in df.columns}
     raw_normalized = {re.sub(r'[^a-zA-Z0-9]', '', col).lower(): col for col in df.columns}
     for candidate in candidates:
@@ -40,11 +52,25 @@ def find_column(df, candidates):
             return raw_normalized[clean_c]
     return None
 
-def calculate_kpis(df, col_mapping=None):
+def safe_button(label, width="stretch", **kwargs):
     """
-    Centralized KPI calculation with guaranteed keys and fallbacks.
+    Renders st.button with modern width parameter, falling back gracefully for older versions.
     """
-    return compute_kpis(df, col_mapping)
+    try:
+        return st.button(label, width=width, **kwargs)
+    except TypeError:
+        use_cw = (width == "stretch")
+        return st.button(label, use_container_width=use_cw, **kwargs)
+
+def safe_form_submit_button(label, width="stretch", **kwargs):
+    """
+    Renders st.form_submit_button with modern width parameter, falling back gracefully for older versions.
+    """
+    try:
+        return st.form_submit_button(label, width=width, **kwargs)
+    except TypeError:
+        use_cw = (width == "stretch")
+        return st.form_submit_button(label, use_container_width=use_cw, **kwargs)
 
 def render_chart(fig):
     """
@@ -66,21 +92,6 @@ def render_dataframe(df, height=None):
         st.dataframe(df, width="stretch", **kwargs)
     except Exception:
         st.dataframe(df, use_container_width=True, **kwargs)
-from utils.visualization import (
-    plot_price_distribution,
-    plot_price_by_location,
-    plot_area_vs_price,
-    plot_bedrooms_vs_price,
-    plot_price_per_sqft_by_location,
-    plot_category_distribution,
-    plot_year_built_trend,
-    plot_correlation_heatmap,
-    plot_feature_importance
-)
-from utils.prediction import (
-    train_house_price_model,
-    predict_single_house_price
-)
 
 # -----------------------------------------------------------------------------
 # 1. Page Configuration
@@ -119,7 +130,7 @@ def load_and_prepare_data(file_bytes=None, file_name=None):
     return df_clean, col_mapping, quality_report
 
 @st.cache_resource
-def get_trained_model(_df_clean, col_mapping_tuple):
+def get_trained_model(data_hash, _df_clean, col_mapping_tuple):
     col_mapping = dict(col_mapping_tuple)
     return train_house_price_model(_df_clean, col_mapping)
 
@@ -204,7 +215,6 @@ with st.sidebar:
     yr_col = col_mapping.get("year_built") or find_column(df_clean, ["Year Built", "year_built", "YearBuilt", "Year"])
     park_col = col_mapping.get("parking") or find_column(df_clean, ["Parking", "parking", "Garage"])
     furn_col = col_mapping.get("furnishing") or find_column(df_clean, ["Furnishing", "furnishing", "Furnished"])
-    sqft_col = col_mapping.get("price_per_sqft")
 
     filtered_df = df_clean.copy()
 
@@ -214,38 +224,37 @@ with st.sidebar:
         selected_locs = st.multiselect(
             "Location",
             options=loc_options,
-            default=st.session_state.get("filter_location", []),
             key="filter_location"
         )
         if selected_locs:
             filtered_df = filtered_df[filtered_df[loc_col].isin(selected_locs)]
 
-    # 2. Bedrooms Filter (Range Slider)
+    # 2. Bedrooms Filter (Range Slider computed from full dataset)
     if bed_col and bed_col in filtered_df.columns:
-        min_b = int(filtered_df[bed_col].min())
-        max_b = int(filtered_df[bed_col].max())
+        min_b = int(df_clean[bed_col].min())
+        max_b = int(df_clean[bed_col].max())
         if min_b < max_b:
             selected_b = st.slider(
                 "Bedrooms",
                 min_value=min_b,
                 max_value=max_b,
-                value=st.session_state.get("filter_bedrooms", (min_b, max_b)),
+                value=(min_b, max_b),
                 key="filter_bedrooms"
             )
             filtered_df = filtered_df[
                 (filtered_df[bed_col] >= selected_b[0]) & (filtered_df[bed_col] <= selected_b[1])
             ]
 
-    # 3. Bathrooms Filter (Range Slider)
+    # 3. Bathrooms Filter (Range Slider computed from full dataset)
     if bath_col and bath_col in filtered_df.columns:
-        min_ba = int(filtered_df[bath_col].min())
-        max_ba = int(filtered_df[bath_col].max())
+        min_ba = int(df_clean[bath_col].min())
+        max_ba = int(df_clean[bath_col].max())
         if min_ba < max_ba:
             selected_ba = st.slider(
                 "Bathrooms",
                 min_value=min_ba,
                 max_value=max_ba,
-                value=st.session_state.get("filter_bathrooms", (min_ba, max_ba)),
+                value=(min_ba, max_ba),
                 key="filter_bathrooms"
             )
             filtered_df = filtered_df[
@@ -261,7 +270,7 @@ with st.sidebar:
                 "Price Range (₹)",
                 min_value=min_p,
                 max_value=max_p,
-                value=st.session_state.get("filter_price", (min_p, max_p)),
+                value=(min_p, max_p),
                 step=100000.0,
                 format="₹%d",
                 key="filter_price"
@@ -272,7 +281,7 @@ with st.sidebar:
 
     # Reset Filters Button
     st.markdown('<div class="sidebar-reset-btn" style="margin-top: 12px;">', unsafe_allow_html=True)
-    if st.button("↻ Reset Filters", use_container_width=True):
+    if safe_button("↻ Reset Filters", width="stretch"):
         reset_all_filters()
         st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
@@ -292,7 +301,7 @@ render_header(
 # -----------------------------------------------------------------------------
 # 5. Top 5 KPI Cards Section (Pastel Colors, Robust Against KeyError)
 # -----------------------------------------------------------------------------
-kpis = calculate_kpis(filtered_df, col_mapping)
+kpis = compute_kpis(filtered_df, col_mapping)
 render_kpi_row(kpis)
 
 if filtered_df.empty:
@@ -426,8 +435,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Train or retrieve cached model
+data_hash = int(pd.util.hash_pandas_object(df_clean, index=True).sum())
 model_tuple = tuple(sorted(col_mapping.items()))
-model_res = get_trained_model(df_clean, model_tuple)
+model_res = get_trained_model(data_hash, df_clean, model_tuple)
 
 if model_res["status"] == "error":
     st.warning(f"⚠️ {model_res['message']}")
@@ -446,12 +456,21 @@ else:
         input_data = {}
 
         if a_col:
-            default_a = int(df_clean[a_col].median()) if not df_clean[a_col].dropna().empty else 1500
+            col_series_a = df_clean[a_col].dropna()
+            if not col_series_a.empty:
+                data_min_a = float(col_series_a.min())
+                data_max_a = float(col_series_a.max())
+                area_min = max(1, int(data_min_a * 0.8))
+                area_max = max(area_min + 100, int(data_max_a * 1.2))
+                default_a = int(col_series_a.median())
+            else:
+                area_min, area_max, default_a = 100, 20000, 1500
+            default_a = max(area_min, min(area_max, default_a))
             with f_c1:
                 input_data[a_col] = st.number_input(
                     "Area (Square Feet)",
-                    min_value=300,
-                    max_value=15000,
+                    min_value=area_min,
+                    max_value=area_max,
                     value=default_a,
                     step=50,
                     help="Total carpet or super built-up area in sqft"
@@ -485,12 +504,21 @@ else:
                 )
 
         if yr_col:
-            default_y = int(df_clean[yr_col].median()) if not df_clean[yr_col].dropna().empty else 2018
+            col_series_y = df_clean[yr_col].dropna()
+            if not col_series_y.empty:
+                data_min_y = int(col_series_y.min())
+                data_max_y = int(col_series_y.max())
+                year_min = max(1800, data_min_y - 10)
+                year_max = max(year_min + 5, max(data_max_y + 5, 2030))
+                default_y = int(col_series_y.median())
+            else:
+                year_min, year_max, default_y = 1950, 2030, 2018
+            default_y = max(year_min, min(year_max, default_y))
             with f_c2:
                 input_data[yr_col] = st.number_input(
                     "Year Built",
-                    min_value=1950,
-                    max_value=2030,
+                    min_value=year_min,
+                    max_value=year_max,
                     value=default_y,
                     step=1
                 )
@@ -523,7 +551,7 @@ else:
                     input_data[feat] = st.selectbox(feat, options=sorted(df_clean[feat].dropna().unique().tolist()))
 
         st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
-        predict_submit = st.form_submit_button("🔮 Predict House Price", use_container_width=True)
+        predict_submit = safe_form_submit_button("🔮 Predict House Price", width="stretch")
 
     if predict_submit:
         try:
