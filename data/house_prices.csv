@@ -1,0 +1,1501 @@
+House ID,Area,Bedrooms,Bathrooms,Location,Year Built,Parking,Furnishing,Price
+HSE-1001,550,1,1,Tech Park Enclave,2001,Yes,Semi-Furnished,4010000
+HSE-1002,3139,4,3,Metro Outskirts,2017,Yes,Semi-Furnished,12560000
+HSE-1003,746,1,1,Midtown Heights,2023,Yes,Semi-Furnished,4890000
+HSE-1004,580,1,1,Lakeside Boulevard,2001,No,Furnished,3600000
+HSE-1005,2314,4,3,Green Valley Suburbs,2008,No,Furnished,11970000
+HSE-1006,3235,5,5,Green Valley Suburbs,1996,No,Furnished,15210000
+HSE-1007,2549,4,4,Downtown Core,2004,Yes,Unfurnished,21580000
+HSE-1008,2016,3,2,Metro Outskirts,2013,No,Semi-Furnished,7800000
+HSE-1009,2036,4,3,Lakeside Boulevard,2020,Yes,Semi-Furnished,13950000
+HSE-1010,2204,4,3,Midtown Heights,2003,Yes,Unfurnished,14160000
+HSE-1011,2143,3,2,Downtown Core,2010,Yes,Furnished,18660000
+HSE-1012,1832,3,2,Metro Outskirts,2013,Yes,Unfurnished,6880000
+HSE-1013,1717,2,2,Metro Outskirts,2012,No,Semi-Furnished,6590000
+HSE-1014,1609,3,3,Green Valley Suburbs,2003,Yes,Semi-Furnished,7930000
+HSE-1015,1159,2,2,Green Valley Suburbs,2010,Yes,Unfurnished,5770000
+HSE-1016,1467,3,2,Green Valley Suburbs,2007,No,Unfurnished,7710000
+HSE-1017,550,1,1,Green Valley Suburbs,2004,No,Unfurnished,2260000
+HSE-1018,1586,3,3,Tech Park Enclave,2019,Yes,Furnished,12630000
+HSE-1019,1007,2,1,Tech Park Enclave,2014,Yes,Unfurnished,7240000
+HSE-1020,932,3,3,Green Valley Suburbs,2008,No,Unfurnished,4550000
+HSE-1021,1766,3,3,Lakeside Boulevard,2006,Yes,Semi-Furnished,12820000
+HSE-1022,2554,4,3,Downtown Core,2019,Yes,Furnished,23550000
+HSE-1023,2246,3,2,Green Valley Suburbs,2013,Yes,Furnished,12020000
+HSE-1024,629,1,1,Tech Park Enclave,2001,Yes,Unfurnished,4150000
+HSE-1025,1006,2,2,Tech Park Enclave,2017,No,Semi-Furnished,7500000
+HSE-1026,2261,5,4,Midtown Heights,2009,Yes,Semi-Furnished,15260000
+HSE-1027,1011,3,3,Green Valley Suburbs,2010,Yes,Furnished,5910000
+HSE-1028,1503,3,2,Tech Park Enclave,2021,Yes,Furnished,11700000
+HSE-1029,2007,4,4,Lakeside Boulevard,2002,Yes,Semi-Furnished,13420000
+HSE-1030,1020,3,2,Downtown Core,2004,Yes,Semi-Furnished,8990000
+HSE-1031,1718,4,3,Lakeside Boulevard,1998,Yes,Unfurnished,10330000
+HSE-1032,782,2,2,Green Valley Suburbs,2013,Yes,Semi-Furnished,4270000
+HSE-1033,1259,2,1,Downtown Core,2013,Yes,Unfurnished,12420000
+HSE-1034,1857,3,2,Metro Outskirts,2022,Yes,Furnished,8400000
+HSE-1035,614,1,1,Metro Outskirts,2015,Yes,Furnished,2560000
+HSE-1036,1936,2,1,Midtown Heights,2021,Yes,Semi-Furnished,12190000
+HSE-1037,1637,4,3,Green Valley Suburbs,2009,Yes,Furnished,9390000
+HSE-1038,2009,3,2,Downtown Core,2008,No,Furnished,16540000
+HSE-1039,1795,3,2,Midtown Heights,1995,Yes,Unfurnished,9460000
+HSE-1040,2536,4,4,Tech Park Enclave,2010,Yes,Semi-Furnished,20450000
+HSE-1041,1731,4,3,Downtown Core,2004,Yes,Furnished,15070000
+HSE-1042,1370,3,3,Tech Park Enclave,2013,No,Furnished,10690000
+HSE-1043,1729,3,2,Downtown Core,2024,Yes,Furnished,15910000
+HSE-1044,2003,2,2,Metro Outskirts,2016,No,Unfurnished,7850000
+HSE-1045,1681,3,3,Green Valley Suburbs,1997,Yes,Furnished,8120000
+HSE-1046,1676,2,1,Lakeside Boulevard,1999,No,Semi-Furnished,9060000
+HSE-1047,1193,2,2,Green Valley Suburbs,2003,No,Semi-Furnished,5220000
+HSE-1048,1219,2,1,Tech Park Enclave,2012,Yes,Furnished,9330000
+HSE-1049,738,2,2,Lakeside Boulevard,2005,Yes,Furnished,5050000
+HSE-1050,2787,4,4,Green Valley Suburbs,2010,Yes,Furnished,13780000
+HSE-1051,841,1,1,Metro Outskirts,1996,Yes,Furnished,3630000
+HSE-1052,1199,3,3,Midtown Heights,2006,Yes,Furnished,7920000
+HSE-1053,1183,2,2,Metro Outskirts,2016,Yes,Furnished,4430000
+HSE-1054,2231,3,3,Metro Outskirts,2000,Yes,Unfurnished,7820000
+HSE-1055,1458,3,2,Lakeside Boulevard,2005,Yes,Furnished,9890000
+HSE-1056,2461,4,3,Metro Outskirts,2021,Yes,Semi-Furnished,9160000
+HSE-1057,1212,3,3,Downtown Core,2002,Yes,Unfurnished,10460000
+HSE-1058,1831,2,2,Green Valley Suburbs,2006,Yes,Semi-Furnished,8080000
+HSE-1059,1107,3,2,Downtown Core,2023,No,Furnished,11580000
+HSE-1060,3044,5,5,Green Valley Suburbs,2021,Yes,Furnished,17460000
+HSE-1061,878,1,1,Tech Park Enclave,2024,Yes,Semi-Furnished,8100000
+HSE-1062,1851,3,2,Green Valley Suburbs,1996,Yes,Semi-Furnished,7900000
+HSE-1063,2061,4,4,Metro Outskirts,2003,Yes,Semi-Furnished,7370000
+HSE-1064,1918,3,3,Tech Park Enclave,2009,Yes,Furnished,15070000
+HSE-1065,1529,3,3,Green Valley Suburbs,1996,Yes,Unfurnished,7510000
+HSE-1066,1565,4,4,Lakeside Boulevard,2023,No,Furnished,12640000
+HSE-1067,1678,3,2,Downtown Core,1995,Yes,Semi-Furnished,14000000
+HSE-1068,1554,3,2,Midtown Heights,2004,Yes,Semi-Furnished,9830000
+HSE-1069,2276,4,4,Downtown Core,1996,No,Furnished,18350000
+HSE-1070,3086,4,3,Metro Outskirts,2006,Yes,Semi-Furnished,11430000
+HSE-1071,1287,2,2,Midtown Heights,2017,No,Semi-Furnished,7350000
+HSE-1072,759,1,1,Green Valley Suburbs,2002,No,Unfurnished,3250000
+HSE-1073,1592,4,4,Downtown Core,1999,Yes,Unfurnished,13020000
+HSE-1074,3326,5,4,Midtown Heights,2016,Yes,Semi-Furnished,19760000
+HSE-1075,1127,2,2,Midtown Heights,2022,Yes,Semi-Furnished,7700000
+HSE-1076,2715,4,4,Midtown Heights,1995,Yes,Furnished,14280000
+HSE-1077,2740,4,4,Midtown Heights,2009,Yes,Semi-Furnished,17530000
+HSE-1078,1290,3,3,Downtown Core,2000,No,Furnished,11030000
+HSE-1079,2019,4,3,Tech Park Enclave,2006,Yes,Semi-Furnished,14520000
+HSE-1080,2708,4,4,Downtown Core,2002,Yes,Semi-Furnished,22690000
+HSE-1081,1403,4,4,Metro Outskirts,2007,Yes,Semi-Furnished,5510000
+HSE-1082,1517,3,3,Lakeside Boulevard,2013,Yes,Semi-Furnished,10250000
+HSE-1083,1271,2,2,Tech Park Enclave,2021,Yes,Unfurnished,9370000
+HSE-1084,990,2,2,Downtown Core,1995,No,Semi-Furnished,7660000
+HSE-1085,1227,2,2,Green Valley Suburbs,2005,Yes,Unfurnished,6020000
+HSE-1086,854,1,1,Green Valley Suburbs,2014,Yes,Semi-Furnished,4520000
+HSE-1087,1672,3,3,Midtown Heights,1995,Yes,Semi-Furnished,8690000
+HSE-1088,1149,2,2,Lakeside Boulevard,2024,Yes,Semi-Furnished,8710000
+HSE-1089,1801,4,4,Metro Outskirts,2002,Yes,Furnished,6910000
+HSE-1090,638,1,1,Tech Park Enclave,1999,Yes,Unfurnished,3610000
+HSE-1091,1865,3,3,Downtown Core,2011,Yes,Semi-Furnished,19130000
+HSE-1092,2191,3,3,Midtown Heights,2024,No,Unfurnished,13740000
+HSE-1093,550,1,1,Midtown Heights,2002,Yes,Semi-Furnished,3180000
+HSE-1094,1893,3,3,Lakeside Boulevard,2019,Yes,Unfurnished,12220000
+HSE-1095,2447,4,4,Midtown Heights,2004,Yes,Unfurnished,13480000
+HSE-1096,863,1,1,Tech Park Enclave,1996,Yes,Semi-Furnished,5830000
+HSE-1097,2737,4,4,Tech Park Enclave,2003,Yes,Furnished,21070000
+HSE-1098,1922,3,2,Tech Park Enclave,2018,Yes,Semi-Furnished,14620000
+HSE-1099,1191,2,1,Downtown Core,2017,Yes,Semi-Furnished,10580000
+HSE-1100,1613,3,2,Downtown Core,1997,No,Furnished,13730000
+HSE-1101,2012,3,3,Downtown Core,2012,Yes,Unfurnished,17530000
+HSE-1102,1699,3,3,Lakeside Boulevard,2001,Yes,Semi-Furnished,10990000
+HSE-1103,2000,4,4,Green Valley Suburbs,2009,Yes,Unfurnished,9750000
+HSE-1104,1051,2,2,Tech Park Enclave,2015,Yes,Unfurnished,8740000
+HSE-1105,1760,2,2,Metro Outskirts,2016,No,Semi-Furnished,7090000
+HSE-1106,731,2,1,Green Valley Suburbs,2014,Yes,Unfurnished,3800000
+HSE-1107,1577,3,3,Tech Park Enclave,2012,No,Semi-Furnished,11830000
+HSE-1108,1062,3,3,Midtown Heights,2019,Yes,Unfurnished,6830000
+HSE-1109,1171,3,2,Green Valley Suburbs,1997,Yes,Semi-Furnished,5650000
+HSE-1110,2453,4,3,Downtown Core,2022,Yes,Semi-Furnished,21980000
+HSE-1111,2359,5,5,Green Valley Suburbs,2024,Yes,Semi-Furnished,14420000
+HSE-1112,2045,3,3,Green Valley Suburbs,2017,Yes,Semi-Furnished,10630000
+HSE-1113,939,2,1,Metro Outskirts,2008,Yes,Semi-Furnished,4090000
+HSE-1114,1444,3,3,Midtown Heights,2018,Yes,Semi-Furnished,9470000
+HSE-1115,2438,3,3,Lakeside Boulevard,1996,Yes,Furnished,13200000
+HSE-1116,1742,3,3,Metro Outskirts,2008,No,Unfurnished,6020000
+HSE-1117,3157,4,4,Midtown Heights,2016,Yes,Semi-Furnished,17520000
+HSE-1118,1905,4,4,Green Valley Suburbs,2005,Yes,Semi-Furnished,9050000
+HSE-1119,1774,3,3,Metro Outskirts,2010,Yes,Semi-Furnished,6490000
+HSE-1120,1449,3,3,Lakeside Boulevard,2002,Yes,Semi-Furnished,9660000
+HSE-1121,1736,3,3,Midtown Heights,2001,Yes,Unfurnished,9740000
+HSE-1122,1550,2,1,Metro Outskirts,2005,Yes,Semi-Furnished,5990000
+HSE-1123,2110,2,2,Green Valley Suburbs,1997,No,Furnished,9600000
+HSE-1124,2271,4,3,Downtown Core,2011,Yes,Semi-Furnished,19910000
+HSE-1125,1139,2,1,Green Valley Suburbs,2008,Yes,Semi-Furnished,6360000
+HSE-1126,784,1,1,Tech Park Enclave,2000,Yes,Unfurnished,5410000
+HSE-1127,550,2,1,Midtown Heights,2002,Yes,Semi-Furnished,3410000
+HSE-1128,1980,4,3,Metro Outskirts,2016,Yes,Unfurnished,7610000
+HSE-1129,932,3,3,Downtown Core,1999,Yes,Semi-Furnished,7490000
+HSE-1130,550,1,1,Tech Park Enclave,2021,Yes,Unfurnished,4330000
+HSE-1131,1902,4,3,Tech Park Enclave,2022,No,Furnished,16490000
+HSE-1132,3270,5,5,Green Valley Suburbs,2002,Yes,Unfurnished,16860000
+HSE-1133,1646,3,3,Downtown Core,1996,Yes,Unfurnished,13350000
+HSE-1134,2195,3,3,Tech Park Enclave,2009,Yes,Unfurnished,15810000
+HSE-1135,1703,3,2,Metro Outskirts,2006,Yes,Furnished,6940000
+HSE-1136,1585,4,4,Green Valley Suburbs,2011,Yes,Furnished,8730000
+HSE-1137,2247,5,5,Tech Park Enclave,1995,Yes,Semi-Furnished,16100000
+HSE-1138,1461,2,2,Midtown Heights,2009,Yes,Furnished,9700000
+HSE-1139,1823,4,4,Tech Park Enclave,2008,No,Furnished,13630000
+HSE-1140,1859,3,3,Metro Outskirts,2014,No,Furnished,8190000
+HSE-1141,1215,3,3,Metro Outskirts,2016,Yes,Semi-Furnished,5510000
+HSE-1142,2294,4,3,Green Valley Suburbs,2010,No,Semi-Furnished,11540000
+HSE-1143,1536,4,4,Tech Park Enclave,2023,Yes,Furnished,13820000
+HSE-1144,1158,2,1,Green Valley Suburbs,2003,Yes,Furnished,5990000
+HSE-1145,1998,3,3,Green Valley Suburbs,1995,No,Semi-Furnished,8970000
+HSE-1146,1065,2,1,Downtown Core,2022,Yes,Semi-Furnished,11380000
+HSE-1147,1668,4,3,Lakeside Boulevard,2011,Yes,Furnished,12220000
+HSE-1148,1644,4,4,Tech Park Enclave,2023,Yes,Semi-Furnished,13420000
+HSE-1149,2355,5,5,Downtown Core,2007,Yes,Unfurnished,19360000
+HSE-1150,1958,4,3,Green Valley Suburbs,2015,No,Unfurnished,9520000
+HSE-1151,1633,2,2,Metro Outskirts,2020,Yes,Unfurnished,6490000
+HSE-1152,2181,3,3,Green Valley Suburbs,2015,Yes,Unfurnished,11040000
+HSE-1153,2553,3,2,Downtown Core,1999,Yes,Semi-Furnished,20840000
+HSE-1154,2012,3,3,Tech Park Enclave,2004,Yes,Semi-Furnished,15170000
+HSE-1155,1656,3,2,Metro Outskirts,2000,Yes,Semi-Furnished,6750000
+HSE-1156,797,1,1,Green Valley Suburbs,2018,Yes,Semi-Furnished,4140000
+HSE-1157,957,2,2,Midtown Heights,2013,Yes,Furnished,5950000
+HSE-1158,1451,2,2,Midtown Heights,2019,Yes,Semi-Furnished,9920000
+HSE-1159,1253,2,1,Green Valley Suburbs,2007,No,Semi-Furnished,5590000
+HSE-1160,1528,2,2,Midtown Heights,1995,Yes,Furnished,7960000
+HSE-1161,1686,4,3,Tech Park Enclave,2014,Yes,Unfurnished,14210000
+HSE-1162,1994,3,3,Lakeside Boulevard,2019,Yes,Furnished,14930000
+HSE-1163,1604,4,4,Lakeside Boulevard,2009,No,Furnished,11450000
+HSE-1164,1966,3,3,Lakeside Boulevard,2008,No,Furnished,13170000
+HSE-1165,1691,3,2,Downtown Core,2002,Yes,Semi-Furnished,13930000
+HSE-1166,550,2,1,Metro Outskirts,2004,Yes,Furnished,2450000
+HSE-1167,1039,2,1,Green Valley Suburbs,2003,Yes,Unfurnished,4890000
+HSE-1168,1556,3,2,Green Valley Suburbs,2011,Yes,Semi-Furnished,8090000
+HSE-1169,863,1,1,Downtown Core,2003,Yes,Semi-Furnished,6740000
+HSE-1170,2039,2,2,Lakeside Boulevard,1997,Yes,Semi-Furnished,11950000
+HSE-1171,2644,4,4,Midtown Heights,2005,No,Semi-Furnished,13740000
+HSE-1172,2442,4,4,Downtown Core,2006,Yes,Unfurnished,20850000
+HSE-1173,1511,3,2,Tech Park Enclave,2004,No,Semi-Furnished,10770000
+HSE-1174,2618,3,3,Green Valley Suburbs,2019,Yes,Semi-Furnished,14760000
+HSE-1175,1746,3,3,Lakeside Boulevard,2011,Yes,Unfurnished,12120000
+HSE-1176,1430,4,4,Green Valley Suburbs,2011,Yes,Unfurnished,7410000
+HSE-1177,1251,2,2,Midtown Heights,2019,Yes,Semi-Furnished,7840000
+HSE-1178,1453,3,2,Tech Park Enclave,2005,Yes,Furnished,11140000
+HSE-1179,1397,3,2,Metro Outskirts,2024,No,Semi-Furnished,6010000
+HSE-1180,1760,3,3,Downtown Core,2016,No,Semi-Furnished,16200000
+HSE-1181,1754,2,1,Tech Park Enclave,1998,No,Semi-Furnished,11880000
+HSE-1182,1651,3,2,Downtown Core,2001,Yes,Unfurnished,13330000
+HSE-1183,1934,3,3,Metro Outskirts,2015,No,Semi-Furnished,7380000
+HSE-1184,2423,4,4,Metro Outskirts,2020,No,Unfurnished,9140000
+HSE-1185,2267,4,4,Green Valley Suburbs,2008,Yes,Furnished,11260000
+HSE-1186,684,1,1,Lakeside Boulevard,2001,Yes,Furnished,4420000
+HSE-1187,550,1,1,Midtown Heights,2018,Yes,Furnished,4130000
+HSE-1188,2257,4,3,Lakeside Boulevard,2002,Yes,Unfurnished,14480000
+HSE-1189,761,1,1,Tech Park Enclave,1995,Yes,Unfurnished,4970000
+HSE-1190,1503,3,2,Green Valley Suburbs,2018,No,Semi-Furnished,7560000
+HSE-1191,889,1,1,Downtown Core,2016,Yes,Semi-Furnished,8190000
+HSE-1192,550,1,1,Metro Outskirts,1998,Yes,Semi-Furnished,2250000
+HSE-1193,2001,2,2,Metro Outskirts,2023,No,Unfurnished,8310000
+HSE-1194,2143,3,3,Lakeside Boulevard,2024,Yes,Unfurnished,16640000
+HSE-1195,1275,2,2,Tech Park Enclave,2006,No,Semi-Furnished,8860000
+HSE-1196,550,2,2,Tech Park Enclave,2018,Yes,Semi-Furnished,4560000
+HSE-1197,1294,2,2,Midtown Heights,1997,Yes,Furnished,7290000
+HSE-1198,1904,3,3,Metro Outskirts,2007,Yes,Semi-Furnished,7420000
+HSE-1199,688,1,1,Metro Outskirts,2014,Yes,Semi-Furnished,3010000
+HSE-1200,1769,3,2,Midtown Heights,2000,Yes,Furnished,10540000
+HSE-1201,1640,3,3,Lakeside Boulevard,2005,Yes,Unfurnished,11620000
+HSE-1202,2026,3,3,Downtown Core,2017,Yes,Semi-Furnished,18040000
+HSE-1203,1727,3,3,Green Valley Suburbs,1998,No,Unfurnished,7490000
+HSE-1204,1017,3,3,Metro Outskirts,2014,Yes,Furnished,4810000
+HSE-1205,2427,4,4,Lakeside Boulevard,2010,Yes,Semi-Furnished,16700000
+HSE-1206,1546,3,2,Downtown Core,2001,Yes,Semi-Furnished,13050000
+HSE-1207,1632,4,4,Downtown Core,2016,Yes,Furnished,15450000
+HSE-1208,1043,3,2,Lakeside Boulevard,2023,Yes,Semi-Furnished,7920000
+HSE-1209,1361,3,3,Downtown Core,2005,No,Furnished,11890000
+HSE-1210,1074,2,1,Green Valley Suburbs,2018,Yes,Furnished,6200000
+HSE-1211,1537,3,2,Lakeside Boulevard,1995,Yes,Furnished,10230000
+HSE-1212,2762,4,4,Midtown Heights,2020,Yes,Furnished,17080000
+HSE-1213,758,1,1,Lakeside Boulevard,2023,Yes,Semi-Furnished,5780000
+HSE-1214,601,1,1,Green Valley Suburbs,2021,No,Furnished,3460000
+HSE-1215,2606,4,4,Midtown Heights,2001,Yes,Semi-Furnished,14610000
+HSE-1216,1513,4,4,Green Valley Suburbs,2006,Yes,Semi-Furnished,7670000
+HSE-1217,1215,2,1,Green Valley Suburbs,2001,Yes,Semi-Furnished,6090000
+HSE-1218,2325,5,5,Midtown Heights,2021,Yes,Unfurnished,15200000
+HSE-1219,1256,2,2,Lakeside Boulevard,2017,Yes,Semi-Furnished,8480000
+HSE-1220,2836,4,4,Metro Outskirts,2001,Yes,Semi-Furnished,9670000
+HSE-1221,2090,3,3,Lakeside Boulevard,2004,No,Furnished,13750000
+HSE-1222,1332,3,3,Lakeside Boulevard,2024,No,Semi-Furnished,9820000
+HSE-1223,3052,4,3,Downtown Core,2010,Yes,Unfurnished,24200000
+HSE-1224,1256,2,2,Tech Park Enclave,2020,Yes,Semi-Furnished,9410000
+HSE-1225,2132,4,3,Green Valley Suburbs,2002,Yes,Furnished,10950000
+HSE-1226,1844,3,3,Green Valley Suburbs,2003,No,Semi-Furnished,8750000
+HSE-1227,2496,4,3,Metro Outskirts,2003,No,Semi-Furnished,9770000
+HSE-1228,2664,4,4,Tech Park Enclave,1996,No,Semi-Furnished,15950000
+HSE-1229,1670,3,2,Metro Outskirts,2007,No,Semi-Furnished,6640000
+HSE-1230,1160,3,3,Lakeside Boulevard,2007,Yes,Furnished,8130000
+HSE-1231,1948,3,3,Midtown Heights,2017,No,Unfurnished,11540000
+HSE-1232,1209,2,2,Tech Park Enclave,2017,Yes,Furnished,8870000
+HSE-1233,2958,4,3,Lakeside Boulevard,1998,Yes,Furnished,18940000
+HSE-1234,1738,3,3,Tech Park Enclave,2019,Yes,Semi-Furnished,12270000
+HSE-1235,1412,2,2,Green Valley Suburbs,2018,Yes,Furnished,7970000
+HSE-1236,1770,3,3,Midtown Heights,2006,Yes,Furnished,10030000
+HSE-1237,774,1,1,Green Valley Suburbs,2011,Yes,Furnished,3960000
+HSE-1238,1018,2,1,Downtown Core,1996,Yes,Semi-Furnished,7690000
+HSE-1239,2430,4,4,Lakeside Boulevard,2007,No,Unfurnished,15280000
+HSE-1240,1223,2,2,Green Valley Suburbs,2023,Yes,Unfurnished,7130000
+HSE-1241,969,3,2,Metro Outskirts,2012,Yes,Semi-Furnished,4520000
+HSE-1242,1998,3,2,Metro Outskirts,2022,Yes,Furnished,8520000
+HSE-1243,2420,5,5,Metro Outskirts,2022,Yes,Semi-Furnished,10780000
+HSE-1244,2117,4,3,Tech Park Enclave,2021,Yes,Semi-Furnished,16810000
+HSE-1245,2297,4,3,Downtown Core,2009,Yes,Semi-Furnished,19760000
+HSE-1246,1158,2,2,Metro Outskirts,2002,Yes,Furnished,4750000
+HSE-1247,725,1,1,Tech Park Enclave,2009,Yes,Furnished,5680000
+HSE-1248,2625,4,4,Metro Outskirts,1995,No,Semi-Furnished,8910000
+HSE-1249,1440,3,2,Metro Outskirts,2014,Yes,Semi-Furnished,5510000
+HSE-1250,1486,2,2,Metro Outskirts,2004,Yes,Unfurnished,5460000
+HSE-1251,2513,4,3,Green Valley Suburbs,2006,Yes,Furnished,13300000
+HSE-1252,2011,4,3,Tech Park Enclave,1999,No,Furnished,13500000
+HSE-1253,1946,3,2,Metro Outskirts,2003,Yes,Semi-Furnished,6530000
+HSE-1254,3057,4,4,Green Valley Suburbs,2017,No,Semi-Furnished,15420000
+HSE-1255,1231,3,2,Green Valley Suburbs,2002,No,Furnished,6600000
+HSE-1256,2253,4,3,Lakeside Boulevard,2010,No,Furnished,16290000
+HSE-1257,1687,3,2,Metro Outskirts,2008,No,Furnished,6360000
+HSE-1258,1824,4,4,Midtown Heights,2021,Yes,Furnished,12230000
+HSE-1259,2643,4,3,Lakeside Boulevard,2019,Yes,Semi-Furnished,18950000
+HSE-1260,1980,3,2,Downtown Core,2007,No,Unfurnished,17800000
+HSE-1261,1999,2,1,Lakeside Boulevard,2017,Yes,Semi-Furnished,12620000
+HSE-1262,2347,5,4,Metro Outskirts,2015,Yes,Semi-Furnished,9170000
+HSE-1263,1412,3,3,Downtown Core,2007,Yes,Semi-Furnished,11140000
+HSE-1264,1104,3,3,Tech Park Enclave,1999,Yes,Semi-Furnished,7720000
+HSE-1265,970,3,2,Metro Outskirts,2010,No,Furnished,4290000
+HSE-1266,550,1,1,Midtown Heights,2020,Yes,Semi-Furnished,3460000
+HSE-1267,2986,4,3,Midtown Heights,2005,Yes,Semi-Furnished,16280000
+HSE-1268,932,2,1,Midtown Heights,2016,No,Furnished,5980000
+HSE-1269,1506,2,2,Tech Park Enclave,1999,No,Semi-Furnished,10320000
+HSE-1270,1470,3,2,Green Valley Suburbs,2007,Yes,Semi-Furnished,7110000
+HSE-1271,1849,4,4,Midtown Heights,2022,Yes,Semi-Furnished,12460000
+HSE-1272,2180,2,2,Midtown Heights,2005,Yes,Furnished,12950000
+HSE-1273,2209,4,4,Metro Outskirts,2019,Yes,Semi-Furnished,9400000
+HSE-1274,1270,2,2,Metro Outskirts,2013,Yes,Semi-Furnished,5020000
+HSE-1275,1541,3,3,Tech Park Enclave,1997,Yes,Furnished,10500000
+HSE-1276,1833,4,4,Tech Park Enclave,2009,Yes,Furnished,15520000
+HSE-1277,1488,3,2,Midtown Heights,2001,Yes,Semi-Furnished,8530000
+HSE-1278,2694,4,4,Lakeside Boulevard,2001,Yes,Furnished,17630000
+HSE-1279,1969,3,3,Midtown Heights,2000,Yes,Semi-Furnished,11610000
+HSE-1280,2127,3,3,Midtown Heights,1997,Yes,Semi-Furnished,10770000
+HSE-1281,2080,3,3,Metro Outskirts,2024,Yes,Furnished,9210000
+HSE-1282,2412,4,3,Tech Park Enclave,2007,Yes,Furnished,16460000
+HSE-1283,1767,3,2,Tech Park Enclave,2001,Yes,Semi-Furnished,12380000
+HSE-1284,807,2,2,Downtown Core,1999,Yes,Furnished,7500000
+HSE-1285,1909,3,2,Lakeside Boulevard,2017,No,Furnished,12610000
+HSE-1286,1226,2,2,Downtown Core,2012,Yes,Semi-Furnished,10220000
+HSE-1287,1306,3,3,Tech Park Enclave,2016,Yes,Furnished,11540000
+HSE-1288,2031,3,3,Lakeside Boulevard,2024,Yes,Semi-Furnished,14410000
+HSE-1289,2454,3,3,Green Valley Suburbs,2002,No,Furnished,10840000
+HSE-1290,1663,3,2,Lakeside Boulevard,2011,Yes,Semi-Furnished,12380000
+HSE-1291,1850,3,2,Downtown Core,2014,Yes,Furnished,15900000
+HSE-1292,2756,4,4,Downtown Core,2021,Yes,Unfurnished,26690000
+HSE-1293,1806,3,3,Metro Outskirts,1995,Yes,Semi-Furnished,6560000
+HSE-1294,3341,5,5,Tech Park Enclave,2008,No,Furnished,26240000
+HSE-1295,2017,3,2,Downtown Core,2011,Yes,Semi-Furnished,17950000
+HSE-1296,550,1,1,Tech Park Enclave,2004,Yes,Semi-Furnished,4300000
+HSE-1297,2139,2,1,Midtown Heights,2006,Yes,Semi-Furnished,11830000
+HSE-1298,1897,2,2,Green Valley Suburbs,2010,Yes,Unfurnished,9090000
+HSE-1299,2488,4,3,Lakeside Boulevard,2008,Yes,Semi-Furnished,14910000
+HSE-1300,2087,3,3,Downtown Core,2024,Yes,Furnished,21490000
+HSE-1301,1560,4,3,Downtown Core,2021,Yes,Semi-Furnished,14690000
+HSE-1302,854,1,1,Lakeside Boulevard,2010,Yes,Furnished,5740000
+HSE-1303,1514,2,2,Lakeside Boulevard,2002,Yes,Semi-Furnished,8880000
+HSE-1304,1097,2,2,Lakeside Boulevard,2017,No,Semi-Furnished,7650000
+HSE-1305,1272,2,2,Midtown Heights,2022,No,Furnished,9340000
+HSE-1306,2032,2,1,Metro Outskirts,2004,No,Furnished,7310000
+HSE-1307,2735,4,4,Tech Park Enclave,2023,Yes,Unfurnished,21730000
+HSE-1308,1906,2,2,Green Valley Suburbs,2011,No,Unfurnished,8810000
+HSE-1309,872,1,1,Midtown Heights,2021,Yes,Semi-Furnished,5810000
+HSE-1310,1938,3,2,Green Valley Suburbs,2024,Yes,Furnished,10680000
+HSE-1311,2427,3,3,Tech Park Enclave,2023,No,Semi-Furnished,19370000
+HSE-1312,1253,2,2,Downtown Core,2012,Yes,Furnished,12210000
+HSE-1313,1562,4,4,Downtown Core,2014,Yes,Furnished,15180000
+HSE-1314,1659,3,3,Metro Outskirts,2010,Yes,Furnished,6760000
+HSE-1315,1139,3,2,Metro Outskirts,2011,Yes,Furnished,4790000
+HSE-1316,2071,2,2,Midtown Heights,2010,Yes,Semi-Furnished,13360000
+HSE-1317,1571,3,2,Tech Park Enclave,2013,Yes,Unfurnished,11330000
+HSE-1318,1922,3,3,Green Valley Suburbs,2018,Yes,Semi-Furnished,10040000
+HSE-1319,1073,3,3,Green Valley Suburbs,2018,Yes,Furnished,5740000
+HSE-1320,1365,2,2,Green Valley Suburbs,2002,Yes,Semi-Furnished,7050000
+HSE-1321,2119,4,3,Lakeside Boulevard,2000,Yes,Semi-Furnished,13210000
+HSE-1322,1407,3,2,Midtown Heights,2000,Yes,Furnished,8080000
+HSE-1323,2772,3,3,Lakeside Boulevard,2015,No,Unfurnished,19300000
+HSE-1324,1390,2,2,Green Valley Suburbs,2023,Yes,Semi-Furnished,7310000
+HSE-1325,1796,4,3,Metro Outskirts,2003,Yes,Unfurnished,6960000
+HSE-1326,2256,4,4,Midtown Heights,1998,Yes,Semi-Furnished,12560000
+HSE-1327,728,2,1,Lakeside Boulevard,2020,Yes,Semi-Furnished,4940000
+HSE-1328,550,1,1,Lakeside Boulevard,2006,Yes,Furnished,3790000
+HSE-1329,658,1,1,Tech Park Enclave,2022,Yes,Semi-Furnished,5320000
+HSE-1330,2470,3,2,Green Valley Suburbs,2006,Yes,Furnished,12020000
+HSE-1331,1291,3,3,Tech Park Enclave,2017,Yes,Unfurnished,9440000
+HSE-1332,3312,5,4,Midtown Heights,2011,Yes,Unfurnished,20390000
+HSE-1333,1283,3,3,Downtown Core,2009,Yes,Unfurnished,10610000
+HSE-1334,1769,3,2,Downtown Core,2003,Yes,Semi-Furnished,13070000
+HSE-1335,2652,4,3,Downtown Core,2001,Yes,Unfurnished,23680000
+HSE-1336,2953,4,3,Downtown Core,2004,No,Furnished,24910000
+HSE-1337,2989,4,4,Metro Outskirts,2010,Yes,Semi-Furnished,12790000
+HSE-1338,2435,4,4,Midtown Heights,2006,Yes,Semi-Furnished,13790000
+HSE-1339,2315,5,5,Tech Park Enclave,2019,Yes,Semi-Furnished,18600000
+HSE-1340,2035,4,3,Downtown Core,2001,Yes,Semi-Furnished,17660000
+HSE-1341,2155,3,2,Tech Park Enclave,2012,Yes,Furnished,16530000
+HSE-1342,1291,2,2,Tech Park Enclave,2009,Yes,Furnished,9190000
+HSE-1343,1118,2,2,Green Valley Suburbs,2000,Yes,Unfurnished,5220000
+HSE-1344,1647,4,4,Tech Park Enclave,2020,Yes,Semi-Furnished,13450000
+HSE-1345,1539,2,1,Tech Park Enclave,2006,Yes,Furnished,11680000
+HSE-1346,1355,3,3,Lakeside Boulevard,2005,Yes,Unfurnished,8970000
+HSE-1347,2102,3,3,Lakeside Boulevard,2014,Yes,Unfurnished,15140000
+HSE-1348,2270,4,3,Downtown Core,1997,Yes,Furnished,19220000
+HSE-1349,1707,4,4,Tech Park Enclave,1996,Yes,Unfurnished,11400000
+HSE-1350,2610,4,3,Lakeside Boulevard,2000,Yes,Unfurnished,15060000
+HSE-1351,907,2,2,Tech Park Enclave,2018,Yes,Unfurnished,7070000
+HSE-1352,1524,2,2,Metro Outskirts,2016,No,Unfurnished,5480000
+HSE-1353,1184,2,2,Lakeside Boulevard,2019,Yes,Semi-Furnished,8430000
+HSE-1354,550,1,1,Green Valley Suburbs,2024,Yes,Semi-Furnished,3420000
+HSE-1355,1596,3,3,Downtown Core,1999,Yes,Furnished,13640000
+HSE-1356,1570,4,3,Lakeside Boulevard,2012,No,Furnished,11970000
+HSE-1357,2633,5,5,Downtown Core,2010,Yes,Semi-Furnished,22190000
+HSE-1358,2060,3,2,Lakeside Boulevard,2002,Yes,Semi-Furnished,13890000
+HSE-1359,984,2,2,Metro Outskirts,2019,Yes,Furnished,4720000
+HSE-1360,2855,5,5,Lakeside Boulevard,2024,Yes,Semi-Furnished,21700000
+HSE-1361,2443,3,3,Tech Park Enclave,2020,Yes,Furnished,21090000
+HSE-1362,2028,2,2,Lakeside Boulevard,2014,Yes,Unfurnished,13200000
+HSE-1363,1502,3,2,Tech Park Enclave,2016,Yes,Furnished,11510000
+HSE-1364,1026,2,2,Lakeside Boulevard,2005,Yes,Semi-Furnished,7130000
+HSE-1365,1408,3,3,Metro Outskirts,2004,No,Semi-Furnished,5300000
+HSE-1366,2357,5,4,Tech Park Enclave,2018,Yes,Furnished,17910000
+HSE-1367,2874,4,3,Metro Outskirts,2019,Yes,Unfurnished,11580000
+HSE-1368,2653,4,3,Metro Outskirts,2006,Yes,Semi-Furnished,10230000
+HSE-1369,1332,2,2,Green Valley Suburbs,2015,Yes,Semi-Furnished,6840000
+HSE-1370,922,2,2,Downtown Core,2022,Yes,Furnished,9460000
+HSE-1371,1741,3,3,Downtown Core,2000,Yes,Semi-Furnished,14910000
+HSE-1372,550,2,2,Downtown Core,2021,Yes,Furnished,5340000
+HSE-1373,1860,3,3,Downtown Core,2014,Yes,Semi-Furnished,17300000
+HSE-1374,1554,3,2,Midtown Heights,1999,Yes,Semi-Furnished,8490000
+HSE-1375,1347,3,3,Downtown Core,2017,Yes,Unfurnished,11820000
+HSE-1376,613,2,2,Green Valley Suburbs,2003,Yes,Semi-Furnished,3480000
+HSE-1377,1983,3,3,Metro Outskirts,2020,Yes,Furnished,8490000
+HSE-1378,1303,2,1,Downtown Core,2021,Yes,Furnished,10820000
+HSE-1379,889,1,1,Midtown Heights,2023,Yes,Semi-Furnished,5860000
+HSE-1380,550,1,1,Green Valley Suburbs,2010,Yes,Furnished,3230000
+HSE-1381,1632,3,3,Downtown Core,2016,Yes,Furnished,15210000
+HSE-1382,2801,4,3,Midtown Heights,2008,Yes,Unfurnished,17080000
+HSE-1383,2729,4,3,Lakeside Boulevard,2016,Yes,Furnished,19280000
+HSE-1384,1352,3,3,Metro Outskirts,2002,Yes,Unfurnished,5060000
+HSE-1385,1258,3,2,Midtown Heights,2021,No,Furnished,7990000
+HSE-1386,1954,4,4,Midtown Heights,2014,Yes,Unfurnished,13000000
+HSE-1387,1001,2,2,Green Valley Suburbs,2013,Yes,Semi-Furnished,5610000
+HSE-1388,1846,3,3,Green Valley Suburbs,2008,Yes,Semi-Furnished,9590000
+HSE-1389,2147,3,2,Midtown Heights,2001,Yes,Furnished,12480000
+HSE-1390,2447,3,2,Midtown Heights,1999,Yes,Unfurnished,13070000
+HSE-1391,1584,3,2,Metro Outskirts,2012,Yes,Unfurnished,6180000
+HSE-1392,1517,3,3,Tech Park Enclave,1996,Yes,Semi-Furnished,11030000
+HSE-1393,1079,2,1,Tech Park Enclave,2005,Yes,Semi-Furnished,8250000
+HSE-1394,1112,3,2,Midtown Heights,2016,Yes,Semi-Furnished,6990000
+HSE-1395,1502,2,2,Tech Park Enclave,2002,Yes,Furnished,10920000
+HSE-1396,1888,3,2,Metro Outskirts,1995,Yes,Semi-Furnished,6820000
+HSE-1397,2243,4,4,Metro Outskirts,2021,Yes,Unfurnished,9200000
+HSE-1398,1127,2,2,Tech Park Enclave,2016,No,Semi-Furnished,8730000
+HSE-1399,2620,4,3,Midtown Heights,2006,Yes,Furnished,14850000
+HSE-1400,1473,3,3,Midtown Heights,1996,Yes,Semi-Furnished,7860000
+HSE-1401,1636,3,3,Downtown Core,2012,Yes,Semi-Furnished,15790000
+HSE-1402,1164,2,2,Metro Outskirts,2001,Yes,Furnished,4980000
+HSE-1403,550,1,1,Tech Park Enclave,2020,No,Furnished,4000000
+HSE-1404,2224,3,3,Metro Outskirts,2011,No,Furnished,8690000
+HSE-1405,2128,3,2,Green Valley Suburbs,2016,Yes,Unfurnished,11330000
+HSE-1406,1467,4,4,Metro Outskirts,2024,No,Furnished,6020000
+HSE-1407,1693,3,2,Tech Park Enclave,2017,Yes,Semi-Furnished,12380000
+HSE-1408,1985,3,3,Downtown Core,2008,Yes,Semi-Furnished,17160000
+HSE-1409,634,1,1,Metro Outskirts,2018,No,Semi-Furnished,2310000
+HSE-1410,1306,3,3,Downtown Core,2001,Yes,Unfurnished,10970000
+HSE-1411,2166,4,3,Green Valley Suburbs,2016,Yes,Furnished,12540000
+HSE-1412,834,1,1,Metro Outskirts,2019,Yes,Furnished,3440000
+HSE-1413,1840,3,2,Metro Outskirts,2023,No,Unfurnished,7540000
+HSE-1414,768,2,2,Lakeside Boulevard,1997,Yes,Furnished,5140000
+HSE-1415,1953,3,2,Lakeside Boulevard,2021,No,Furnished,13660000
+HSE-1416,1626,3,3,Tech Park Enclave,2000,Yes,Unfurnished,11340000
+HSE-1417,600,1,1,Green Valley Suburbs,2014,Yes,Unfurnished,3470000
+HSE-1418,2407,4,4,Green Valley Suburbs,1996,No,Semi-Furnished,11790000
+HSE-1419,1172,3,3,Midtown Heights,2011,Yes,Furnished,7140000
+HSE-1420,1123,2,2,Midtown Heights,2006,No,Semi-Furnished,6260000
+HSE-1421,1780,3,3,Midtown Heights,2006,Yes,Furnished,10480000
+HSE-1422,2396,4,4,Midtown Heights,2024,Yes,Semi-Furnished,15270000
+HSE-1423,989,2,2,Downtown Core,2011,Yes,Semi-Furnished,8320000
+HSE-1424,1690,4,4,Tech Park Enclave,2021,Yes,Unfurnished,13060000
+HSE-1425,1928,3,2,Downtown Core,2004,Yes,Furnished,15830000
+HSE-1426,2100,2,2,Lakeside Boulevard,1997,No,Semi-Furnished,12010000
+HSE-1427,1764,3,3,Tech Park Enclave,2014,No,Furnished,15040000
+HSE-1428,1411,3,2,Metro Outskirts,2012,Yes,Semi-Furnished,5630000
+HSE-1429,1112,2,2,Tech Park Enclave,2007,No,Unfurnished,7700000
+HSE-1430,1705,3,3,Downtown Core,2006,No,Furnished,15220000
+HSE-1431,953,2,1,Downtown Core,2021,Yes,Semi-Furnished,8500000
+HSE-1432,550,1,1,Midtown Heights,2021,Yes,Semi-Furnished,3350000
+HSE-1433,1933,3,3,Lakeside Boulevard,2024,No,Unfurnished,13970000
+HSE-1434,2237,4,4,Downtown Core,2021,Yes,Semi-Furnished,22390000
+HSE-1435,550,1,1,Downtown Core,2011,No,Unfurnished,4450000
+HSE-1436,993,3,3,Midtown Heights,1998,No,Semi-Furnished,5430000
+HSE-1437,2052,4,3,Downtown Core,2017,No,Furnished,19010000
+HSE-1438,2987,5,5,Metro Outskirts,2004,Yes,Semi-Furnished,11170000
+HSE-1439,1663,3,3,Midtown Heights,2005,Yes,Semi-Furnished,11320000
+HSE-1440,1176,3,2,Downtown Core,2000,Yes,Semi-Furnished,9460000
+HSE-1441,1531,3,3,Downtown Core,2000,Yes,Semi-Furnished,13820000
+HSE-1442,2543,4,4,Metro Outskirts,2021,Yes,Semi-Furnished,10890000
+HSE-1443,1230,2,1,Tech Park Enclave,2003,Yes,Furnished,8840000
+HSE-1444,1130,2,2,Tech Park Enclave,2024,Yes,Furnished,9700000
+HSE-1445,1336,3,3,Midtown Heights,2009,No,Semi-Furnished,7700000
+HSE-1446,1030,2,2,Metro Outskirts,1996,Yes,Semi-Furnished,3730000
+HSE-1447,1729,3,2,Metro Outskirts,1998,Yes,Semi-Furnished,6160000
+HSE-1448,2706,4,3,Midtown Heights,1999,Yes,Semi-Furnished,15310000
+HSE-1449,1860,3,2,Tech Park Enclave,2011,Yes,Furnished,13250000
+HSE-1450,1485,3,3,Downtown Core,2002,Yes,Semi-Furnished,12730000
+HSE-1451,1460,3,3,Midtown Heights,2002,Yes,Semi-Furnished,8580000
+HSE-1452,633,2,1,Lakeside Boulevard,2016,Yes,Semi-Furnished,4720000
+HSE-1453,2224,4,3,Tech Park Enclave,2006,Yes,Semi-Furnished,16730000
+HSE-1454,1599,3,2,Metro Outskirts,2015,Yes,Semi-Furnished,6440000
+HSE-1455,1532,3,3,Downtown Core,2002,No,Semi-Furnished,12970000
+HSE-1456,3725,4,3,Tech Park Enclave,2013,No,Unfurnished,27660000
+HSE-1457,1844,4,4,Downtown Core,1997,No,Semi-Furnished,15330000
+HSE-1458,1161,2,2,Tech Park Enclave,2012,No,Semi-Furnished,8940000
+HSE-1459,1372,2,1,Downtown Core,2015,No,Semi-Furnished,12180000
+HSE-1460,2396,3,3,Downtown Core,2013,No,Semi-Furnished,21150000
+HSE-1461,1723,3,3,Downtown Core,2013,Yes,Semi-Furnished,16690000
+HSE-1462,715,1,1,Lakeside Boulevard,2009,Yes,Semi-Furnished,4990000
+HSE-1463,2247,4,4,Midtown Heights,2000,Yes,Semi-Furnished,12080000
+HSE-1464,1215,2,2,Lakeside Boulevard,2010,Yes,Furnished,8380000
+HSE-1465,2867,4,3,Metro Outskirts,2002,Yes,Unfurnished,10200000
+HSE-1466,2352,4,3,Tech Park Enclave,2010,Yes,Unfurnished,17480000
+HSE-1467,1359,3,3,Green Valley Suburbs,2012,No,Semi-Furnished,7200000
+HSE-1468,2482,4,3,Metro Outskirts,2014,No,Semi-Furnished,9260000
+HSE-1469,1694,3,2,Green Valley Suburbs,2010,Yes,Furnished,8900000
+HSE-1470,2204,4,3,Metro Outskirts,2005,Yes,Furnished,8520000
+HSE-1471,1965,4,3,Downtown Core,2001,No,Furnished,17210000
+HSE-1472,1099,2,2,Metro Outskirts,2011,Yes,Semi-Furnished,4250000
+HSE-1473,1231,3,2,Downtown Core,2011,No,Unfurnished,10660000
+HSE-1474,2319,4,4,Metro Outskirts,2006,Yes,Semi-Furnished,8670000
+HSE-1475,1432,3,3,Tech Park Enclave,2007,Yes,Semi-Furnished,11740000
+HSE-1476,1387,2,2,Metro Outskirts,2004,Yes,Semi-Furnished,5590000
+HSE-1477,1029,2,1,Downtown Core,2001,No,Furnished,7830000
+HSE-1478,1925,3,3,Lakeside Boulevard,2008,Yes,Furnished,12670000
+HSE-1479,2990,3,2,Metro Outskirts,2017,Yes,Semi-Furnished,12130000
+HSE-1480,956,3,3,Tech Park Enclave,1995,Yes,Unfurnished,6780000
+HSE-1481,1665,4,4,Lakeside Boulevard,2011,Yes,Semi-Furnished,12010000
+HSE-1482,2567,4,4,Midtown Heights,1998,No,Semi-Furnished,14310000
+HSE-1483,1598,3,3,Tech Park Enclave,2015,Yes,Unfurnished,12880000
+HSE-1484,1944,2,2,Lakeside Boulevard,1999,Yes,Furnished,12790000
+HSE-1485,959,2,2,Lakeside Boulevard,2014,Yes,Semi-Furnished,6780000
+HSE-1486,1928,2,2,Metro Outskirts,2018,Yes,Semi-Furnished,7150000
+HSE-1487,1528,3,3,Downtown Core,2017,Yes,Semi-Furnished,12800000
+HSE-1488,2290,5,4,Green Valley Suburbs,2019,No,Furnished,12190000
+HSE-1489,2421,4,4,Metro Outskirts,2001,Yes,Semi-Furnished,8180000
+HSE-1490,3333,4,4,Metro Outskirts,2004,Yes,Unfurnished,12300000
+HSE-1491,2026,3,3,Tech Park Enclave,2011,Yes,Furnished,15300000
+HSE-1492,1861,3,3,Lakeside Boulevard,2023,No,Semi-Furnished,15160000
+HSE-1493,1776,3,3,Green Valley Suburbs,2024,No,Furnished,10280000
+HSE-1494,1420,4,3,Green Valley Suburbs,2001,No,Unfurnished,6720000
+HSE-1495,1870,4,4,Tech Park Enclave,1995,Yes,Semi-Furnished,11800000
+HSE-1496,1457,3,2,Tech Park Enclave,2001,Yes,Unfurnished,9560000
+HSE-1497,1759,3,3,Lakeside Boulevard,2020,No,Semi-Furnished,12560000
+HSE-1498,2506,4,3,Downtown Core,2018,Yes,Furnished,22450000
+HSE-1499,995,2,1,Metro Outskirts,2005,Yes,Furnished,4600000
+HSE-1500,2390,4,4,Metro Outskirts,2003,Yes,Furnished,9220000
+HSE-1501,2506,4,4,Midtown Heights,2006,No,Furnished,15040000
+HSE-1502,1573,3,2,Lakeside Boulevard,1997,Yes,Semi-Furnished,9190000
+HSE-1503,550,1,1,Green Valley Suburbs,1998,Yes,Furnished,3080000
+HSE-1504,1254,2,2,Midtown Heights,1998,Yes,Semi-Furnished,6790000
+HSE-1505,2493,4,3,Midtown Heights,2022,Yes,Semi-Furnished,17240000
+HSE-1506,1635,3,2,Green Valley Suburbs,2019,Yes,Semi-Furnished,9000000
+HSE-1507,1000,2,2,Metro Outskirts,2007,No,Semi-Furnished,3780000
+HSE-1508,1321,3,3,Metro Outskirts,2017,No,Semi-Furnished,5810000
+HSE-1509,2196,2,1,Metro Outskirts,2013,Yes,Unfurnished,8060000
+HSE-1510,2005,3,2,Midtown Heights,2004,No,Furnished,12640000
+HSE-1511,1494,3,2,Lakeside Boulevard,1999,Yes,Semi-Furnished,8910000
+HSE-1512,1411,4,3,Tech Park Enclave,2001,Yes,Semi-Furnished,10680000
+HSE-1513,1395,2,2,Metro Outskirts,2018,Yes,Semi-Furnished,5600000
+HSE-1514,1050,2,2,Metro Outskirts,2010,No,Semi-Furnished,3880000
+HSE-1515,2699,4,3,Downtown Core,1995,Yes,Semi-Furnished,19420000
+HSE-1516,1440,3,3,Downtown Core,2006,Yes,Semi-Furnished,12370000
+HSE-1517,2441,5,5,Tech Park Enclave,1996,No,Semi-Furnished,16290000
+HSE-1518,2638,4,3,Midtown Heights,2001,Yes,Unfurnished,15000000
+HSE-1519,2298,5,5,Metro Outskirts,2005,Yes,Unfurnished,9190000
+HSE-1520,1369,3,3,Green Valley Suburbs,2023,Yes,Furnished,7880000
+HSE-1521,1912,4,3,Lakeside Boulevard,2024,Yes,Furnished,16080000
+HSE-1522,1634,3,2,Tech Park Enclave,2007,No,Unfurnished,11330000
+HSE-1523,1062,3,3,Metro Outskirts,1996,Yes,Unfurnished,4060000
+HSE-1524,1860,3,3,Metro Outskirts,2001,Yes,Furnished,7190000
+HSE-1525,883,2,1,Metro Outskirts,2009,Yes,Semi-Furnished,3530000
+HSE-1526,2421,4,3,Tech Park Enclave,2019,Yes,Unfurnished,18500000
+HSE-1527,1347,3,2,Tech Park Enclave,2005,Yes,Semi-Furnished,9460000
+HSE-1528,1780,3,3,Green Valley Suburbs,1996,Yes,Furnished,8400000
+HSE-1529,1834,3,3,Downtown Core,2001,No,Semi-Furnished,13950000
+HSE-1530,1481,4,4,Metro Outskirts,1998,Yes,Unfurnished,5410000
+HSE-1531,2031,2,1,Midtown Heights,2005,Yes,Unfurnished,11270000
+HSE-1532,1341,3,3,Metro Outskirts,2023,Yes,Semi-Furnished,6330000
+HSE-1533,2216,4,4,Metro Outskirts,1996,Yes,Semi-Furnished,7890000
+HSE-1534,775,2,2,Lakeside Boulevard,2023,Yes,Furnished,6150000
+HSE-1535,1732,3,2,Midtown Heights,2010,Yes,Unfurnished,10550000
+HSE-1536,2910,4,4,Metro Outskirts,2001,No,Furnished,10710000
+HSE-1537,999,3,3,Metro Outskirts,2007,Yes,Unfurnished,3920000
+HSE-1538,1209,2,2,Green Valley Suburbs,1999,Yes,Semi-Furnished,5940000
+HSE-1539,1984,4,4,Tech Park Enclave,2011,Yes,Unfurnished,14910000
+HSE-1540,1766,3,2,Downtown Core,2015,No,Furnished,15450000
+HSE-1541,1877,3,3,Metro Outskirts,2006,Yes,Semi-Furnished,7060000
+HSE-1542,1967,3,3,Lakeside Boulevard,2022,Yes,Furnished,15760000
+HSE-1543,2062,3,3,Green Valley Suburbs,2013,Yes,Semi-Furnished,10580000
+HSE-1544,2371,4,4,Midtown Heights,2001,Yes,Unfurnished,13690000
+HSE-1545,1916,2,2,Lakeside Boulevard,2000,Yes,Semi-Furnished,11240000
+HSE-1546,1493,3,2,Tech Park Enclave,2002,No,Semi-Furnished,11030000
+HSE-1547,2087,2,2,Downtown Core,2007,Yes,Furnished,17460000
+HSE-1548,2884,5,4,Midtown Heights,1999,Yes,Unfurnished,16470000
+HSE-1549,1563,4,3,Tech Park Enclave,1996,Yes,Semi-Furnished,10740000
+HSE-1550,1016,2,2,Midtown Heights,2003,Yes,Semi-Furnished,6200000
+HSE-1551,2369,4,4,Tech Park Enclave,2024,Yes,Unfurnished,20010000
+HSE-1552,1571,3,3,Metro Outskirts,2005,Yes,Semi-Furnished,6090000
+HSE-1553,550,1,1,Lakeside Boulevard,2018,Yes,Semi-Furnished,3590000
+HSE-1554,2200,4,4,Lakeside Boulevard,2000,Yes,Semi-Furnished,14870000
+HSE-1555,1302,3,3,Metro Outskirts,2023,Yes,Semi-Furnished,5870000
+HSE-1556,1591,3,3,Tech Park Enclave,2020,Yes,Unfurnished,12470000
+HSE-1557,1865,3,2,Downtown Core,2001,No,Unfurnished,15450000
+HSE-1558,1773,3,3,Downtown Core,2019,Yes,Furnished,15950000
+HSE-1559,2111,4,3,Midtown Heights,2001,Yes,Semi-Furnished,12520000
+HSE-1560,1366,2,1,Lakeside Boulevard,2013,No,Furnished,9100000
+HSE-1561,1983,3,3,Midtown Heights,2000,Yes,Furnished,11770000
+HSE-1562,1481,3,2,Green Valley Suburbs,2005,No,Semi-Furnished,7200000
+HSE-1563,2130,3,2,Downtown Core,2023,No,Unfurnished,19720000
+HSE-1564,2049,2,2,Downtown Core,2005,No,Furnished,17210000
+HSE-1565,1041,3,3,Tech Park Enclave,2001,No,Semi-Furnished,7040000
+HSE-1566,2355,3,2,Lakeside Boulevard,1996,Yes,Unfurnished,14360000
+HSE-1567,1301,3,3,Tech Park Enclave,2013,Yes,Unfurnished,10320000
+HSE-1568,2175,3,3,Tech Park Enclave,1998,Yes,Semi-Furnished,15200000
+HSE-1569,1888,3,3,Metro Outskirts,2020,Yes,Semi-Furnished,8240000
+HSE-1570,2844,4,3,Tech Park Enclave,2000,Yes,Semi-Furnished,19620000
+HSE-1571,1504,3,3,Tech Park Enclave,2011,No,Furnished,11510000
+HSE-1572,1422,3,3,Midtown Heights,2019,Yes,Furnished,8820000
+HSE-1573,1637,3,3,Tech Park Enclave,1999,No,Furnished,12370000
+HSE-1574,1452,3,3,Lakeside Boulevard,2023,No,Semi-Furnished,10080000
+HSE-1575,2169,3,2,Metro Outskirts,2022,No,Unfurnished,8920000
+HSE-1576,599,2,1,Metro Outskirts,2024,Yes,Unfurnished,2540000
+HSE-1577,965,2,2,Downtown Core,2001,No,Semi-Furnished,7920000
+HSE-1578,955,2,2,Metro Outskirts,2003,No,Semi-Furnished,3280000
+HSE-1579,2267,3,3,Tech Park Enclave,2019,Yes,Furnished,18390000
+HSE-1580,2761,3,2,Green Valley Suburbs,1995,Yes,Semi-Furnished,11790000
+HSE-1581,1582,3,3,Tech Park Enclave,1995,No,Unfurnished,10990000
+HSE-1582,1540,3,3,Metro Outskirts,2013,No,Furnished,6070000
+HSE-1583,1695,3,2,Tech Park Enclave,2000,Yes,Furnished,12700000
+HSE-1584,2405,4,3,Green Valley Suburbs,2012,Yes,Semi-Furnished,12110000
+HSE-1585,1047,2,2,Lakeside Boulevard,2004,Yes,Semi-Furnished,6770000
+HSE-1586,1804,4,4,Green Valley Suburbs,2022,Yes,Semi-Furnished,10520000
+HSE-1587,2283,5,4,Downtown Core,2005,No,Semi-Furnished,18550000
+HSE-1588,1975,2,2,Downtown Core,1995,No,Semi-Furnished,14500000
+HSE-1589,1773,3,3,Downtown Core,1995,Yes,Furnished,13700000
+HSE-1590,2300,5,5,Green Valley Suburbs,2007,Yes,Semi-Furnished,12050000
+HSE-1591,550,2,1,Downtown Core,1999,Yes,Semi-Furnished,4710000
+HSE-1592,2090,3,3,Lakeside Boulevard,2014,Yes,Unfurnished,14450000
+HSE-1593,1224,2,1,Green Valley Suburbs,1995,Yes,Unfurnished,5380000
+HSE-1594,550,1,1,Tech Park Enclave,2014,Yes,Unfurnished,4280000
+HSE-1595,1982,3,2,Metro Outskirts,1997,Yes,Semi-Furnished,7430000
+HSE-1596,2542,4,3,Tech Park Enclave,2012,Yes,Semi-Furnished,20090000
+HSE-1597,1560,2,2,Lakeside Boulevard,2003,Yes,Semi-Furnished,9980000
+HSE-1598,2269,4,3,Green Valley Suburbs,2008,Yes,Unfurnished,10630000
+HSE-1599,2697,3,3,Green Valley Suburbs,2021,Yes,Furnished,12760000
+HSE-1600,2504,4,3,Downtown Core,2011,Yes,Semi-Furnished,22060000
+HSE-1601,2715,4,3,Green Valley Suburbs,2017,Yes,Semi-Furnished,12740000
+HSE-1602,2132,2,2,Green Valley Suburbs,2008,No,Semi-Furnished,10180000
+HSE-1603,1699,3,3,Green Valley Suburbs,2023,No,Furnished,10380000
+HSE-1604,608,1,1,Downtown Core,1998,No,Semi-Furnished,4490000
+HSE-1605,1490,4,4,Downtown Core,1999,No,Unfurnished,11290000
+HSE-1606,1101,2,2,Tech Park Enclave,2020,Yes,Semi-Furnished,8880000
+HSE-1607,3061,4,4,Green Valley Suburbs,2015,Yes,Unfurnished,13550000
+HSE-1608,1535,3,3,Tech Park Enclave,2011,Yes,Semi-Furnished,12010000
+HSE-1609,1730,3,2,Tech Park Enclave,2016,No,Unfurnished,13870000
+HSE-1610,2008,4,4,Midtown Heights,2023,No,Semi-Furnished,12960000
+HSE-1611,1678,3,3,Downtown Core,2019,Yes,Semi-Furnished,14490000
+HSE-1612,2751,4,4,Midtown Heights,1996,Yes,Furnished,15840000
+HSE-1613,1245,2,1,Lakeside Boulevard,2017,Yes,Furnished,8380000
+HSE-1614,1776,3,3,Downtown Core,2016,Yes,Semi-Furnished,16790000
+HSE-1615,1167,3,2,Metro Outskirts,1999,Yes,Semi-Furnished,4230000
+HSE-1616,791,2,2,Metro Outskirts,1998,Yes,Semi-Furnished,3370000
+HSE-1617,1252,2,2,Downtown Core,1998,Yes,Furnished,10750000
+HSE-1618,1625,3,2,Green Valley Suburbs,2000,Yes,Unfurnished,7660000
+HSE-1619,1370,3,3,Midtown Heights,2014,Yes,Unfurnished,9400000
+HSE-1620,1199,3,2,Midtown Heights,2015,Yes,Furnished,8370000
+HSE-1621,735,1,1,Green Valley Suburbs,2007,No,Semi-Furnished,3560000
+HSE-1622,1595,3,3,Green Valley Suburbs,2016,Yes,Unfurnished,7590000
+HSE-1623,671,1,1,Tech Park Enclave,1999,No,Semi-Furnished,4340000
+HSE-1624,2144,4,4,Tech Park Enclave,2017,No,Furnished,17570000
+HSE-1625,1703,2,1,Lakeside Boulevard,2019,Yes,Semi-Furnished,10960000
+HSE-1626,702,1,1,Tech Park Enclave,2020,Yes,Furnished,5470000
+HSE-1627,1449,3,2,Tech Park Enclave,2017,Yes,Furnished,10920000
+HSE-1628,1161,2,2,Midtown Heights,2001,Yes,Furnished,7140000
+HSE-1629,1857,3,2,Downtown Core,2014,No,Semi-Furnished,17290000
+HSE-1630,2521,4,3,Green Valley Suburbs,1995,Yes,Furnished,12340000
+HSE-1631,550,1,1,Midtown Heights,2008,No,Unfurnished,2880000
+HSE-1632,1724,3,2,Metro Outskirts,2018,Yes,Semi-Furnished,7110000
+HSE-1633,1545,3,3,Tech Park Enclave,1998,Yes,Furnished,10540000
+HSE-1634,2086,3,3,Lakeside Boulevard,2011,Yes,Semi-Furnished,14140000
+HSE-1635,1788,3,2,Downtown Core,2015,Yes,Furnished,16790000
+HSE-1636,1161,3,2,Tech Park Enclave,2008,Yes,Semi-Furnished,9290000
+HSE-1637,1442,3,2,Lakeside Boulevard,2010,No,Semi-Furnished,8650000
+HSE-1638,1132,2,1,Green Valley Suburbs,2008,Yes,Furnished,6000000
+HSE-1639,2349,3,2,Green Valley Suburbs,2010,Yes,Furnished,12900000
+HSE-1640,1663,3,3,Tech Park Enclave,2018,Yes,Semi-Furnished,13100000
+HSE-1641,2885,4,3,Downtown Core,2014,Yes,Furnished,26200000
+HSE-1642,1610,3,2,Green Valley Suburbs,2023,No,Semi-Furnished,8660000
+HSE-1643,1189,3,2,Green Valley Suburbs,2022,No,Semi-Furnished,7150000
+HSE-1644,666,1,1,Green Valley Suburbs,2002,Yes,Semi-Furnished,3230000
+HSE-1645,550,1,1,Downtown Core,2018,No,Semi-Furnished,4800000
+HSE-1646,620,1,1,Metro Outskirts,1997,Yes,Semi-Furnished,2280000
+HSE-1647,1823,3,3,Lakeside Boulevard,2019,Yes,Unfurnished,12710000
+HSE-1648,1980,3,3,Midtown Heights,2013,Yes,Furnished,13570000
+HSE-1649,622,1,1,Midtown Heights,1995,No,Furnished,3340000
+HSE-1650,2231,4,4,Tech Park Enclave,1996,Yes,Furnished,15570000
+HSE-1651,1336,3,2,Downtown Core,2009,Yes,Furnished,12290000
+HSE-1652,1745,4,3,Lakeside Boulevard,2016,Yes,Furnished,12130000
+HSE-1653,2697,4,3,Lakeside Boulevard,2022,Yes,Semi-Furnished,20120000
+HSE-1654,2232,4,3,Midtown Heights,2004,Yes,Semi-Furnished,14360000
+HSE-1655,1475,3,3,Tech Park Enclave,2012,Yes,Unfurnished,10380000
+HSE-1656,1070,2,2,Downtown Core,2016,Yes,Furnished,9810000
+HSE-1657,550,1,1,Green Valley Suburbs,2008,Yes,Furnished,3160000
+HSE-1658,1182,3,3,Tech Park Enclave,2011,Yes,Unfurnished,8890000
+HSE-1659,1512,3,3,Lakeside Boulevard,2021,Yes,Unfurnished,12110000
+HSE-1660,1008,3,2,Lakeside Boulevard,2007,Yes,Semi-Furnished,7190000
+HSE-1661,1564,3,3,Tech Park Enclave,1995,Yes,Semi-Furnished,10140000
+HSE-1662,1699,3,2,Metro Outskirts,1999,No,Unfurnished,5120000
+HSE-1663,1503,3,2,Lakeside Boulevard,2020,Yes,Semi-Furnished,10790000
+HSE-1664,1227,2,2,Green Valley Suburbs,2007,Yes,Furnished,6220000
+HSE-1665,1759,3,2,Downtown Core,2021,Yes,Unfurnished,16730000
+HSE-1666,1937,3,2,Green Valley Suburbs,2019,No,Semi-Furnished,9740000
+HSE-1667,941,2,2,Green Valley Suburbs,2008,No,Furnished,4770000
+HSE-1668,2567,5,5,Green Valley Suburbs,2018,Yes,Semi-Furnished,13330000
+HSE-1669,1585,3,3,Green Valley Suburbs,1997,Yes,Semi-Furnished,7940000
+HSE-1670,1662,4,3,Green Valley Suburbs,2009,Yes,Unfurnished,8710000
+HSE-1671,2110,4,4,Green Valley Suburbs,2013,Yes,Furnished,12510000
+HSE-1672,1801,3,2,Metro Outskirts,2011,Yes,Unfurnished,6870000
+HSE-1673,2269,4,4,Downtown Core,2024,Yes,Semi-Furnished,23160000
+HSE-1674,1836,3,3,Tech Park Enclave,1997,No,Semi-Furnished,12920000
+HSE-1675,1251,3,3,Tech Park Enclave,2010,Yes,Furnished,10230000
+HSE-1676,1884,3,3,Metro Outskirts,2008,Yes,Semi-Furnished,7180000
+HSE-1677,906,2,1,Downtown Core,2006,Yes,Unfurnished,7860000
+HSE-1678,1720,3,3,Tech Park Enclave,2022,Yes,Semi-Furnished,14310000
+HSE-1679,1628,3,3,Metro Outskirts,2006,Yes,Furnished,6550000
+HSE-1680,1514,3,3,Metro Outskirts,2023,Yes,Semi-Furnished,6480000
+HSE-1681,1566,3,2,Midtown Heights,2005,Yes,Unfurnished,8180000
+HSE-1682,550,1,1,Green Valley Suburbs,2011,Yes,Furnished,3370000
+HSE-1683,1293,3,3,Green Valley Suburbs,2002,Yes,Semi-Furnished,6670000
+HSE-1684,1710,3,3,Lakeside Boulevard,2011,Yes,Semi-Furnished,11050000
+HSE-1685,1753,4,3,Metro Outskirts,2015,Yes,Furnished,7790000
+HSE-1686,982,3,3,Lakeside Boulevard,2019,Yes,Semi-Furnished,7710000
+HSE-1687,2472,4,3,Lakeside Boulevard,2017,Yes,Furnished,18150000
+HSE-1688,1086,2,2,Green Valley Suburbs,2014,Yes,Unfurnished,5410000
+HSE-1689,2280,4,4,Midtown Heights,2005,Yes,Semi-Furnished,13090000
+HSE-1690,1927,2,2,Green Valley Suburbs,2019,Yes,Semi-Furnished,9680000
+HSE-1691,1229,3,3,Green Valley Suburbs,2019,Yes,Semi-Furnished,7040000
+HSE-1692,2803,3,3,Tech Park Enclave,1996,Yes,Furnished,19440000
+HSE-1693,874,2,1,Tech Park Enclave,2004,Yes,Unfurnished,7100000
+HSE-1694,2247,5,4,Green Valley Suburbs,2004,No,Semi-Furnished,10130000
+HSE-1695,2300,4,4,Downtown Core,2005,Yes,Semi-Furnished,19600000
+HSE-1696,1214,2,2,Lakeside Boulevard,2022,Yes,Semi-Furnished,8320000
+HSE-1697,2555,4,3,Green Valley Suburbs,2000,Yes,Semi-Furnished,12500000
+HSE-1698,1487,3,3,Lakeside Boulevard,1998,Yes,Furnished,10230000
+HSE-1699,1837,4,3,Green Valley Suburbs,2018,No,Furnished,10530000
+HSE-1700,1819,2,1,Tech Park Enclave,2006,Yes,Furnished,13410000
+HSE-1701,1562,2,2,Lakeside Boulevard,2005,No,Semi-Furnished,9040000
+HSE-1702,2177,4,3,Downtown Core,2017,Yes,Furnished,19900000
+HSE-1703,2165,3,3,Tech Park Enclave,2017,Yes,Furnished,17220000
+HSE-1704,550,2,2,Downtown Core,2021,No,Unfurnished,4620000
+HSE-1705,2497,4,4,Downtown Core,2020,Yes,Furnished,22520000
+HSE-1706,569,1,1,Metro Outskirts,2019,Yes,Semi-Furnished,2240000
+HSE-1707,2321,4,3,Green Valley Suburbs,2007,Yes,Semi-Furnished,11310000
+HSE-1708,2382,4,4,Midtown Heights,1999,Yes,Furnished,14400000
+HSE-1709,940,3,3,Green Valley Suburbs,2000,Yes,Semi-Furnished,5040000
+HSE-1710,1382,2,2,Midtown Heights,1995,Yes,Furnished,7300000
+HSE-1711,931,2,1,Midtown Heights,2000,Yes,Unfurnished,5050000
+HSE-1712,1510,3,3,Lakeside Boulevard,2012,No,Semi-Furnished,10530000
+HSE-1713,1449,3,3,Tech Park Enclave,2016,No,Furnished,11480000
+HSE-1714,2156,3,3,Tech Park Enclave,2003,Yes,Furnished,15070000
+HSE-1715,2501,4,4,Tech Park Enclave,2018,Yes,Semi-Furnished,19780000
+HSE-1716,2557,4,4,Metro Outskirts,2019,Yes,Furnished,10540000
+HSE-1717,1284,3,3,Metro Outskirts,2023,Yes,Furnished,5280000
+HSE-1718,1514,3,2,Metro Outskirts,2009,No,Semi-Furnished,5600000
+HSE-1719,555,1,1,Downtown Core,2020,Yes,Unfurnished,4790000
+HSE-1720,1126,2,2,Midtown Heights,2002,Yes,Semi-Furnished,6860000
+HSE-1721,2277,3,2,Metro Outskirts,2013,No,Semi-Furnished,9060000
+HSE-1722,2700,4,4,Green Valley Suburbs,2018,No,Unfurnished,12590000
+HSE-1723,847,2,1,Downtown Core,2010,Yes,Furnished,7970000
+HSE-1724,1264,2,2,Midtown Heights,2000,Yes,Unfurnished,7070000
+HSE-1725,1632,3,2,Lakeside Boulevard,2023,Yes,Semi-Furnished,12410000
+HSE-1726,1832,3,3,Metro Outskirts,2000,No,Semi-Furnished,6340000
+HSE-1727,1123,2,2,Downtown Core,2016,Yes,Unfurnished,10050000
+HSE-1728,1925,4,3,Midtown Heights,1997,Yes,Furnished,11740000
+HSE-1729,1342,2,1,Green Valley Suburbs,2004,Yes,Furnished,6810000
+HSE-1730,1640,3,2,Green Valley Suburbs,1995,Yes,Semi-Furnished,7590000
+HSE-1731,2005,2,2,Green Valley Suburbs,2022,Yes,Semi-Furnished,10850000
+HSE-1732,1654,2,2,Midtown Heights,2008,No,Semi-Furnished,10170000
+HSE-1733,1366,2,2,Lakeside Boulevard,1998,No,Furnished,8010000
+HSE-1734,1578,2,1,Tech Park Enclave,2020,No,Semi-Furnished,11300000
+HSE-1735,1592,3,3,Tech Park Enclave,2006,Yes,Unfurnished,10820000
+HSE-1736,1409,3,3,Metro Outskirts,2000,No,Semi-Furnished,5190000
+HSE-1737,1481,3,3,Tech Park Enclave,2005,No,Unfurnished,11120000
+HSE-1738,2689,3,3,Midtown Heights,2006,Yes,Furnished,15730000
+HSE-1739,2014,3,2,Tech Park Enclave,2004,Yes,Furnished,13860000
+HSE-1740,1457,3,2,Tech Park Enclave,2012,Yes,Semi-Furnished,12270000
+HSE-1741,2103,4,3,Tech Park Enclave,2001,No,Semi-Furnished,14980000
+HSE-1742,1433,2,1,Green Valley Suburbs,2001,Yes,Furnished,7140000
+HSE-1743,2412,5,4,Midtown Heights,2005,No,Furnished,14270000
+HSE-1744,1890,3,2,Tech Park Enclave,1998,Yes,Unfurnished,13240000
+HSE-1745,1580,3,2,Green Valley Suburbs,2014,Yes,Unfurnished,8310000
+HSE-1746,1941,3,3,Metro Outskirts,1995,Yes,Semi-Furnished,6740000
+HSE-1747,628,1,1,Tech Park Enclave,2007,Yes,Furnished,4850000
+HSE-1748,917,2,2,Lakeside Boulevard,2012,Yes,Unfurnished,6090000
+HSE-1749,873,1,1,Metro Outskirts,2003,No,Unfurnished,2690000
+HSE-1750,1742,3,3,Lakeside Boulevard,2020,Yes,Semi-Furnished,12100000
+HSE-1751,2776,5,5,Downtown Core,2018,Yes,Unfurnished,26500000
+HSE-1752,3100,4,3,Metro Outskirts,2018,Yes,Unfurnished,11440000
+HSE-1753,2064,2,2,Lakeside Boulevard,2003,Yes,Unfurnished,13540000
+HSE-1754,1975,3,2,Tech Park Enclave,2017,Yes,Unfurnished,14370000
+HSE-1755,550,1,1,Downtown Core,2023,Yes,Semi-Furnished,4950000
+HSE-1756,1297,2,2,Midtown Heights,2003,No,Semi-Furnished,7570000
+HSE-1757,1137,3,2,Lakeside Boulevard,2004,Yes,Semi-Furnished,8280000
+HSE-1758,1246,3,3,Lakeside Boulevard,2022,Yes,Semi-Furnished,9260000
+HSE-1759,1540,3,2,Metro Outskirts,1996,Yes,Unfurnished,4980000
+HSE-1760,1343,3,2,Midtown Heights,2000,Yes,Unfurnished,7810000
+HSE-1761,550,1,1,Green Valley Suburbs,2009,No,Semi-Furnished,2540000
+HSE-1762,2136,4,4,Green Valley Suburbs,1997,Yes,Semi-Furnished,10410000
+HSE-1763,952,2,1,Green Valley Suburbs,2005,No,Semi-Furnished,4820000
+HSE-1764,1805,2,2,Midtown Heights,2000,Yes,Semi-Furnished,10340000
+HSE-1765,2998,4,4,Downtown Core,1997,Yes,Semi-Furnished,24840000
+HSE-1766,1052,2,2,Lakeside Boulevard,2018,No,Furnished,7770000
+HSE-1767,550,1,1,Midtown Heights,2005,Yes,Semi-Furnished,3540000
+HSE-1768,1464,3,3,Metro Outskirts,2009,Yes,Furnished,6160000
+HSE-1769,2365,4,4,Tech Park Enclave,2007,Yes,Furnished,18390000
+HSE-1770,2922,3,2,Metro Outskirts,2014,No,Unfurnished,11030000
+HSE-1771,850,1,1,Downtown Core,2022,Yes,Furnished,8630000
+HSE-1772,1972,3,3,Metro Outskirts,2004,Yes,Semi-Furnished,8610000
+HSE-1773,1347,3,3,Downtown Core,2000,Yes,Furnished,11630000
+HSE-1774,1581,3,3,Tech Park Enclave,2009,Yes,Furnished,11260000
+HSE-1775,3368,4,3,Midtown Heights,2019,No,Semi-Furnished,20330000
+HSE-1776,673,1,1,Downtown Core,2012,Yes,Semi-Furnished,6050000
+HSE-1777,1814,2,2,Green Valley Suburbs,2012,Yes,Unfurnished,9100000
+HSE-1778,1954,4,4,Midtown Heights,2001,No,Semi-Furnished,11730000
+HSE-1779,2355,5,5,Midtown Heights,2009,Yes,Furnished,15670000
+HSE-1780,1713,3,2,Lakeside Boulevard,2012,Yes,Semi-Furnished,11940000
+HSE-1781,1850,2,1,Midtown Heights,2012,Yes,Semi-Furnished,10580000
+HSE-1782,1395,2,2,Lakeside Boulevard,2014,Yes,Semi-Furnished,9820000
+HSE-1783,1824,3,3,Green Valley Suburbs,2003,Yes,Unfurnished,8560000
+HSE-1784,1426,3,3,Tech Park Enclave,2018,Yes,Semi-Furnished,11330000
+HSE-1785,2054,2,2,Green Valley Suburbs,1996,Yes,Semi-Furnished,9280000
+HSE-1786,1409,2,1,Metro Outskirts,2002,Yes,Unfurnished,5310000
+HSE-1787,1895,3,2,Lakeside Boulevard,2014,Yes,Unfurnished,13210000
+HSE-1788,1630,3,3,Tech Park Enclave,1996,Yes,Semi-Furnished,10900000
+HSE-1789,2381,4,4,Tech Park Enclave,2005,Yes,Furnished,16350000
+HSE-1790,1616,2,2,Metro Outskirts,2020,No,Semi-Furnished,6190000
+HSE-1791,550,1,1,Green Valley Suburbs,2001,Yes,Semi-Furnished,2770000
+HSE-1792,2470,5,4,Lakeside Boulevard,2000,Yes,Unfurnished,15440000
+HSE-1793,1061,3,3,Tech Park Enclave,2024,Yes,Semi-Furnished,9520000
+HSE-1794,1225,2,1,Lakeside Boulevard,2004,No,Furnished,7420000
+HSE-1795,1262,2,2,Downtown Core,1999,No,Unfurnished,9530000
+HSE-1796,2543,3,2,Metro Outskirts,2005,Yes,Unfurnished,9250000
+HSE-1797,550,1,1,Metro Outskirts,1995,Yes,Furnished,2240000
+HSE-1798,3689,4,4,Lakeside Boulevard,1996,Yes,Unfurnished,21770000
+HSE-1799,2336,4,3,Midtown Heights,2018,Yes,Semi-Furnished,14630000
+HSE-1800,1795,3,3,Metro Outskirts,1995,Yes,Semi-Furnished,6660000
+HSE-1801,1614,3,3,Midtown Heights,2013,No,Unfurnished,9800000
+HSE-1802,1835,2,2,Green Valley Suburbs,1996,Yes,Semi-Furnished,7570000
+HSE-1803,1988,3,2,Lakeside Boulevard,2015,Yes,Furnished,13620000
+HSE-1804,2069,2,2,Lakeside Boulevard,2014,Yes,Semi-Furnished,14590000
+HSE-1805,2011,3,2,Tech Park Enclave,2023,Yes,Semi-Furnished,17220000
+HSE-1806,1708,4,4,Midtown Heights,2017,No,Furnished,11480000
+HSE-1807,1521,3,2,Metro Outskirts,2015,No,Semi-Furnished,6310000
+HSE-1808,1551,3,3,Metro Outskirts,2018,Yes,Semi-Furnished,6470000
+HSE-1809,1523,4,4,Tech Park Enclave,1998,Yes,Semi-Furnished,11000000
+HSE-1810,2386,5,5,Downtown Core,2006,Yes,Semi-Furnished,19650000
+HSE-1811,2035,3,2,Metro Outskirts,2016,Yes,Unfurnished,7070000
+HSE-1812,550,2,2,Metro Outskirts,2014,Yes,Semi-Furnished,2360000
+HSE-1813,2076,3,2,Downtown Core,2012,Yes,Semi-Furnished,17990000
+HSE-1814,1776,3,3,Metro Outskirts,1995,No,Furnished,5910000
+HSE-1815,1637,3,3,Metro Outskirts,2024,Yes,Semi-Furnished,7140000
+HSE-1816,1397,3,2,Tech Park Enclave,2024,No,Unfurnished,11030000
+HSE-1817,2380,4,4,Lakeside Boulevard,1995,Yes,Semi-Furnished,15310000
+HSE-1818,2265,4,4,Tech Park Enclave,2018,No,Semi-Furnished,16490000
+HSE-1819,1147,2,2,Downtown Core,2008,Yes,Semi-Furnished,10130000
+HSE-1820,1914,3,2,Tech Park Enclave,1998,Yes,Semi-Furnished,12870000
+HSE-1821,1018,2,2,Midtown Heights,1999,Yes,Furnished,5830000
+HSE-1822,753,1,1,Downtown Core,2005,No,Unfurnished,5800000
+HSE-1823,1242,3,2,Tech Park Enclave,2018,Yes,Furnished,8960000
+HSE-1824,2210,4,3,Tech Park Enclave,2022,Yes,Semi-Furnished,19080000
+HSE-1825,2269,4,4,Lakeside Boulevard,2017,Yes,Semi-Furnished,17120000
+HSE-1826,1983,4,4,Metro Outskirts,2007,Yes,Semi-Furnished,7760000
+HSE-1827,2121,3,3,Tech Park Enclave,2010,Yes,Furnished,16140000
+HSE-1828,1985,3,2,Tech Park Enclave,2018,No,Semi-Furnished,14750000
+HSE-1829,1233,3,3,Midtown Heights,2007,Yes,Furnished,7570000
+HSE-1830,1930,3,2,Tech Park Enclave,2018,Yes,Furnished,15570000
+HSE-1831,2170,2,2,Green Valley Suburbs,2016,Yes,Semi-Furnished,11320000
+HSE-1832,2140,3,3,Tech Park Enclave,2020,Yes,Semi-Furnished,14060000
+HSE-1833,2422,4,3,Downtown Core,1996,Yes,Furnished,18450000
+HSE-1834,2110,3,3,Green Valley Suburbs,2010,Yes,Furnished,9880000
+HSE-1835,1878,4,4,Tech Park Enclave,2000,Yes,Unfurnished,14230000
+HSE-1836,2345,3,2,Tech Park Enclave,2008,Yes,Unfurnished,16840000
+HSE-1837,1632,2,1,Metro Outskirts,1995,No,Furnished,5680000
+HSE-1838,1076,3,2,Tech Park Enclave,2011,Yes,Semi-Furnished,8240000
+HSE-1839,1544,2,1,Lakeside Boulevard,2005,Yes,Semi-Furnished,10600000
+HSE-1840,1165,2,2,Lakeside Boulevard,2013,Yes,Semi-Furnished,8600000
+HSE-1841,1211,2,2,Downtown Core,1997,Yes,Unfurnished,9510000
+HSE-1842,1556,3,2,Lakeside Boulevard,2005,Yes,Furnished,11450000
+HSE-1843,1134,2,1,Green Valley Suburbs,2023,Yes,Semi-Furnished,6480000
+HSE-1844,1449,2,2,Metro Outskirts,1999,No,Semi-Furnished,4670000
+HSE-1845,550,1,1,Downtown Core,2011,Yes,Semi-Furnished,5010000
+HSE-1846,1788,3,3,Tech Park Enclave,2020,Yes,Semi-Furnished,14230000
+HSE-1847,1650,3,2,Downtown Core,2016,Yes,Unfurnished,14670000
+HSE-1848,1118,2,2,Metro Outskirts,2001,Yes,Furnished,4380000
+HSE-1849,2078,3,3,Tech Park Enclave,2004,Yes,Furnished,16500000
+HSE-1850,2259,4,3,Lakeside Boulevard,2022,Yes,Furnished,16240000
+HSE-1851,605,1,1,Downtown Core,2023,Yes,Unfurnished,4980000
+HSE-1852,1154,2,1,Midtown Heights,2005,Yes,Semi-Furnished,7400000
+HSE-1853,1150,3,3,Green Valley Suburbs,1997,Yes,Semi-Furnished,5330000
+HSE-1854,1039,2,2,Metro Outskirts,2014,Yes,Furnished,4490000
+HSE-1855,2189,3,3,Green Valley Suburbs,2004,Yes,Unfurnished,10330000
+HSE-1856,1524,3,3,Green Valley Suburbs,2021,Yes,Unfurnished,8510000
+HSE-1857,1478,4,4,Downtown Core,2004,No,Semi-Furnished,13520000
+HSE-1858,550,2,1,Tech Park Enclave,2008,Yes,Semi-Furnished,4030000
+HSE-1859,2063,3,2,Lakeside Boulevard,2006,Yes,Furnished,14730000
+HSE-1860,844,1,1,Downtown Core,2009,No,Semi-Furnished,7610000
+HSE-1861,1688,3,2,Midtown Heights,2004,Yes,Semi-Furnished,9950000
+HSE-1862,1830,3,2,Tech Park Enclave,2024,Yes,Furnished,16090000
+HSE-1863,2534,4,4,Tech Park Enclave,2004,Yes,Semi-Furnished,19210000
+HSE-1864,799,1,1,Tech Park Enclave,2020,Yes,Furnished,6310000
+HSE-1865,550,1,1,Tech Park Enclave,2013,No,Semi-Furnished,4060000
+HSE-1866,1769,3,3,Lakeside Boulevard,1995,No,Semi-Furnished,10970000
+HSE-1867,2820,4,4,Green Valley Suburbs,2018,Yes,Furnished,13760000
+HSE-1868,2455,5,5,Green Valley Suburbs,2023,Yes,Semi-Furnished,13930000
+HSE-1869,1786,2,1,Metro Outskirts,2020,Yes,Semi-Furnished,6570000
+HSE-1870,1330,2,1,Metro Outskirts,2004,Yes,Furnished,5570000
+HSE-1871,2174,2,2,Tech Park Enclave,1996,No,Unfurnished,13830000
+HSE-1872,1017,3,3,Green Valley Suburbs,2011,Yes,Furnished,5910000
+HSE-1873,1959,3,3,Lakeside Boulevard,2024,Yes,Furnished,14820000
+HSE-1874,1978,3,3,Tech Park Enclave,2018,Yes,Furnished,15260000
+HSE-1875,2339,4,4,Downtown Core,2001,Yes,Furnished,19820000
+HSE-1876,3443,4,4,Green Valley Suburbs,2001,Yes,Furnished,15890000
+HSE-1877,1905,3,2,Midtown Heights,2014,No,Furnished,11770000
+HSE-1878,1319,2,2,Lakeside Boulevard,2021,Yes,Semi-Furnished,9170000
+HSE-1879,1633,3,3,Downtown Core,2003,No,Furnished,13490000
+HSE-1880,550,2,1,Green Valley Suburbs,2016,Yes,Semi-Furnished,3180000
+HSE-1881,1198,2,2,Green Valley Suburbs,1996,Yes,Furnished,5750000
+HSE-1882,1383,2,2,Midtown Heights,2008,Yes,Furnished,9280000
+HSE-1883,1309,2,2,Downtown Core,2011,Yes,Furnished,12240000
+HSE-1884,1749,4,3,Downtown Core,1995,Yes,Unfurnished,12890000
+HSE-1885,1115,2,2,Midtown Heights,2003,Yes,Semi-Furnished,6800000
+HSE-1886,2378,3,2,Green Valley Suburbs,2014,Yes,Semi-Furnished,11860000
+HSE-1887,1650,3,3,Lakeside Boulevard,2015,Yes,Furnished,11980000
+HSE-1888,1643,3,2,Green Valley Suburbs,2013,Yes,Unfurnished,8200000
+HSE-1889,1436,3,2,Downtown Core,1998,Yes,Furnished,10630000
+HSE-1890,1750,3,3,Green Valley Suburbs,2022,Yes,Furnished,10210000
+HSE-1891,2186,4,4,Midtown Heights,2002,No,Semi-Furnished,11640000
+HSE-1892,1086,2,1,Metro Outskirts,2007,Yes,Semi-Furnished,4320000
+HSE-1893,1222,2,1,Metro Outskirts,1998,Yes,Unfurnished,4290000
+HSE-1894,1452,3,3,Tech Park Enclave,2003,Yes,Furnished,10480000
+HSE-1895,775,1,1,Lakeside Boulevard,2003,Yes,Unfurnished,5340000
+HSE-1896,1117,3,3,Green Valley Suburbs,2016,Yes,Semi-Furnished,5820000
+HSE-1897,1340,2,2,Green Valley Suburbs,2012,Yes,Semi-Furnished,6860000
+HSE-1898,2218,4,3,Metro Outskirts,2006,Yes,Furnished,8270000
+HSE-1899,1820,3,3,Downtown Core,2004,Yes,Furnished,17240000
+HSE-1900,1775,3,2,Downtown Core,2005,Yes,Unfurnished,15910000
+HSE-1901,2203,4,3,Green Valley Suburbs,2001,Yes,Semi-Furnished,9900000
+HSE-1902,1560,2,2,Downtown Core,2003,No,Semi-Furnished,12250000
+HSE-1903,1903,4,4,Green Valley Suburbs,2000,Yes,Unfurnished,8790000
+HSE-1904,1582,4,4,Lakeside Boulevard,2013,Yes,Furnished,11340000
+HSE-1905,1822,3,2,Tech Park Enclave,2010,Yes,Semi-Furnished,12950000
+HSE-1906,1271,3,2,Metro Outskirts,2024,Yes,Semi-Furnished,5520000
+HSE-1907,550,1,1,Midtown Heights,2009,No,Furnished,3600000
+HSE-1908,1562,3,2,Tech Park Enclave,2001,No,Furnished,12130000
+HSE-1909,2574,4,4,Green Valley Suburbs,2010,Yes,Semi-Furnished,12190000
+HSE-1910,2252,4,3,Tech Park Enclave,1999,Yes,Semi-Furnished,14850000
+HSE-1911,2277,4,3,Lakeside Boulevard,2010,Yes,Semi-Furnished,15710000
+HSE-1912,2453,4,3,Green Valley Suburbs,1995,Yes,Furnished,10570000
+HSE-1913,1707,2,2,Lakeside Boulevard,2013,Yes,Unfurnished,11800000
+HSE-1914,1778,3,2,Tech Park Enclave,1999,No,Furnished,12650000
+HSE-1915,1248,2,2,Lakeside Boulevard,2001,No,Semi-Furnished,8080000
+HSE-1916,1444,3,2,Tech Park Enclave,2013,No,Semi-Furnished,11280000
+HSE-1917,2050,3,3,Green Valley Suburbs,2016,No,Furnished,10460000
+HSE-1918,2432,3,2,Metro Outskirts,1999,Yes,Furnished,8780000
+HSE-1919,1559,3,3,Midtown Heights,2023,Yes,Unfurnished,9910000
+HSE-1920,1357,2,2,Downtown Core,2011,Yes,Unfurnished,12150000
+HSE-1921,1650,4,3,Metro Outskirts,2020,Yes,Furnished,7710000
+HSE-1922,2040,3,3,Tech Park Enclave,2016,Yes,Semi-Furnished,16080000
+HSE-1923,711,1,1,Metro Outskirts,2024,No,Semi-Furnished,2760000
+HSE-1924,550,2,2,Midtown Heights,2002,No,Furnished,3650000
+HSE-1925,1292,2,2,Tech Park Enclave,2023,No,Semi-Furnished,11750000
+HSE-1926,856,1,1,Downtown Core,2023,No,Unfurnished,7970000
+HSE-1927,1319,2,2,Green Valley Suburbs,1995,No,Furnished,6270000
+HSE-1928,1553,4,3,Lakeside Boulevard,1996,Yes,Unfurnished,9990000
+HSE-1929,1355,2,1,Lakeside Boulevard,2024,Yes,Furnished,9510000
+HSE-1930,2594,4,3,Green Valley Suburbs,2009,Yes,Semi-Furnished,12850000
+HSE-1931,1862,2,1,Downtown Core,2014,Yes,Semi-Furnished,16150000
+HSE-1932,1845,3,2,Metro Outskirts,2022,No,Semi-Furnished,8040000
+HSE-1933,2054,3,2,Metro Outskirts,2012,No,Semi-Furnished,8220000
+HSE-1934,909,2,2,Tech Park Enclave,2005,Yes,Furnished,6960000
+HSE-1935,2325,3,3,Green Valley Suburbs,2019,Yes,Semi-Furnished,11770000
+HSE-1936,1600,4,3,Green Valley Suburbs,2004,Yes,Semi-Furnished,7450000
+HSE-1937,2085,3,2,Downtown Core,2018,Yes,Furnished,18930000
+HSE-1938,953,2,2,Metro Outskirts,2018,No,Unfurnished,3420000
+HSE-1939,640,2,1,Downtown Core,1998,Yes,Furnished,5290000
+HSE-1940,2181,2,1,Lakeside Boulevard,1999,Yes,Semi-Furnished,14040000
+HSE-1941,1894,3,2,Green Valley Suburbs,1998,Yes,Furnished,9480000
+HSE-1942,1063,3,3,Lakeside Boulevard,2007,Yes,Furnished,7470000
+HSE-1943,1084,3,3,Lakeside Boulevard,2019,Yes,Furnished,7500000
+HSE-1944,2381,4,3,Metro Outskirts,2007,No,Semi-Furnished,8550000
+HSE-1945,876,1,1,Green Valley Suburbs,2012,Yes,Semi-Furnished,4820000
+HSE-1946,2717,5,5,Downtown Core,2023,Yes,Semi-Furnished,27250000
+HSE-1947,1064,2,2,Downtown Core,2021,Yes,Furnished,9730000
+HSE-1948,2064,4,4,Metro Outskirts,2018,Yes,Semi-Furnished,8550000
+HSE-1949,1436,4,4,Metro Outskirts,1996,No,Semi-Furnished,4720000
+HSE-1950,2042,3,3,Lakeside Boulevard,2010,Yes,Semi-Furnished,12410000
+HSE-1951,1296,3,2,Lakeside Boulevard,1995,Yes,Furnished,9140000
+HSE-1952,1544,2,1,Lakeside Boulevard,2020,Yes,Furnished,11160000
+HSE-1953,1676,3,3,Green Valley Suburbs,2013,Yes,Semi-Furnished,8940000
+HSE-1954,998,2,2,Metro Outskirts,2003,Yes,Furnished,4040000
+HSE-1955,2131,3,3,Tech Park Enclave,2022,Yes,Furnished,16280000
+HSE-1956,1316,3,3,Tech Park Enclave,1997,No,Furnished,9670000
+HSE-1957,1501,3,3,Tech Park Enclave,2019,Yes,Semi-Furnished,11090000
+HSE-1958,1003,2,1,Downtown Core,2001,Yes,Semi-Furnished,8650000
+HSE-1959,550,2,2,Green Valley Suburbs,2023,Yes,Semi-Furnished,3460000
+HSE-1960,1525,4,4,Midtown Heights,2004,Yes,Furnished,9520000
+HSE-1961,3218,4,4,Downtown Core,1995,No,Semi-Furnished,23300000
+HSE-1962,2159,4,4,Lakeside Boulevard,2004,Yes,Furnished,13550000
+HSE-1963,1637,2,2,Green Valley Suburbs,2015,Yes,Unfurnished,8520000
+HSE-1964,1479,4,3,Tech Park Enclave,2003,No,Semi-Furnished,10670000
+HSE-1965,1664,3,3,Green Valley Suburbs,2022,Yes,Semi-Furnished,9570000
+HSE-1966,2005,2,1,Tech Park Enclave,2009,Yes,Furnished,15100000
+HSE-1967,882,1,1,Midtown Heights,2009,Yes,Furnished,5040000
+HSE-1968,2374,4,4,Green Valley Suburbs,1997,Yes,Semi-Furnished,11740000
+HSE-1969,2114,3,3,Lakeside Boulevard,2019,Yes,Semi-Furnished,14490000
+HSE-1970,2116,2,2,Tech Park Enclave,1999,Yes,Furnished,15550000
+HSE-1971,1935,3,3,Lakeside Boulevard,2003,Yes,Unfurnished,11160000
+HSE-1972,1662,4,4,Metro Outskirts,2020,No,Unfurnished,6810000
+HSE-1973,2087,3,2,Midtown Heights,2016,Yes,Semi-Furnished,13350000
+HSE-1974,2034,3,2,Green Valley Suburbs,2003,Yes,Unfurnished,8950000
+HSE-1975,1419,3,3,Downtown Core,2017,Yes,Furnished,12830000
+HSE-1976,1277,2,2,Green Valley Suburbs,2001,No,Furnished,5860000
+HSE-1977,1716,4,4,Lakeside Boulevard,2018,Yes,Furnished,13090000
+HSE-1978,2656,4,3,Downtown Core,2017,Yes,Semi-Furnished,24250000
+HSE-1979,844,1,1,Tech Park Enclave,2006,Yes,Furnished,6910000
+HSE-1980,696,1,1,Lakeside Boulevard,2019,Yes,Unfurnished,4790000
+HSE-1981,1757,3,3,Tech Park Enclave,2021,No,Furnished,14110000
+HSE-1982,1683,3,3,Midtown Heights,2003,Yes,Furnished,10740000
+HSE-1983,1762,4,3,Downtown Core,2000,Yes,Unfurnished,14860000
+HSE-1984,1808,3,2,Downtown Core,2017,Yes,Furnished,16220000
+HSE-1985,1504,3,2,Midtown Heights,1996,Yes,Furnished,8400000
+HSE-1986,2618,4,4,Tech Park Enclave,2003,No,Semi-Furnished,18380000
+HSE-1987,609,1,1,Midtown Heights,2022,Yes,Furnished,4580000
+HSE-1988,1111,3,3,Tech Park Enclave,2023,Yes,Furnished,9400000
+HSE-1989,1582,3,3,Green Valley Suburbs,2011,Yes,Furnished,8820000
+HSE-1990,581,1,1,Midtown Heights,1995,Yes,Semi-Furnished,3370000
+HSE-1991,1535,3,2,Midtown Heights,2013,Yes,Unfurnished,8950000
+HSE-1992,2729,4,4,Midtown Heights,2022,Yes,Unfurnished,18770000
+HSE-1993,1663,3,2,Green Valley Suburbs,2000,Yes,Furnished,8270000
+HSE-1994,1799,3,2,Lakeside Boulevard,1999,Yes,Semi-Furnished,11020000
+HSE-1995,830,1,1,Tech Park Enclave,1996,Yes,Semi-Furnished,5710000
+HSE-1996,1249,3,3,Downtown Core,2003,Yes,Unfurnished,10290000
+HSE-1997,1406,3,2,Metro Outskirts,2024,Yes,Furnished,6530000
+HSE-1998,1443,3,3,Downtown Core,2023,No,Semi-Furnished,13880000
+HSE-1999,2483,4,3,Metro Outskirts,2020,Yes,Semi-Furnished,9210000
+HSE-2000,2012,3,3,Tech Park Enclave,2008,Yes,Unfurnished,14620000
+HSE-2001,927,2,2,Green Valley Suburbs,1998,Yes,Furnished,4670000
+HSE-2002,1810,3,3,Lakeside Boulevard,1998,No,Furnished,11730000
+HSE-2003,1973,3,2,Metro Outskirts,2015,No,Furnished,8200000
+HSE-2004,2391,3,2,Midtown Heights,2009,No,Furnished,13920000
+HSE-2005,2677,4,4,Midtown Heights,2002,Yes,Semi-Furnished,14850000
+HSE-2006,990,2,1,Lakeside Boulevard,2020,Yes,Semi-Furnished,6410000
+HSE-2007,1122,2,2,Midtown Heights,1998,No,Semi-Furnished,5930000
+HSE-2008,832,1,1,Metro Outskirts,2010,Yes,Furnished,3450000
+HSE-2009,1497,3,3,Green Valley Suburbs,2015,Yes,Furnished,7730000
+HSE-2010,1953,3,2,Tech Park Enclave,2022,Yes,Furnished,17080000
+HSE-2011,2291,4,3,Green Valley Suburbs,1998,No,Furnished,10920000
+HSE-2012,1600,4,4,Metro Outskirts,2024,No,Unfurnished,6860000
+HSE-2013,1442,2,2,Metro Outskirts,2010,Yes,Furnished,5890000
+HSE-2014,1748,3,3,Downtown Core,2016,Yes,Furnished,16360000
+HSE-2015,1107,2,2,Midtown Heights,2006,No,Semi-Furnished,6670000
+HSE-2016,3008,4,4,Metro Outskirts,2010,Yes,Semi-Furnished,12160000
+HSE-2017,605,1,1,Green Valley Suburbs,2013,Yes,Semi-Furnished,3220000
+HSE-2018,1770,3,2,Lakeside Boulevard,2002,Yes,Unfurnished,11150000
+HSE-2019,2965,5,5,Metro Outskirts,2000,Yes,Furnished,11260000
+HSE-2020,1654,3,3,Downtown Core,2004,Yes,Semi-Furnished,13960000
+HSE-2021,1526,4,3,Midtown Heights,1999,Yes,Semi-Furnished,9310000
+HSE-2022,1417,2,1,Green Valley Suburbs,2023,No,Furnished,8370000
+HSE-2023,1532,2,1,Metro Outskirts,2012,Yes,Unfurnished,5980000
+HSE-2024,2542,3,2,Metro Outskirts,2004,Yes,Furnished,9120000
+HSE-2025,550,1,1,Metro Outskirts,2004,Yes,Semi-Furnished,2250000
+HSE-2026,2646,4,4,Tech Park Enclave,2001,Yes,Furnished,19200000
+HSE-2027,724,1,1,Metro Outskirts,2012,Yes,Semi-Furnished,2820000
+HSE-2028,1476,2,2,Metro Outskirts,1995,Yes,Unfurnished,5140000
+HSE-2029,1370,3,2,Green Valley Suburbs,2001,No,Unfurnished,6140000
+HSE-2030,2032,4,3,Metro Outskirts,2015,Yes,Unfurnished,8440000
+HSE-2031,611,1,1,Downtown Core,1995,Yes,Semi-Furnished,5060000
+HSE-2032,1950,2,2,Lakeside Boulevard,2009,Yes,Furnished,13380000
+HSE-2033,2965,3,3,Green Valley Suburbs,1998,No,Semi-Furnished,13420000
+HSE-2034,763,1,1,Downtown Core,2022,Yes,Semi-Furnished,6640000
+HSE-2035,1773,2,2,Downtown Core,2023,Yes,Furnished,16270000
+HSE-2036,1219,2,1,Midtown Heights,2014,Yes,Semi-Furnished,7590000
+HSE-2037,1926,3,3,Tech Park Enclave,2004,No,Unfurnished,14500000
+HSE-2038,1662,3,3,Midtown Heights,2017,Yes,Semi-Furnished,10870000
+HSE-2039,1233,3,2,Downtown Core,2003,Yes,Furnished,11720000
+HSE-2040,1967,3,2,Green Valley Suburbs,1996,Yes,Unfurnished,8930000
+HSE-2041,2822,5,4,Lakeside Boulevard,2022,Yes,Furnished,21490000
+HSE-2042,1525,2,1,Midtown Heights,2008,Yes,Furnished,9970000
+HSE-2043,2117,3,3,Green Valley Suburbs,2010,Yes,Semi-Furnished,10730000
+HSE-2044,809,1,1,Lakeside Boulevard,1995,Yes,Semi-Furnished,4750000
+HSE-2045,1028,2,2,Metro Outskirts,1996,Yes,Semi-Furnished,3880000
+HSE-2046,1957,2,2,Lakeside Boulevard,2001,Yes,Furnished,13270000
+HSE-2047,2614,4,4,Green Valley Suburbs,2023,Yes,Furnished,14390000
+HSE-2048,1881,3,2,Downtown Core,2004,No,Furnished,16270000
+HSE-2049,1446,3,3,Metro Outskirts,2016,No,Unfurnished,5590000
+HSE-2050,1649,3,3,Downtown Core,2014,Yes,Semi-Furnished,15370000
+HSE-2051,837,1,1,Metro Outskirts,1995,Yes,Semi-Furnished,3050000
+HSE-2052,2042,2,1,Tech Park Enclave,2007,Yes,Furnished,14630000
+HSE-2053,2223,4,3,Metro Outskirts,1995,No,Furnished,7840000
+HSE-2054,1356,2,2,Midtown Heights,1999,Yes,Semi-Furnished,7580000
+HSE-2055,1344,2,1,Metro Outskirts,2010,Yes,Furnished,5490000
+HSE-2056,1822,4,3,Tech Park Enclave,2009,Yes,Semi-Furnished,13200000
+HSE-2057,1366,2,2,Midtown Heights,2011,No,Semi-Furnished,7940000
+HSE-2058,1607,3,3,Tech Park Enclave,2022,Yes,Semi-Furnished,13210000
+HSE-2059,3014,4,4,Tech Park Enclave,2017,Yes,Semi-Furnished,23540000
+HSE-2060,1489,3,3,Lakeside Boulevard,2010,Yes,Semi-Furnished,9610000
+HSE-2061,1417,3,2,Metro Outskirts,2007,Yes,Furnished,5780000
+HSE-2062,1229,2,2,Metro Outskirts,2005,Yes,Semi-Furnished,4590000
+HSE-2063,2133,3,3,Midtown Heights,2011,Yes,Semi-Furnished,12830000
+HSE-2064,1532,3,3,Tech Park Enclave,2011,Yes,Furnished,11580000
+HSE-2065,1227,3,2,Tech Park Enclave,1996,No,Unfurnished,8170000
+HSE-2066,2508,4,4,Midtown Heights,2007,Yes,Furnished,15160000
+HSE-2067,2572,4,4,Green Valley Suburbs,2008,Yes,Furnished,13710000
+HSE-2068,1259,3,2,Downtown Core,2005,Yes,Furnished,11330000
+HSE-2069,550,1,1,Tech Park Enclave,2022,Yes,Unfurnished,4130000
+HSE-2070,2304,4,3,Green Valley Suburbs,2004,No,Semi-Furnished,10560000
+HSE-2071,1204,2,1,Green Valley Suburbs,1997,Yes,Unfurnished,5420000
+HSE-2072,2163,3,2,Green Valley Suburbs,2023,Yes,Furnished,12280000
+HSE-2073,550,2,2,Downtown Core,2021,No,Semi-Furnished,4820000
+HSE-2074,2230,4,3,Downtown Core,2011,No,Semi-Furnished,20830000
+HSE-2075,862,2,1,Metro Outskirts,2009,No,Unfurnished,3190000
+HSE-2076,2124,4,4,Tech Park Enclave,2003,Yes,Furnished,14290000
+HSE-2077,1659,3,2,Tech Park Enclave,2004,Yes,Furnished,12420000
+HSE-2078,1029,2,2,Midtown Heights,2002,Yes,Furnished,6310000
+HSE-2079,1385,2,1,Green Valley Suburbs,2015,Yes,Unfurnished,7470000
+HSE-2080,2096,4,4,Metro Outskirts,2007,Yes,Semi-Furnished,7610000
+HSE-2081,1718,3,3,Midtown Heights,2021,No,Semi-Furnished,11750000
+HSE-2082,2029,3,3,Downtown Core,2012,Yes,Semi-Furnished,17550000
+HSE-2083,2934,4,4,Tech Park Enclave,1999,Yes,Unfurnished,20450000
+HSE-2084,633,1,1,Metro Outskirts,2000,Yes,Unfurnished,2170000
+HSE-2085,2701,4,4,Metro Outskirts,2024,Yes,Semi-Furnished,11470000
+HSE-2086,1717,3,2,Tech Park Enclave,2011,Yes,Furnished,12110000
+HSE-2087,1065,3,2,Lakeside Boulevard,2005,No,Furnished,7670000
+HSE-2088,785,2,1,Green Valley Suburbs,2014,Yes,Unfurnished,4040000
+HSE-2089,1527,4,4,Metro Outskirts,2010,No,Semi-Furnished,6080000
+HSE-2090,2249,3,3,Green Valley Suburbs,2003,No,Furnished,12130000
+HSE-2091,1567,3,3,Metro Outskirts,1996,Yes,Semi-Furnished,6020000
+HSE-2092,2632,3,2,Lakeside Boulevard,1999,No,Unfurnished,15330000
+HSE-2093,706,1,1,Lakeside Boulevard,1995,Yes,Semi-Furnished,4260000
+HSE-2094,1642,3,2,Tech Park Enclave,1998,Yes,Semi-Furnished,11520000
+HSE-2095,835,1,1,Green Valley Suburbs,1998,Yes,Unfurnished,3930000
+HSE-2096,1886,3,3,Green Valley Suburbs,2016,Yes,Semi-Furnished,10840000
+HSE-2097,2226,5,4,Green Valley Suburbs,2020,No,Furnished,10980000
+HSE-2098,1376,2,2,Green Valley Suburbs,2019,Yes,Unfurnished,7340000
+HSE-2099,550,1,1,Midtown Heights,1997,Yes,Unfurnished,3150000
+HSE-2100,1779,3,2,Tech Park Enclave,2003,Yes,Unfurnished,12040000
+HSE-2101,1933,2,2,Downtown Core,2016,Yes,Semi-Furnished,16970000
+HSE-2102,1912,3,3,Metro Outskirts,2017,Yes,Furnished,7330000
+HSE-2103,2453,5,4,Metro Outskirts,2006,No,Unfurnished,8900000
+HSE-2104,953,3,2,Metro Outskirts,2004,Yes,Furnished,4160000
+HSE-2105,2092,4,4,Metro Outskirts,1996,Yes,Unfurnished,8040000
+HSE-2106,2425,5,5,Green Valley Suburbs,2005,Yes,Unfurnished,13110000
+HSE-2107,550,1,1,Tech Park Enclave,2004,Yes,Semi-Furnished,3870000
+HSE-2108,1857,3,2,Midtown Heights,2024,Yes,Unfurnished,13230000
+HSE-2109,1322,3,2,Midtown Heights,2016,No,Unfurnished,7250000
+HSE-2110,1597,3,3,Green Valley Suburbs,2000,Yes,Furnished,7770000
+HSE-2111,1875,3,3,Midtown Heights,2012,Yes,Semi-Furnished,11650000
+HSE-2112,1333,2,2,Green Valley Suburbs,1996,Yes,Furnished,6540000
+HSE-2113,1210,2,2,Green Valley Suburbs,2024,Yes,Semi-Furnished,6950000
+HSE-2114,1672,3,2,Lakeside Boulevard,1996,Yes,Furnished,10760000
+HSE-2115,943,2,2,Lakeside Boulevard,2004,Yes,Semi-Furnished,6290000
+HSE-2116,944,2,2,Lakeside Boulevard,2010,Yes,Unfurnished,6740000
+HSE-2117,2091,3,3,Downtown Core,2006,No,Unfurnished,18040000
+HSE-2118,903,2,2,Metro Outskirts,1995,Yes,Furnished,3560000
+HSE-2119,2083,3,3,Green Valley Suburbs,2015,Yes,Semi-Furnished,11390000
+HSE-2120,1950,3,3,Downtown Core,2002,Yes,Semi-Furnished,17920000
+HSE-2121,550,1,1,Metro Outskirts,2010,Yes,Unfurnished,2030000
+HSE-2122,1209,2,2,Metro Outskirts,2012,No,Semi-Furnished,5110000
+HSE-2123,2426,4,4,Metro Outskirts,2007,Yes,Semi-Furnished,9140000
+HSE-2124,1012,2,2,Midtown Heights,2009,Yes,Unfurnished,6560000
+HSE-2125,1348,2,2,Lakeside Boulevard,2015,Yes,Semi-Furnished,9200000
+HSE-2126,1950,3,3,Lakeside Boulevard,2006,No,Unfurnished,13000000
+HSE-2127,2159,3,3,Downtown Core,2002,Yes,Unfurnished,17890000
+HSE-2128,1486,3,2,Tech Park Enclave,2004,Yes,Unfurnished,9680000
+HSE-2129,1261,3,3,Tech Park Enclave,2008,Yes,Furnished,10770000
+HSE-2130,2574,4,3,Green Valley Suburbs,1999,Yes,Semi-Furnished,11590000
+HSE-2131,2780,4,4,Midtown Heights,2012,Yes,Unfurnished,16120000
+HSE-2132,2286,3,2,Tech Park Enclave,2013,Yes,Semi-Furnished,16880000
+HSE-2133,1705,3,3,Downtown Core,2009,No,Semi-Furnished,16630000
+HSE-2134,1124,2,2,Green Valley Suburbs,2000,Yes,Furnished,5350000
+HSE-2135,1110,2,2,Midtown Heights,2021,Yes,Furnished,7370000
+HSE-2136,1989,3,3,Downtown Core,2005,No,Semi-Furnished,15730000
+HSE-2137,1921,3,2,Metro Outskirts,2015,Yes,Semi-Furnished,7330000
+HSE-2138,2561,3,2,Tech Park Enclave,2005,No,Semi-Furnished,16600000
+HSE-2139,2072,3,2,Tech Park Enclave,2014,Yes,Semi-Furnished,16110000
+HSE-2140,672,1,1,Lakeside Boulevard,2014,Yes,Semi-Furnished,4720000
+HSE-2141,2333,4,4,Metro Outskirts,2015,Yes,Semi-Furnished,8980000
+HSE-2142,1001,2,2,Tech Park Enclave,2012,Yes,Semi-Furnished,8220000
+HSE-2143,1400,3,3,Midtown Heights,2019,Yes,Semi-Furnished,9460000
+HSE-2144,1812,4,3,Lakeside Boulevard,2012,No,Semi-Furnished,12880000
+HSE-2145,2947,3,2,Green Valley Suburbs,2004,No,Furnished,14870000
+HSE-2146,3671,5,4,Metro Outskirts,1996,Yes,Semi-Furnished,12600000
+HSE-2147,2044,2,2,Midtown Heights,2020,Yes,Semi-Furnished,12820000
+HSE-2148,1530,3,3,Lakeside Boulevard,2024,Yes,Semi-Furnished,11500000
+HSE-2149,1997,3,2,Metro Outskirts,2003,No,Semi-Furnished,6620000
+HSE-2150,2226,4,4,Metro Outskirts,2008,Yes,Semi-Furnished,8870000
+HSE-2151,1441,3,2,Midtown Heights,2013,Yes,Furnished,9460000
+HSE-2152,2816,5,5,Metro Outskirts,2004,Yes,Unfurnished,10560000
+HSE-2153,1799,3,3,Midtown Heights,2017,Yes,Furnished,11820000
+HSE-2154,1973,2,1,Midtown Heights,1998,No,Unfurnished,11140000
+HSE-2155,2082,4,4,Lakeside Boulevard,2023,Yes,Semi-Furnished,15720000
+HSE-2156,1924,3,2,Midtown Heights,2023,Yes,Semi-Furnished,12320000
+HSE-2157,2195,4,4,Green Valley Suburbs,2000,Yes,Furnished,10710000
+HSE-2158,1248,2,1,Metro Outskirts,2008,Yes,Furnished,5010000
+HSE-2159,1287,3,3,Metro Outskirts,1998,Yes,Furnished,5390000
+HSE-2160,934,2,1,Downtown Core,2020,Yes,Furnished,8790000
+HSE-2161,1935,3,3,Metro Outskirts,2009,Yes,Semi-Furnished,7160000
+HSE-2162,2156,4,4,Downtown Core,2010,Yes,Furnished,20130000
+HSE-2163,1947,3,3,Tech Park Enclave,2001,Yes,Semi-Furnished,14190000
+HSE-2164,2738,3,3,Midtown Heights,2011,Yes,Furnished,16920000
+HSE-2165,1646,3,3,Green Valley Suburbs,2013,Yes,Unfurnished,9020000
+HSE-2166,2084,3,2,Midtown Heights,2023,Yes,Semi-Furnished,14740000
+HSE-2167,940,2,2,Metro Outskirts,2013,Yes,Furnished,4110000
+HSE-2168,1398,2,1,Tech Park Enclave,2011,Yes,Semi-Furnished,10020000
+HSE-2169,2102,3,3,Downtown Core,2000,Yes,Furnished,17410000
+HSE-2170,2201,4,3,Green Valley Suburbs,2023,Yes,Furnished,13070000
+HSE-2171,1458,3,3,Lakeside Boulevard,2005,No,Semi-Furnished,9500000
+HSE-2172,1603,3,3,Metro Outskirts,2010,Yes,Semi-Furnished,6140000
+HSE-2173,663,1,1,Lakeside Boulevard,2024,Yes,Unfurnished,4900000
+HSE-2174,1417,2,1,Green Valley Suburbs,2019,Yes,Semi-Furnished,6620000
+HSE-2175,2228,3,2,Lakeside Boulevard,2002,Yes,Unfurnished,13790000
+HSE-2176,2023,3,2,Lakeside Boulevard,2005,No,Unfurnished,13340000
+HSE-2177,1975,3,2,Midtown Heights,2001,Yes,Unfurnished,11600000
+HSE-2178,1682,3,2,Downtown Core,2020,No,Semi-Furnished,12160000
+HSE-2179,1654,3,2,Midtown Heights,2018,No,Furnished,10300000
+HSE-2180,1220,3,3,Lakeside Boulevard,2016,No,Furnished,9060000
+HSE-2181,2104,2,2,Metro Outskirts,2019,No,Semi-Furnished,7530000
+HSE-2182,1923,3,2,Tech Park Enclave,2013,No,Semi-Furnished,14250000
+HSE-2183,1969,3,2,Lakeside Boulevard,2020,Yes,Furnished,14760000
+HSE-2184,1308,3,2,Metro Outskirts,2004,Yes,Semi-Furnished,4980000
+HSE-2185,550,2,2,Downtown Core,2003,Yes,Furnished,5560000
+HSE-2186,2363,3,3,Metro Outskirts,1998,Yes,Semi-Furnished,8120000
+HSE-2187,1338,2,1,Midtown Heights,2017,No,Furnished,8900000
+HSE-2188,1089,3,2,Downtown Core,2009,Yes,Semi-Furnished,9780000
+HSE-2189,2100,3,3,Green Valley Suburbs,2007,No,Unfurnished,9650000
+HSE-2190,1395,2,2,Midtown Heights,2019,No,Furnished,9360000
+HSE-2191,2338,4,3,Downtown Core,1996,Yes,Semi-Furnished,17470000
+HSE-2192,2051,3,3,Lakeside Boulevard,1996,Yes,Semi-Furnished,12130000
+HSE-2193,2094,4,3,Tech Park Enclave,2010,Yes,Furnished,16430000
+HSE-2194,762,2,2,Lakeside Boulevard,2003,Yes,Furnished,5430000
+HSE-2195,2437,4,4,Downtown Core,2022,Yes,Semi-Furnished,24100000
+HSE-2196,1819,3,3,Metro Outskirts,2007,No,Semi-Furnished,6710000
+HSE-2197,1409,4,4,Metro Outskirts,1997,Yes,Semi-Furnished,5140000
+HSE-2198,1743,2,2,Metro Outskirts,2003,Yes,Furnished,6440000
+HSE-2199,550,1,1,Midtown Heights,2007,Yes,Semi-Furnished,3640000
+HSE-2200,1915,4,4,Downtown Core,2015,Yes,Furnished,16590000
+HSE-2201,980,2,2,Midtown Heights,2016,Yes,Unfurnished,6640000
+HSE-2202,770,1,1,Downtown Core,1996,Yes,Furnished,6500000
+HSE-2203,660,1,1,Downtown Core,2002,Yes,Unfurnished,5230000
+HSE-2204,2373,5,4,Green Valley Suburbs,2021,Yes,Semi-Furnished,11420000
+HSE-2205,1240,2,2,Tech Park Enclave,2003,Yes,Semi-Furnished,8110000
+HSE-2206,2646,4,4,Midtown Heights,2010,No,Semi-Furnished,15640000
+HSE-2207,1301,2,1,Midtown Heights,1996,Yes,Semi-Furnished,7010000
+HSE-2208,550,2,2,Tech Park Enclave,2000,Yes,Semi-Furnished,4190000
+HSE-2209,924,3,3,Green Valley Suburbs,2016,Yes,Semi-Furnished,5710000
+HSE-2210,2453,4,4,Metro Outskirts,2002,Yes,Semi-Furnished,9430000
+HSE-2211,1548,3,2,Tech Park Enclave,2020,Yes,Semi-Furnished,11940000
+HSE-2212,1293,2,2,Tech Park Enclave,2022,Yes,Semi-Furnished,11420000
+HSE-2213,1754,4,4,Green Valley Suburbs,1999,Yes,Unfurnished,8490000
+HSE-2214,1976,3,2,Midtown Heights,2003,Yes,Semi-Furnished,12360000
+HSE-2215,2376,5,5,Midtown Heights,1995,Yes,Semi-Furnished,12860000
+HSE-2216,2591,4,3,Green Valley Suburbs,2003,Yes,Semi-Furnished,11850000
+HSE-2217,1416,3,2,Downtown Core,2004,Yes,Semi-Furnished,10870000
+HSE-2218,788,2,2,Midtown Heights,2017,Yes,Unfurnished,4980000
+HSE-2219,1381,3,3,Lakeside Boulevard,1998,No,Unfurnished,7910000
+HSE-2220,1819,4,4,Green Valley Suburbs,1997,No,Semi-Furnished,7980000
+HSE-2221,1023,2,1,Metro Outskirts,2024,Yes,Semi-Furnished,4710000
+HSE-2222,1027,2,2,Green Valley Suburbs,2004,Yes,Semi-Furnished,4760000
+HSE-2223,1873,3,2,Tech Park Enclave,2009,Yes,Semi-Furnished,14010000
+HSE-2224,1618,3,2,Metro Outskirts,2005,No,Unfurnished,5760000
+HSE-2225,1671,3,2,Tech Park Enclave,2008,Yes,Furnished,12690000
+HSE-2226,1156,2,2,Lakeside Boulevard,2000,Yes,Furnished,8200000
+HSE-2227,1500,3,3,Tech Park Enclave,2006,Yes,Furnished,10890000
+HSE-2228,1049,2,2,Green Valley Suburbs,2007,Yes,Semi-Furnished,5790000
+HSE-2229,2228,4,4,Metro Outskirts,2011,Yes,Unfurnished,8010000
+HSE-2230,2322,4,3,Tech Park Enclave,2010,Yes,Furnished,18240000
+HSE-2231,550,1,1,Metro Outskirts,1997,Yes,Semi-Furnished,2260000
+HSE-2232,1045,2,2,Green Valley Suburbs,1996,No,Semi-Furnished,3790000
+HSE-2233,677,1,1,Green Valley Suburbs,2005,Yes,Semi-Furnished,3420000
+HSE-2234,1227,2,2,Downtown Core,2023,Yes,Semi-Furnished,11930000
+HSE-2235,1595,3,3,Lakeside Boulevard,2003,Yes,Unfurnished,10360000
+HSE-2236,707,2,1,Tech Park Enclave,1997,Yes,Furnished,5690000
+HSE-2237,1050,3,3,Metro Outskirts,2023,Yes,Semi-Furnished,4730000
+HSE-2238,997,2,2,Tech Park Enclave,2012,No,Furnished,7350000
+HSE-2239,1784,3,3,Metro Outskirts,2014,Yes,Semi-Furnished,7320000
+HSE-2240,1695,4,4,Green Valley Suburbs,2009,No,Unfurnished,9000000
+HSE-2241,1180,3,2,Metro Outskirts,2008,Yes,Furnished,5150000
+HSE-2242,1764,3,3,Midtown Heights,1996,Yes,Furnished,10090000
+HSE-2243,1294,3,2,Midtown Heights,2011,No,Semi-Furnished,7800000
+HSE-2244,1473,3,3,Metro Outskirts,2016,Yes,Semi-Furnished,5530000
+HSE-2245,2737,4,4,Midtown Heights,2020,Yes,Semi-Furnished,17640000
+HSE-2246,2521,3,2,Lakeside Boulevard,2002,Yes,Furnished,16770000
+HSE-2247,805,1,1,Downtown Core,2004,Yes,Furnished,6800000
+HSE-2248,2189,2,2,Downtown Core,2020,Yes,Semi-Furnished,19050000
+HSE-2249,2177,3,3,Metro Outskirts,2012,Yes,Furnished,8480000
+HSE-2250,903,2,1,Lakeside Boulevard,2024,Yes,Unfurnished,7000000
+HSE-2251,2182,4,4,Midtown Heights,2019,Yes,Furnished,13820000
+HSE-2252,2649,5,4,Tech Park Enclave,2023,Yes,Semi-Furnished,21940000
+HSE-2253,920,2,2,Downtown Core,2013,No,Furnished,8730000
+HSE-2254,1053,3,3,Downtown Core,2002,No,Furnished,9220000
+HSE-2255,2311,5,5,Midtown Heights,2022,Yes,Semi-Furnished,16420000
+HSE-2256,1826,3,3,Tech Park Enclave,2002,No,Semi-Furnished,12890000
+HSE-2257,2008,2,2,Green Valley Suburbs,1997,Yes,Furnished,9520000
+HSE-2258,1871,3,3,Tech Park Enclave,1997,No,Furnished,12940000
+HSE-2259,1903,4,3,Downtown Core,2006,Yes,Furnished,17040000
+HSE-2260,787,1,1,Lakeside Boulevard,2016,Yes,Semi-Furnished,5660000
+HSE-2261,2330,4,4,Green Valley Suburbs,2011,No,Semi-Furnished,11150000
+HSE-2262,2410,4,4,Midtown Heights,1998,Yes,Furnished,13410000
+HSE-2263,1500,3,2,Green Valley Suburbs,2011,Yes,Semi-Furnished,7760000
+HSE-2264,1621,3,2,Tech Park Enclave,2008,No,Semi-Furnished,12080000
+HSE-2265,654,1,1,Downtown Core,2013,No,Unfurnished,5990000
+HSE-2266,1984,3,3,Downtown Core,2003,No,Unfurnished,15540000
+HSE-2267,2021,4,4,Tech Park Enclave,2024,Yes,Semi-Furnished,17740000
+HSE-2268,1609,4,3,Tech Park Enclave,2024,Yes,Furnished,13460000
+HSE-2269,2380,3,2,Lakeside Boulevard,2015,Yes,Furnished,17780000
+HSE-2270,1432,4,3,Green Valley Suburbs,2006,Yes,Semi-Furnished,8180000
+HSE-2271,2016,3,3,Midtown Heights,1999,Yes,Unfurnished,10250000
+HSE-2272,987,3,2,Metro Outskirts,2005,Yes,Semi-Furnished,3970000
+HSE-2273,1634,3,3,Midtown Heights,2014,Yes,Furnished,9370000
+HSE-2274,1536,4,3,Downtown Core,1997,Yes,Semi-Furnished,11520000
+HSE-2275,1796,4,4,Tech Park Enclave,2015,Yes,Furnished,13190000
+HSE-2276,1409,3,2,Downtown Core,2009,No,Furnished,12800000
+HSE-2277,1564,4,4,Green Valley Suburbs,2008,Yes,Semi-Furnished,8460000
+HSE-2278,2186,2,1,Metro Outskirts,2005,No,Furnished,8260000
+HSE-2279,1366,3,3,Downtown Core,2014,Yes,Furnished,13190000
+HSE-2280,605,1,1,Tech Park Enclave,2002,No,Semi-Furnished,4250000
+HSE-2281,2787,4,3,Lakeside Boulevard,1998,Yes,Furnished,17600000
+HSE-2282,2547,4,4,Midtown Heights,2021,No,Furnished,15880000
+HSE-2283,810,2,2,Lakeside Boulevard,2006,No,Furnished,5850000
+HSE-2284,2098,3,2,Downtown Core,2002,No,Unfurnished,16920000
+HSE-2285,1323,2,2,Green Valley Suburbs,2000,Yes,Semi-Furnished,6540000
+HSE-2286,1821,3,3,Tech Park Enclave,2009,Yes,Furnished,12260000
+HSE-2287,1841,3,2,Downtown Core,2024,Yes,Semi-Furnished,16820000
+HSE-2288,1497,4,4,Tech Park Enclave,2006,Yes,Furnished,12110000
+HSE-2289,1140,2,1,Downtown Core,2010,Yes,Semi-Furnished,9720000
+HSE-2290,1201,2,2,Downtown Core,2010,Yes,Semi-Furnished,9910000
+HSE-2291,1054,3,3,Tech Park Enclave,2021,Yes,Unfurnished,8560000
+HSE-2292,1109,2,1,Downtown Core,2015,Yes,Semi-Furnished,10050000
+HSE-2293,1606,3,3,Lakeside Boulevard,2014,Yes,Unfurnished,10980000
+HSE-2294,1184,3,3,Midtown Heights,2014,Yes,Unfurnished,8130000
+HSE-2295,2093,3,3,Midtown Heights,2022,Yes,Unfurnished,14870000
+HSE-2296,2616,4,4,Green Valley Suburbs,1998,Yes,Semi-Furnished,12190000
+HSE-2297,1272,2,2,Green Valley Suburbs,2005,Yes,Semi-Furnished,6600000
+HSE-2298,1805,4,4,Downtown Core,2007,No,Semi-Furnished,13840000
+HSE-2299,1974,4,3,Lakeside Boulevard,2023,Yes,Furnished,16060000
+HSE-2300,1956,3,3,Midtown Heights,2003,Yes,Furnished,11010000
+HSE-2301,1699,2,2,Downtown Core,1998,Yes,Semi-Furnished,12650000
+HSE-2302,2132,4,4,Metro Outskirts,2006,Yes,Semi-Furnished,7590000
+HSE-2303,1963,3,3,Downtown Core,2003,Yes,Unfurnished,14770000
+HSE-2304,845,1,1,Lakeside Boulevard,2007,Yes,Furnished,6190000
+HSE-2305,2214,4,4,Midtown Heights,2010,Yes,Furnished,14350000
+HSE-2306,2226,5,5,Metro Outskirts,2020,Yes,Unfurnished,8810000
+HSE-2307,1153,3,2,Midtown Heights,2000,Yes,Semi-Furnished,7090000
+HSE-2308,1674,2,2,Midtown Heights,2004,Yes,Furnished,9670000
+HSE-2309,2094,3,3,Tech Park Enclave,2007,Yes,Unfurnished,15440000
+HSE-2310,1513,4,4,Midtown Heights,2001,Yes,Unfurnished,8670000
+HSE-2311,2347,3,2,Downtown Core,2022,Yes,Semi-Furnished,22470000
+HSE-2312,3186,5,5,Metro Outskirts,2020,Yes,Unfurnished,12110000
+HSE-2313,1139,3,3,Lakeside Boulevard,2013,Yes,Semi-Furnished,7970000
+HSE-2314,752,1,1,Midtown Heights,2018,No,Unfurnished,4440000
+HSE-2315,1847,3,2,Tech Park Enclave,2013,Yes,Unfurnished,14520000
+HSE-2316,2119,3,2,Lakeside Boulevard,2011,Yes,Furnished,14330000
+HSE-2317,1499,4,3,Tech Park Enclave,2007,No,Semi-Furnished,10230000
+HSE-2318,2594,4,4,Midtown Heights,2007,Yes,Furnished,17720000
+HSE-2319,779,2,2,Downtown Core,2020,Yes,Furnished,7510000
+HSE-2320,2100,3,2,Downtown Core,2022,No,Unfurnished,20180000
+HSE-2321,1256,2,2,Green Valley Suburbs,2015,No,Semi-Furnished,6020000
+HSE-2322,2767,3,2,Green Valley Suburbs,1996,Yes,Semi-Furnished,13260000
+HSE-2323,2945,4,3,Metro Outskirts,2004,Yes,Unfurnished,11470000
+HSE-2324,1151,3,2,Green Valley Suburbs,2024,No,Unfurnished,5770000
+HSE-2325,1292,2,2,Metro Outskirts,2016,Yes,Unfurnished,5060000
+HSE-2326,2208,4,4,Tech Park Enclave,2007,No,Semi-Furnished,15980000
+HSE-2327,1398,2,2,Green Valley Suburbs,2020,Yes,Semi-Furnished,8250000
+HSE-2328,1620,3,2,Midtown Heights,2003,Yes,Furnished,10420000
+HSE-2329,1666,3,3,Lakeside Boulevard,1995,No,Semi-Furnished,9330000
+HSE-2330,550,2,2,Tech Park Enclave,2008,No,Semi-Furnished,3990000
+HSE-2331,1641,3,2,Lakeside Boulevard,2023,Yes,Semi-Furnished,11840000
+HSE-2332,1201,2,1,Midtown Heights,2010,Yes,Semi-Furnished,7480000
+HSE-2333,1329,2,2,Green Valley Suburbs,2014,Yes,Unfurnished,7390000
+HSE-2334,2588,5,5,Metro Outskirts,2009,Yes,Semi-Furnished,10380000
+HSE-2335,833,1,1,Metro Outskirts,1995,Yes,Semi-Furnished,3060000
+HSE-2336,2178,2,1,Lakeside Boulevard,2011,No,Semi-Furnished,13860000
+HSE-2337,1468,3,3,Green Valley Suburbs,2018,No,Furnished,8090000
+HSE-2338,1468,3,2,Midtown Heights,2024,Yes,Furnished,10010000
+HSE-2339,2163,3,2,Downtown Core,2024,Yes,Semi-Furnished,19170000
+HSE-2340,1871,3,3,Downtown Core,2007,Yes,Furnished,16750000
+HSE-2341,2020,3,2,Green Valley Suburbs,2024,Yes,Semi-Furnished,11320000
+HSE-2342,2279,3,3,Tech Park Enclave,2021,Yes,Semi-Furnished,16510000
+HSE-2343,1434,4,3,Metro Outskirts,2009,Yes,Furnished,6660000
+HSE-2344,1252,3,3,Midtown Heights,2010,Yes,Furnished,7850000
+HSE-2345,944,2,1,Midtown Heights,2010,Yes,Semi-Furnished,6050000
+HSE-2346,1113,2,2,Tech Park Enclave,1996,Yes,Semi-Furnished,7540000
+HSE-2347,3566,4,3,Tech Park Enclave,2011,Yes,Semi-Furnished,28570000
+HSE-2348,2459,4,4,Tech Park Enclave,2005,Yes,Semi-Furnished,17670000
+HSE-2349,771,1,1,Metro Outskirts,2002,Yes,Semi-Furnished,2670000
+HSE-2350,790,1,1,Downtown Core,2014,Yes,Unfurnished,7260000
+HSE-2351,1963,3,2,Metro Outskirts,1997,Yes,Semi-Furnished,7530000
+HSE-2352,2005,4,4,Lakeside Boulevard,2023,Yes,Unfurnished,14820000
+HSE-2353,2006,3,2,Tech Park Enclave,2006,No,Furnished,15030000
+HSE-2354,1484,4,4,Midtown Heights,2014,Yes,Semi-Furnished,9790000
+HSE-2355,1568,3,2,Tech Park Enclave,2010,Yes,Semi-Furnished,11620000
+HSE-2356,1863,2,1,Metro Outskirts,2008,Yes,Furnished,7520000
+HSE-2357,1705,3,3,Metro Outskirts,2010,Yes,Furnished,6760000
+HSE-2358,550,1,1,Tech Park Enclave,2021,Yes,Semi-Furnished,4350000
+HSE-2359,1500,3,2,Green Valley Suburbs,2015,No,Furnished,8060000
+HSE-2360,1096,2,1,Lakeside Boulevard,2011,Yes,Furnished,7860000
+HSE-2361,1763,4,4,Metro Outskirts,2024,No,Unfurnished,7250000
+HSE-2362,3590,5,5,Green Valley Suburbs,2005,Yes,Unfurnished,19240000
+HSE-2363,1888,3,2,Lakeside Boulevard,2011,Yes,Semi-Furnished,13730000
+HSE-2364,1446,3,3,Lakeside Boulevard,2013,Yes,Unfurnished,10650000
+HSE-2365,2249,3,3,Midtown Heights,2016,Yes,Unfurnished,14850000
+HSE-2366,1963,2,1,Downtown Core,1995,Yes,Semi-Furnished,15300000
+HSE-2367,1923,3,3,Midtown Heights,2024,Yes,Furnished,13000000
+HSE-2368,2044,4,4,Metro Outskirts,2021,No,Unfurnished,7590000
+HSE-2369,2986,4,4,Green Valley Suburbs,2006,Yes,Semi-Furnished,14230000
+HSE-2370,914,2,1,Green Valley Suburbs,2009,Yes,Semi-Furnished,4510000
+HSE-2371,1957,3,3,Metro Outskirts,2012,No,Semi-Furnished,7470000
+HSE-2372,1047,2,1,Green Valley Suburbs,2022,No,Semi-Furnished,5790000
+HSE-2373,2011,3,2,Metro Outskirts,2024,Yes,Unfurnished,8830000
+HSE-2374,1052,3,2,Tech Park Enclave,2017,No,Semi-Furnished,8480000
+HSE-2375,1378,3,3,Green Valley Suburbs,2008,No,Unfurnished,6370000
+HSE-2376,1458,2,2,Metro Outskirts,2024,Yes,Unfurnished,6330000
+HSE-2377,2284,3,3,Tech Park Enclave,1995,Yes,Semi-Furnished,16170000
+HSE-2378,2246,5,5,Tech Park Enclave,2007,Yes,Semi-Furnished,16630000
+HSE-2379,840,1,1,Tech Park Enclave,2024,Yes,Semi-Furnished,7370000
+HSE-2380,1685,2,2,Lakeside Boulevard,2009,Yes,Furnished,12040000
+HSE-2381,1188,2,1,Green Valley Suburbs,2001,No,Furnished,5340000
+HSE-2382,831,1,1,Tech Park Enclave,2009,Yes,Semi-Furnished,6890000
+HSE-2383,1508,3,2,Metro Outskirts,2014,Yes,Semi-Furnished,5960000
+HSE-2384,1449,4,3,Green Valley Suburbs,2004,No,Furnished,7770000
+HSE-2385,3227,4,4,Lakeside Boulevard,2008,No,Furnished,22420000
+HSE-2386,1931,3,3,Green Valley Suburbs,2000,Yes,Unfurnished,8530000
+HSE-2387,754,1,1,Midtown Heights,2008,Yes,Semi-Furnished,4630000
+HSE-2388,1282,2,1,Downtown Core,2018,Yes,Unfurnished,11880000
+HSE-2389,2313,5,4,Metro Outskirts,2019,Yes,Furnished,9180000
+HSE-2390,3007,5,4,Tech Park Enclave,2016,Yes,Semi-Furnished,23270000
+HSE-2391,619,1,1,Green Valley Suburbs,2006,Yes,Furnished,3570000
+HSE-2392,550,2,2,Downtown Core,2005,No,Semi-Furnished,5000000
+HSE-2393,2866,4,4,Green Valley Suburbs,2023,Yes,Semi-Furnished,15800000
+HSE-2394,1903,4,4,Tech Park Enclave,2024,No,Furnished,17270000
+HSE-2395,1085,2,2,Tech Park Enclave,2019,Yes,Semi-Furnished,9040000
+HSE-2396,1997,4,4,Metro Outskirts,2014,Yes,Semi-Furnished,8380000
+HSE-2397,550,2,2,Tech Park Enclave,2016,Yes,Semi-Furnished,4410000
+HSE-2398,1652,3,2,Green Valley Suburbs,2018,No,Semi-Furnished,7990000
+HSE-2399,1863,3,3,Lakeside Boulevard,2019,Yes,Furnished,13560000
+HSE-2400,2250,5,5,Midtown Heights,2013,Yes,Semi-Furnished,15540000
+HSE-2401,990,3,2,Green Valley Suburbs,1996,Yes,Unfurnished,4660000
+HSE-2402,1705,2,2,Green Valley Suburbs,2016,Yes,Unfurnished,8320000
+HSE-2403,1048,3,3,Downtown Core,2014,Yes,Unfurnished,10040000
+HSE-2404,1815,3,3,Midtown Heights,1995,Yes,Semi-Furnished,10130000
+HSE-2405,1068,2,2,Lakeside Boulevard,2002,Yes,Unfurnished,7020000
+HSE-2406,1384,2,2,Tech Park Enclave,2019,Yes,Semi-Furnished,10410000
+HSE-2407,1002,2,2,Metro Outskirts,2008,Yes,Furnished,4190000
+HSE-2408,2073,4,3,Midtown Heights,2003,Yes,Unfurnished,11680000
+HSE-2409,2207,4,3,Lakeside Boulevard,1996,Yes,Semi-Furnished,13990000
+HSE-2410,1497,4,3,Metro Outskirts,2019,Yes,Furnished,6460000
+HSE-2411,1674,2,1,Green Valley Suburbs,2017,Yes,Furnished,9110000
+HSE-2412,708,1,1,Downtown Core,1999,Yes,Unfurnished,5480000
+HSE-2413,1455,3,3,Green Valley Suburbs,2017,Yes,Furnished,8280000
+HSE-2414,1617,3,3,Downtown Core,2023,Yes,Furnished,16670000
+HSE-2415,3353,4,3,Lakeside Boulevard,2019,Yes,Semi-Furnished,23470000
+HSE-2416,927,2,2,Metro Outskirts,2002,No,Furnished,3780000
+HSE-2417,2601,4,3,Downtown Core,2010,Yes,Unfurnished,22080000
+HSE-2418,2297,4,3,Downtown Core,2016,Yes,Semi-Furnished,21490000
+HSE-2419,1832,3,2,Tech Park Enclave,2010,Yes,Semi-Furnished,13900000
+HSE-2420,2793,4,3,Metro Outskirts,2007,No,Unfurnished,9770000
+HSE-2421,1891,4,3,Green Valley Suburbs,2014,Yes,Semi-Furnished,9150000
+HSE-2422,1902,4,4,Tech Park Enclave,2023,Yes,Semi-Furnished,14700000
+HSE-2423,1615,3,2,Downtown Core,2009,No,Unfurnished,12220000
+HSE-2424,2445,4,4,Downtown Core,1995,No,Semi-Furnished,19490000
+HSE-2425,2362,3,2,Metro Outskirts,2016,Yes,Furnished,9380000
+HSE-2426,1243,3,2,Metro Outskirts,1997,Yes,Semi-Furnished,4680000
+HSE-2427,792,1,1,Downtown Core,2000,No,Unfurnished,6050000
+HSE-2428,1518,3,2,Metro Outskirts,2016,Yes,Unfurnished,6210000
+HSE-2429,1129,2,2,Lakeside Boulevard,2008,Yes,Unfurnished,7750000
+HSE-2430,1608,3,2,Metro Outskirts,1998,Yes,Unfurnished,5720000
+HSE-2431,2454,3,3,Tech Park Enclave,2012,Yes,Semi-Furnished,18860000
+HSE-2432,1352,3,3,Tech Park Enclave,2009,Yes,Unfurnished,10220000
+HSE-2433,1622,2,2,Tech Park Enclave,2003,Yes,Furnished,12580000
+HSE-2434,1687,3,3,Lakeside Boulevard,2012,No,Semi-Furnished,10500000
+HSE-2435,2201,3,2,Downtown Core,1997,Yes,Semi-Furnished,16910000
+HSE-2436,550,1,1,Downtown Core,2004,Yes,Semi-Furnished,4970000
+HSE-2437,1255,3,2,Green Valley Suburbs,2011,Yes,Furnished,7270000
+HSE-2438,1787,3,2,Midtown Heights,2001,No,Furnished,10450000
+HSE-2439,2430,4,4,Green Valley Suburbs,2009,Yes,Semi-Furnished,12320000
+HSE-2440,1330,2,1,Midtown Heights,1995,Yes,Semi-Furnished,7960000
+HSE-2441,550,1,1,Metro Outskirts,2021,Yes,Unfurnished,2170000
+HSE-2442,2052,4,3,Downtown Core,2019,Yes,Unfurnished,18500000
+HSE-2443,1237,2,2,Midtown Heights,2021,No,Semi-Furnished,8100000
+HSE-2444,876,2,1,Tech Park Enclave,2005,Yes,Unfurnished,6440000
+HSE-2445,1244,2,2,Metro Outskirts,2011,Yes,Semi-Furnished,5230000
+HSE-2446,1530,4,4,Green Valley Suburbs,1999,Yes,Semi-Furnished,8030000
+HSE-2447,1256,2,1,Midtown Heights,2001,No,Semi-Furnished,6830000
+HSE-2448,550,1,1,Metro Outskirts,2013,Yes,Semi-Furnished,2530000
+HSE-2449,2233,4,3,Metro Outskirts,2019,Yes,Furnished,8140000
+HSE-2450,2478,5,4,Midtown Heights,2018,Yes,Semi-Furnished,14180000
+HSE-2451,2073,4,4,Tech Park Enclave,2023,Yes,Semi-Furnished,16820000
+HSE-2452,910,3,3,Lakeside Boulevard,2009,Yes,Semi-Furnished,6420000
+HSE-2453,1519,4,4,Metro Outskirts,1997,Yes,Unfurnished,5740000
+HSE-2454,1645,3,3,Lakeside Boulevard,2009,Yes,Semi-Furnished,10880000
+HSE-2455,2039,3,3,Downtown Core,1999,Yes,Furnished,16790000
+HSE-2456,2084,3,2,Metro Outskirts,2017,Yes,Semi-Furnished,8210000
+HSE-2457,1172,2,1,Midtown Heights,2006,Yes,Semi-Furnished,7690000
+HSE-2458,1703,3,3,Midtown Heights,2024,No,Semi-Furnished,10920000
+HSE-2459,1947,3,2,Green Valley Suburbs,2014,Yes,Furnished,9520000
+HSE-2460,2596,3,2,Lakeside Boulevard,1999,No,Semi-Furnished,16710000
+HSE-2461,2107,3,3,Tech Park Enclave,1997,No,Unfurnished,13460000
+HSE-2462,2162,3,2,Lakeside Boulevard,2003,No,Semi-Furnished,13580000
+HSE-2463,1704,3,3,Downtown Core,2020,No,Unfurnished,14590000
+HSE-2464,2566,4,4,Lakeside Boulevard,2003,Yes,Unfurnished,17080000
+HSE-2465,1916,3,2,Metro Outskirts,2001,Yes,Furnished,6760000
+HSE-2466,1090,3,3,Downtown Core,2020,Yes,Semi-Furnished,8760000
+HSE-2467,2562,4,3,Metro Outskirts,1996,Yes,Semi-Furnished,9650000
+HSE-2468,2103,3,2,Tech Park Enclave,2017,Yes,Furnished,16510000
+HSE-2469,1362,2,2,Metro Outskirts,2017,No,Semi-Furnished,5560000
+HSE-2470,1338,2,1,Midtown Heights,2021,Yes,Semi-Furnished,8870000
+HSE-2471,1842,3,3,Lakeside Boulevard,2015,Yes,Furnished,12570000
+HSE-2472,1951,3,2,Midtown Heights,2010,No,Unfurnished,11480000
+HSE-2473,1778,2,2,Metro Outskirts,2003,Yes,Semi-Furnished,6720000
+HSE-2474,1852,3,2,Tech Park Enclave,2007,Yes,Unfurnished,13340000
+HSE-2475,2754,5,5,Green Valley Suburbs,2022,No,Furnished,15490000
+HSE-2476,2346,5,5,Lakeside Boulevard,2021,Yes,Unfurnished,16360000
+HSE-2477,1773,3,2,Midtown Heights,2013,Yes,Semi-Furnished,11740000
+HSE-2478,2261,3,2,Midtown Heights,2014,No,Furnished,13810000
+HSE-2479,978,2,2,Midtown Heights,2011,No,Semi-Furnished,6120000
+HSE-2480,1908,3,2,Tech Park Enclave,2000,No,Semi-Furnished,13280000
+HSE-2481,2826,5,5,Midtown Heights,1998,Yes,Semi-Furnished,15210000
+HSE-2482,1508,2,2,Downtown Core,1995,No,Semi-Furnished,11820000
+HSE-2483,1099,3,2,Lakeside Boulevard,2012,Yes,Furnished,7520000
+HSE-2484,1226,2,2,Downtown Core,2013,Yes,Semi-Furnished,11380000
+HSE-2485,941,3,2,Green Valley Suburbs,2003,Yes,Semi-Furnished,5110000
+HSE-2486,1139,2,2,Tech Park Enclave,2007,Yes,Semi-Furnished,8960000
+HSE-2487,1409,3,2,Tech Park Enclave,2002,Yes,Semi-Furnished,9650000
+HSE-2488,736,1,1,Midtown Heights,2017,Yes,Unfurnished,4360000
+HSE-2489,1660,3,3,Tech Park Enclave,2007,Yes,Semi-Furnished,12510000
+HSE-2490,2236,3,3,Tech Park Enclave,2009,Yes,Semi-Furnished,16200000
+HSE-2491,1059,2,2,Green Valley Suburbs,2005,No,Unfurnished,4480000
+HSE-2492,2637,5,5,Tech Park Enclave,2006,Yes,Semi-Furnished,18920000
+HSE-2493,1982,4,4,Green Valley Suburbs,2008,Yes,Furnished,10610000
+HSE-2494,2319,5,5,Downtown Core,1998,Yes,Furnished,20250000
+HSE-2495,1222,3,2,Lakeside Boulevard,1995,Yes,Semi-Furnished,8320000
+HSE-2496,2205,4,3,Lakeside Boulevard,2018,Yes,Furnished,15800000
+HSE-2497,940,2,2,Lakeside Boulevard,1998,Yes,Semi-Furnished,6240000
+HSE-2498,2228,4,4,Tech Park Enclave,2013,Yes,Furnished,18370000
+HSE-2499,1761,3,3,Tech Park Enclave,2003,No,Furnished,11360000
+HSE-2500,2009,3,3,Metro Outskirts,2004,Yes,Semi-Furnished,7210000
