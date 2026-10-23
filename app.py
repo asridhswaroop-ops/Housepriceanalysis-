@@ -294,8 +294,7 @@ with st.sidebar:
 st.markdown("<div id='kpi-section'></div>", unsafe_allow_html=True)
 render_header(
     title="House Price Prediction & Analysis",
-    subtitle="Interactive Housing Market Analytics Dashboard",
-    project_name="House Price Analytics"
+    subtitle="Interactive Housing Market Analytics Dashboard"
 )
 
 # -----------------------------------------------------------------------------

@@ -351,16 +351,14 @@ def inject_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
-def render_header(title="House Price Prediction & Analysis", subtitle="Interactive Housing Market Analytics Dashboard", project_name="House Price Analytics"):
+def render_header(title="House Price Prediction & Analysis", subtitle="Interactive Housing Market Analytics Dashboard", project_name=None):
     """
-    Renders the modern top dashboard header with project info badge.
+    Renders the modern top dashboard header.
+    If project_name is provided, displays the project badge; otherwise displays a clean, elegant header.
     """
-    st.markdown(f"""
-    <div class="main-header-row">
-        <div class="header-title-box">
-            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0;">{title}</h1>
-            <p style="color: #475569 !important; font-size: 0.95rem; margin: 4px 0 0 0;">{subtitle}</p>
-        </div>
+    project_badge_html = ""
+    if project_name:
+        project_badge_html = f"""
         <div class="header-project-card">
             <div class="header-project-icon">📅</div>
             <div>
@@ -368,6 +366,15 @@ def render_header(title="House Price Prediction & Analysis", subtitle="Interacti
                 <div class="header-project-value" style="color: #0f172a !important;">{project_name}</div>
             </div>
         </div>
+        """
+
+    st.markdown(f"""
+    <div class="main-header-row">
+        <div class="header-title-box">
+            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0;">{title}</h1>
+            <p style="color: #475569 !important; font-size: 0.95rem; margin: 4px 0 0 0;">{subtitle}</p>
+        </div>
+        {project_badge_html}
     </div>
     """, unsafe_allow_html=True)
 
