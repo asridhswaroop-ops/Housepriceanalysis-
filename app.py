@@ -22,7 +22,6 @@ from utils.prediction import (
 )
 from utils.ui import (
     inject_custom_css,
-    render_header,
     render_kpi_row,
 )
 from utils.visualization import (
@@ -33,6 +32,34 @@ from utils.visualization import (
     plot_price_by_location,
     plot_price_distribution,
 )
+
+def render_header(title="House Price Prediction & Analysis", subtitle="Interactive Housing Market Analytics Dashboard"):
+    """
+    Renders an attractive, modern executive dashboard header banner without any redundant project badge.
+    Defined directly in app.py to eliminate any submodule caching issues.
+    """
+    st.markdown(f"""
+    <div class="modern-header-banner">
+        <div class="header-title-box">
+            <div class="header-brand-pill">
+                <span>🏠</span>
+                <span>Real Estate Intelligence Suite</span>
+            </div>
+            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0; font-size: 1.85rem; letter-spacing: -0.025em;">{title}</h1>
+            <p style="color: #475569 !important; font-size: 0.95rem; margin: 5px 0 0 0;">{subtitle}</p>
+        </div>
+        <div class="header-meta-group">
+            <div class="header-meta-pill">
+                <span class="live-status-dot"></span>
+                <span style="color: #1e293b !important; font-size: 0.82rem; font-weight: 600;">Live Market Analytics</span>
+            </div>
+            <div class="header-meta-pill">
+                <span style="font-size: 0.85rem;">⚡</span>
+                <span style="color: #1e293b !important; font-size: 0.82rem; font-weight: 600;">ML Valuation Engine</span>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 def find_column(df, candidates):
     """
