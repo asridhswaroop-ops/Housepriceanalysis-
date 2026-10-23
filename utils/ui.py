@@ -69,6 +69,53 @@ def inject_custom_css():
             border-right: 1px solid #1e293b;
         }
 
+        /* Sidebar File Uploader Dropzone Styling */
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] {
+            background: transparent !important;
+            margin-bottom: 8px !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] section {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            border: 1px dashed rgba(255, 255, 255, 0.35) !important;
+            border-radius: 10px !important;
+            padding: 14px 10px !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] section:hover {
+            border-color: #3b82f6 !important;
+            background-color: rgba(37, 99, 235, 0.16) !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stBaseButton-secondary"],
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+            background: #2563eb !important;
+            color: #ffffff !important;
+            border: none !important;
+            font-weight: 600 !important;
+            font-size: 0.8rem !important;
+            border-radius: 6px !important;
+            padding: 4px 12px !important;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3) !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stBaseButton-secondary"]:hover,
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] button:hover {
+            background: #1d4ed8 !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] span,
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] small,
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] div,
+        section[data-testid="stSidebar"] [data-testid="stFileUploader"] p {
+            color: #cbd5e1 !important;
+        }
+
+        /* Bordered Streamlit Containers (Cards) */
+        [data-testid="stVerticalBlockBorderWrapper"] > div {
+            background-color: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 14px !important;
+            padding: 20px 22px !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+            margin-bottom: 20px !important;
+        }
+
         /* Force light text in sidebar */
         section[data-testid="stSidebar"] div, 
         section[data-testid="stSidebar"] p, 
@@ -428,10 +475,14 @@ def render_header(title="House Price Prediction & Analysis", subtitle="Interacti
     </div>
     """, unsafe_allow_html=True)
 
-def render_kpi_card(label, value, icon, bg_color, border_color, text_color):
+def render_kpi_card(label, value, icon, bg_color, border_color, text_color, delta=None):
     """
-    Renders a single pastel KPI card.
+    Renders a single pastel KPI card with optional delta comparison.
     """
+    delta_html = ""
+    if delta:
+        delta_html = f'<div style="font-size: 0.76rem; font-weight: 700; color: {text_color}; margin-top: 6px; opacity: 0.95;">{delta}</div>'
+
     st.markdown(f"""
     <div class="kpi-card" style="background-color: {bg_color}; border-color: {border_color};">
         <div class="kpi-card-header">
@@ -439,10 +490,11 @@ def render_kpi_card(label, value, icon, bg_color, border_color, text_color):
             <span class="kpi-card-label">{label}</span>
         </div>
         <div class="kpi-card-val" style="color: {text_color};">{value}</div>
+        {delta_html}
     </div>
     """, unsafe_allow_html=True)
 
-def render_kpi_row(kpis: dict):
+def render_kpi_row(kpis: dict, full_kpis: dict | None = None, is_filtered: bool = False):
     """
     Renders the 5 pastel KPI cards in 5 equal columns:
     1. Total Properties (Soft Blue)
@@ -450,7 +502,8 @@ def render_kpi_row(kpis: dict):
     3. Highest Price (Soft Yellow)
     4. Lowest Price (Soft Pink)
     5. Average Area (Soft Purple)
-    Safe from KeyError using .get() defaults.
+    When filters are active, displays dynamic deltas vs the full dataset.
+    When no filters are active, shows no delta.
     """
     c1, c2, c3, c4, c5 = st.columns(5)
     
@@ -460,6 +513,37 @@ def render_kpi_row(kpis: dict):
     min_price = kpis.get("min_price_fmt", "N/A")
     avg_area = kpis.get("avg_area_fmt", "N/A")
 
+    # Compute comparison deltas only when filters are active
+    total_delta = None
+    avg_price_delta = None
+    max_price_delta = None
+    min_price_delta = None
+    avg_area_delta = None
+
+    if is_filtered and full_kpis:
+        full_total = full_kpis.get("total_properties", 0)
+        curr_total = kpis.get("total_properties", 0)
+        if full_total > 0:
+            total_delta = f"{curr_total:,} of {full_total:,} listings"
+
+        if kpis.get("avg_price") and full_kpis.get("avg_price") and full_kpis["avg_price"] > 0:
+            diff_p = ((kpis["avg_price"] - full_kpis["avg_price"]) / full_kpis["avg_price"]) * 100
+            arrow = "▲" if diff_p > 0 else ("▼" if diff_p < 0 else "•")
+            sign = "+" if diff_p > 0 else ""
+            avg_price_delta = f"{arrow} {sign}{diff_p:.1f}% vs all listings"
+
+        if full_kpis.get("max_price_fmt") and full_kpis["max_price_fmt"] != "N/A":
+            max_price_delta = f"vs {full_kpis['max_price_fmt']} overall"
+
+        if full_kpis.get("min_price_fmt") and full_kpis["min_price_fmt"] != "N/A":
+            min_price_delta = f"vs {full_kpis['min_price_fmt']} overall"
+
+        if kpis.get("avg_area") and full_kpis.get("avg_area") and full_kpis["avg_area"] > 0:
+            diff_a = ((kpis["avg_area"] - full_kpis["avg_area"]) / full_kpis["avg_area"]) * 100
+            arrow_a = "▲" if diff_a > 0 else ("▼" if diff_a < 0 else "•")
+            sign_a = "+" if diff_a > 0 else ""
+            avg_area_delta = f"{arrow_a} {sign_a}{diff_a:.1f}% vs all listings"
+
     with c1:
         render_kpi_card(
             label="TOTAL PROPERTIES",
@@ -467,7 +551,8 @@ def render_kpi_row(kpis: dict):
             icon="🏘️",
             bg_color="#eff6ff",
             border_color="#bfdbfe",
-            text_color="#1e3a8a"
+            text_color="#1e3a8a",
+            delta=total_delta
         )
     with c2:
         render_kpi_card(
@@ -476,7 +561,8 @@ def render_kpi_row(kpis: dict):
             icon="💰",
             bg_color="#f0fdf4",
             border_color="#bbf7d0",
-            text_color="#14532d"
+            text_color="#14532d",
+            delta=avg_price_delta
         )
     with c3:
         render_kpi_card(
@@ -485,7 +571,8 @@ def render_kpi_row(kpis: dict):
             icon="📈",
             bg_color="#fefce8",
             border_color="#fef08a",
-            text_color="#713f12"
+            text_color="#713f12",
+            delta=max_price_delta
         )
     with c4:
         render_kpi_card(
@@ -494,7 +581,8 @@ def render_kpi_row(kpis: dict):
             icon="📉",
             bg_color="#fef2f2",
             border_color="#fecaca",
-            text_color="#7f1d1d"
+            text_color="#7f1d1d",
+            delta=min_price_delta
         )
     with c5:
         render_kpi_card(
@@ -503,6 +591,7 @@ def render_kpi_row(kpis: dict):
             icon="📐",
             bg_color="#f5f3ff",
             border_color="#ddd6fe",
-            text_color="#4c1d95"
+            text_color="#4c1d95",
+            delta=avg_area_delta
         )
-    st.markdown("<div style='height: 16px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)

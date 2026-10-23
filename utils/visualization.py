@@ -28,39 +28,49 @@ def style_figure_layout(fig: go.Figure, height: int = 380):
     )
     return fig
 
-def plot_price_distribution(df: pd.DataFrame, price_col: str) -> go.Figure:
+def plot_price_distribution(df: pd.DataFrame, price_col: str, is_per_sqft: bool = False) -> go.Figure:
     """
     Price Distribution histogram with clean marginal boxplot and professional labels.
+    Supports switching between total price and price per sqft.
     """
     if price_col not in df.columns or df[price_col].dropna().empty:
         fig = go.Figure()
-        fig.add_annotation(text="Price column not available", showarrow=False, font=dict(size=14))
+        fig.add_annotation(text="Price data not available", showarrow=False, font=dict(size=14))
         return style_figure_layout(fig)
+
+    chart_title = (
+        "<b>Price per Sqft Distribution</b><br><span style='font-size:12px;color:#64748b;'>Distribution of property rates per square foot</span>"
+        if is_per_sqft
+        else "<b>Price Distribution</b><br><span style='font-size:12px;color:#64748b;'>Distribution of property prices</span>"
+    )
+    unit_label = "₹/sqft" if is_per_sqft else "₹"
+    x_axis_title = "Price per Sqft (₹/sqft)" if is_per_sqft else "Price (₹)"
 
     fig = px.histogram(
         df,
         x=price_col,
         nbins=35,
         marginal="box",
-        title="<b>Price Distribution</b><br><span style='font-size:12px;color:#64748b;'>Distribution of property prices</span>",
+        title=chart_title,
         color_discrete_sequence=[PRIMARY_COLOR],
         opacity=0.88,
         template=CHART_THEME
     )
     fig.update_traces(
-        hovertemplate="Price: ₹%{x:,.0f}<br>Count: %{y}<extra></extra>"
+        hovertemplate=f"Rate: {unit_label}%{{x:,.0f}}<br>Count: %{{y}}<extra></extra>" if is_per_sqft else "Price: ₹%{x:,.0f}<br>Count: %{y}<extra></extra>"
     )
     fig.update_layout(
-        xaxis_title="Price (₹)",
+        xaxis_title=x_axis_title,
         yaxis_title="Number of Properties",
         hovermode="x unified",
         bargap=0.05
     )
     return style_figure_layout(fig, height=390)
 
-def plot_price_by_location(df: pd.DataFrame, loc_col: str, price_col: str) -> go.Figure:
+def plot_price_by_location(df: pd.DataFrame, loc_col: str, price_col: str, is_per_sqft: bool = False) -> go.Figure:
     """
     Average Price by Location bar chart, sorted by average price.
+    Supports switching between total price and price per sqft.
     """
     if loc_col not in df.columns or price_col not in df.columns:
         fig = go.Figure()
@@ -70,22 +80,30 @@ def plot_price_by_location(df: pd.DataFrame, loc_col: str, price_col: str) -> go
     summary = df.groupby(loc_col)[price_col].agg(["mean", "count"]).reset_index()
     summary = summary.sort_values(by="mean", ascending=True)
 
+    chart_title = (
+        "<b>Average Price per Sqft by Location</b><br><span style='font-size:12px;color:#64748b;'>Top locations ranked by mean rate per sqft</span>"
+        if is_per_sqft
+        else "<b>Average Price by Location</b><br><span style='font-size:12px;color:#64748b;'>Top locations ranked by mean price</span>"
+    )
+    x_axis_title = "Average Price per Sqft (₹/sqft)" if is_per_sqft else "Average Price (₹)"
+    unit_str = "/sqft" if is_per_sqft else ""
+
     fig = px.bar(
         summary,
         x="mean",
         y=loc_col,
         orientation="h",
-        title="<b>Average Price by Location</b><br><span style='font-size:12px;color:#64748b;'>Top locations ranked by mean price</span>",
+        title=chart_title,
         color="mean",
         color_continuous_scale="Blues",
         template=CHART_THEME,
         custom_data=["count"]
     )
     fig.update_traces(
-        hovertemplate="<b>%{y}</b><br>Average Price: ₹%{x:,.0f}<br>Listings: %{customdata[0]}<extra></extra>"
+        hovertemplate=f"<b>%{{y}}</b><br>Average Rate: ₹%{{x:,.0f}}{unit_str}<br>Listings: %{{customdata[0]}}<extra></extra>"
     )
     fig.update_layout(
-        xaxis_title="Average Price (₹)",
+        xaxis_title=x_axis_title,
         yaxis_title="Location",
         coloraxis_showscale=False
     )

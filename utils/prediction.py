@@ -315,3 +315,30 @@ def predict_single_house_price(pipeline, input_data: dict, feature_cols: list) -
 
     prediction = pipeline.predict(df_input[feature_cols])
     return float(prediction[0])
+
+def predict_house_price_with_interval(pipeline, input_data: dict, feature_cols: list) -> tuple[float, float | None, float | None]:
+    """
+    Predicts house price and calculates the 10th-90th percentile prediction interval
+    using individual trees in the fitted RandomForestRegressor when available.
+    """
+    df_input = pd.DataFrame([input_data])
+    for col in feature_cols:
+        if col not in df_input.columns:
+            df_input[col] = np.nan
+
+    prediction = float(pipeline.predict(df_input[feature_cols])[0])
+    range_low, range_high = None, None
+
+    try:
+        if hasattr(pipeline, "named_steps") and "regressor" in pipeline.named_steps:
+            preprocessor = pipeline.named_steps.get("preprocessor")
+            regressor = pipeline.named_steps.get("regressor")
+            if preprocessor is not None and hasattr(regressor, "estimators_") and len(regressor.estimators_) > 0:
+                X_trans = preprocessor.transform(df_input[feature_cols])
+                tree_preds = [float(tree.predict(X_trans)[0]) for tree in regressor.estimators_]
+                range_low = float(np.percentile(tree_preds, 10))
+                range_high = float(np.percentile(tree_preds, 90))
+    except Exception:
+        range_low, range_high = None, None
+
+    return prediction, range_low, range_high
