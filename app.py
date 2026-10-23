@@ -315,7 +315,7 @@ insights = compute_insights(filtered_df, col_mapping)
 st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
-        <h3 class="analytics-card-title">📌 Market Insights</h3>
+        <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">📌 Market Insights</h3>
     </div>
 """, unsafe_allow_html=True)
 
@@ -334,8 +334,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">📊 Market Overview</h3>
-            <p class="analytics-card-subtitle">Exploratory distribution and geographic pricing trends</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">📊 Market Overview</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Exploratory distribution and geographic pricing trends</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -365,8 +365,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">📐 Property Dimensionality & Configuration</h3>
-            <p class="analytics-card-subtitle">Correlation of built-up space and bedroom counts with valuation</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">📐 Property Dimensionality & Configuration</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Correlation of built-up space and bedroom counts with valuation</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -403,8 +403,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">📊 Feature Analysis</h3>
-            <p class="analytics-card-subtitle">Automated correlation matrix across all numerical housing features</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">📊 Feature Analysis</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Automated correlation matrix across all numerical housing features</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -428,8 +428,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">🤖 House Price Prediction</h3>
-            <p class="analytics-card-subtitle">Estimate the expected property price using the trained machine-learning model.</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">🤖 House Price Prediction</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Estimate the expected property price using the trained machine-learning model.</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -451,7 +451,7 @@ else:
 
     # Clean input form in 2 or 3 columns
     with st.form("clean_prediction_form"):
-        st.markdown("##### Enter Property Specifications")
+        st.markdown("<h5 style='color: #0f172a !important; font-weight: 700; margin-bottom: 12px;'>Enter Property Specifications</h5>", unsafe_allow_html=True)
         f_c1, f_c2, f_c3 = st.columns(3)
         input_data = {}
 
@@ -591,8 +591,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">📋 Dataset Explorer</h3>
-            <p class="analytics-card-subtitle">Inspect, search, and export the processed dataset</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">📋 Dataset Explorer</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Inspect, search, and export the processed dataset</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -626,8 +626,8 @@ st.markdown("""
 <div class="analytics-card">
     <div class="analytics-card-header">
         <div>
-            <h3 class="analytics-card-title">🔍 Data Quality</h3>
-            <p class="analytics-card-subtitle">Comprehensive data health diagnostics and schema verification</p>
+            <h3 class="analytics-card-title" style="color: #0f172a !important; font-weight: 700; margin: 0;">🔍 Data Quality</h3>
+            <p class="analytics-card-subtitle" style="color: #475569 !important; margin-top: 3px;">Comprehensive data health diagnostics and schema verification</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -639,7 +639,7 @@ with st.expander("Click to view complete Data Quality Diagnostics", expanded=Fal
     dq_3.metric("Features Detected", f"{quality_report.get('total_columns', len(df_clean.columns))}")
     dq_4.metric("Imputed Cells", f"{quality_report.get('total_missing_cells', 0)}")
 
-    st.markdown("##### Column Schema & Type Verification")
+    st.markdown("<h5 style='color: #0f172a !important; font-weight: 700; margin-bottom: 8px;'>Column Schema & Type Verification</h5>", unsafe_allow_html=True)
     schema_df = pd.DataFrame({
         "Column Name": df_clean.columns,
         "Data Type": [str(t) for t in df_clean.dtypes],

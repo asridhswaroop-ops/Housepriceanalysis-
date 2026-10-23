@@ -20,9 +20,21 @@ def inject_custom_css():
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        /* App Background */
+        /* App Background & Base Contrast */
         .stApp {
-            background-color: #f8fafc;
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+        }
+
+        /* Force high contrast dark headings across main dashboard */
+        .main [data-testid="stMarkdownContainer"] h1,
+        .main [data-testid="stMarkdownContainer"] h2,
+        .main [data-testid="stMarkdownContainer"] h3,
+        .main [data-testid="stMarkdownContainer"] h4,
+        .main [data-testid="stMarkdownContainer"] h5,
+        .main [data-testid="stMarkdownContainer"] h6,
+        .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+            color: #0f172a !important;
         }
 
         /* Remove default Streamlit top padding */
@@ -224,31 +236,59 @@ def inject_custom_css():
 
         /* White Analytics Card Container */
         .analytics-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 20px 22px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-            margin-bottom: 20px;
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 14px !important;
+            padding: 20px 22px !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+            margin-bottom: 20px !important;
+            color: #0f172a !important;
         }
         .analytics-card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 10px;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            margin-bottom: 14px !important;
+            border-bottom: 1px solid #f1f5f9 !important;
+            padding-bottom: 10px !important;
         }
-        .analytics-card-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 0;
+        .analytics-card-title,
+        .analytics-card-header h3,
+        .analytics-card-header h2,
+        .analytics-card-header h1,
+        .analytics-card h1,
+        .analytics-card h2,
+        .analytics-card h3,
+        .analytics-card h4,
+        .analytics-card h5,
+        .analytics-card h6 {
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            color: #0f172a !important;
+            margin: 0 !important;
+            line-height: 1.3 !important;
         }
-        .analytics-card-subtitle {
-            font-size: 0.82rem;
-            color: #64748b;
-            margin: 0;
+        .analytics-card-subtitle,
+        .analytics-card-header p {
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            color: #475569 !important;
+            margin: 3px 0 0 0 !important;
+        }
+        .analytics-card [data-testid="stMarkdownContainer"] h5,
+        .analytics-card h5 {
+            color: #0f172a !important;
+            font-weight: 700 !important;
+            font-size: 1.05rem !important;
+        }
+        .analytics-card label,
+        .analytics-card [data-testid="stWidgetLabel"] p {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+        }
+        [data-testid="stExpander"] summary span {
+            color: #0f172a !important;
+            font-weight: 600 !important;
         }
 
         /* Dynamic Insights Callout */
@@ -318,14 +358,14 @@ def render_header(title="House Price Prediction & Analysis", subtitle="Interacti
     st.markdown(f"""
     <div class="main-header-row">
         <div class="header-title-box">
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
+            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0;">{title}</h1>
+            <p style="color: #475569 !important; font-size: 0.95rem; margin: 4px 0 0 0;">{subtitle}</p>
         </div>
         <div class="header-project-card">
             <div class="header-project-icon">📅</div>
             <div>
-                <div class="header-project-label">PROJECT</div>
-                <div class="header-project-value">{project_name}</div>
+                <div class="header-project-label" style="color: #64748b !important;">PROJECT</div>
+                <div class="header-project-value" style="color: #0f172a !important;">{project_name}</div>
             </div>
         </div>
     </div>
