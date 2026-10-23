@@ -146,52 +146,85 @@ def inject_custom_css():
             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
         }
 
-        /* Top Header Styling */
-        .main-header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 12px;
+        /* Modern Executive Header Banner */
+        .modern-header-banner {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 16px !important;
+            padding: 22px 28px !important;
+            margin-bottom: 22px !important;
+            box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            position: relative !important;
+            overflow: hidden !important;
+            flex-wrap: wrap !important;
+            gap: 16px !important;
+        }
+        .modern-header-banner::before {
+            content: "" !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa, #38bdf8) !important;
+        }
+        .header-brand-pill {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: #eff6ff !important;
+            border: 1px solid #bfdbfe !important;
+            border-radius: 20px !important;
+            padding: 4px 12px !important;
+            font-size: 0.72rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.06em !important;
+            color: #1d4ed8 !important;
+            margin-bottom: 8px !important;
         }
         .header-title-box h1 {
-            font-size: 1.85rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin: 0;
-            letter-spacing: -0.02em;
+            font-size: 1.85rem !important;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+            margin: 0 !important;
+            letter-spacing: -0.025em !important;
+            line-height: 1.25 !important;
         }
         .header-title-box p {
-            font-size: 0.92rem;
-            color: #64748b;
-            margin: 4px 0 0 0;
+            font-size: 0.92rem !important;
+            color: #475569 !important;
+            margin: 4px 0 0 0 !important;
         }
-        .header-project-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 10px 18px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .header-meta-group {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            flex-wrap: wrap !important;
         }
-        .header-project-icon {
-            font-size: 1.6rem;
-            color: #2563eb;
+        .header-meta-pill {
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 10px !important;
+            padding: 8px 14px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+            font-size: 0.8rem !important;
+            font-weight: 600 !important;
+            color: #1e293b !important;
         }
-        .header-project-label {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-        .header-project-value {
-            font-size: 0.96rem;
-            font-weight: 700;
-            color: #0f172a;
+        .live-status-dot {
+            height: 8px !important;
+            width: 8px !important;
+            background-color: #10b981 !important;
+            border-radius: 50% !important;
+            display: inline-block !important;
+            box-shadow: 0 0 8px #10b981 !important;
         }
 
         /* Pastel KPI Cards */
@@ -351,30 +384,30 @@ def inject_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
-def render_header(title="House Price Prediction & Analysis", subtitle="Interactive Housing Market Analytics Dashboard", project_name=None):
+def render_header(title="House Price Prediction & Analysis", subtitle="Interactive Housing Market Analytics Dashboard"):
     """
-    Renders the modern top dashboard header.
-    If project_name is provided, displays the project badge; otherwise displays a clean, elegant header.
+    Renders an attractive, modern executive dashboard header banner with status indicators.
     """
-    project_badge_html = ""
-    if project_name:
-        project_badge_html = f"""
-        <div class="header-project-card">
-            <div class="header-project-icon">📅</div>
-            <div>
-                <div class="header-project-label" style="color: #64748b !important;">PROJECT</div>
-                <div class="header-project-value" style="color: #0f172a !important;">{project_name}</div>
+    st.markdown(f"""
+    <div class="modern-header-banner">
+        <div class="header-title-box">
+            <div class="header-brand-pill">
+                <span>🏠</span>
+                <span>Real Estate Intelligence Suite</span>
+            </div>
+            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0;">{title}</h1>
+            <p style="color: #475569 !important; font-size: 0.92rem; margin: 5px 0 0 0;">{subtitle}</p>
+        </div>
+        <div class="header-meta-group">
+            <div class="header-meta-pill">
+                <span class="live-status-dot"></span>
+                <span style="color: #1e293b !important;">Live Market Analytics</span>
+            </div>
+            <div class="header-meta-pill">
+                <span style="font-size: 0.85rem;">⚡</span>
+                <span style="color: #1e293b !important;">ML Valuation Engine</span>
             </div>
         </div>
-        """
-
-    st.markdown(f"""
-    <div class="main-header-row">
-        <div class="header-title-box">
-            <h1 style="color: #0f172a !important; font-weight: 800; margin: 0;">{title}</h1>
-            <p style="color: #475569 !important; font-size: 0.95rem; margin: 4px 0 0 0;">{subtitle}</p>
-        </div>
-        {project_badge_html}
     </div>
     """, unsafe_allow_html=True)
 
