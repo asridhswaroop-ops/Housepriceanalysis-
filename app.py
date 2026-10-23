@@ -133,6 +133,27 @@ st.set_page_config(
 # Inject Clean Professional CSS
 inject_custom_css()
 
+# Hide Deploy button and Three-Dots Menu directly from app.py for immediate hot-reload
+st.markdown("""
+<style>
+    #MainMenu,
+    [data-testid="stDeployButton"],
+    [data-testid="stToolbar"],
+    [data-testid="stDecoration"],
+    header [data-testid="stDeployButton"],
+    header #MainMenu,
+    header [data-testid="stToolbarActions"],
+    header [data-testid="stToolbar"] {
+        visibility: hidden !important;
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # -----------------------------------------------------------------------------
 # 2. Cached Data Loading & Model Retrieval
 # -----------------------------------------------------------------------------

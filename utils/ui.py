@@ -20,6 +20,23 @@ def inject_custom_css():
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
+        /* Hide Streamlit Header Elements: Deploy button and 3-dots menu */
+        #MainMenu,
+        [data-testid="stDeployButton"],
+        [data-testid="stToolbar"],
+        [data-testid="stDecoration"],
+        header [data-testid="stDeployButton"],
+        header #MainMenu,
+        header [data-testid="stToolbarActions"],
+        header [data-testid="stToolbar"] {
+            visibility: hidden !important;
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
         /* App Background & Base Contrast */
         .stApp {
             background-color: #f8fafc !important;
