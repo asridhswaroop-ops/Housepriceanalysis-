@@ -8,6 +8,7 @@ import os
 import re
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 
 # Utility imports
@@ -18,8 +19,12 @@ from utils.data_processing import (
     format_inr,
 )
 from utils.prediction import (
-    predict_single_house_price,
+    align_batch_columns,
+    batch_predict_house_prices,
+    generate_price_vs_area_curve,
+    generate_what_if_scenarios,
     predict_house_price_with_interval,
+    predict_single_house_price,
     train_house_price_model,
 )
 from utils.ui import (
@@ -562,7 +567,7 @@ with tab_market:
 with tab_prediction:
     with st.container(border=True):
         st.markdown("<h3 style='color: #0f172a !important; font-weight: 700; margin: 0;'>🤖 House Price Prediction</h3>", unsafe_allow_html=True)
-        st.markdown("<p style='color: #475569 !important; margin: 2px 0 14px 0; font-size: 0.9rem;'>Estimate the expected property price using the trained machine-learning model.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='color: #475569 !important; margin: 2px 0 14px 0; font-size: 0.9rem;'>Estimate expected property valuations using the trained machine-learning model.</p>", unsafe_allow_html=True)
 
         # Train or retrieve cached model
         data_hash = int(pd.util.hash_pandas_object(df_clean, index=True).sum())
@@ -579,172 +584,405 @@ with tab_prediction:
             importances = model_res["importances"]
             model_name_disp = model_res.get("model_name", "Random Forest Regression")
 
-            # Clean input form
-            with st.form("clean_prediction_form"):
-                st.markdown("<h5 style='color: #0f172a !important; font-weight: 700; margin-bottom: 12px;'>Enter Property Specifications</h5>", unsafe_allow_html=True)
-                f_c1, f_c2, f_c3 = st.columns(3)
-                input_data = {}
-
-                if a_col:
-                    col_series_a = df_clean[a_col].dropna()
-                    if not col_series_a.empty:
-                        data_min_a = float(col_series_a.min())
-                        data_max_a = float(col_series_a.max())
-                        area_min = max(1, int(data_min_a * 0.8))
-                        area_max = max(area_min + 100, int(data_max_a * 1.2))
-                        default_a = int(col_series_a.median())
-                    else:
-                        area_min, area_max, default_a = 100, 20000, 1500
-                    default_a = max(area_min, min(area_max, default_a))
-                    with f_c1:
-                        input_data[a_col] = st.number_input(
-                            "Area (Square Feet)",
-                            min_value=area_min,
-                            max_value=area_max,
-                            value=default_a,
-                            step=50,
-                            help="Total carpet or super built-up area in sqft"
-                        )
-
-                if bed_col:
-                    unique_b = sorted([int(x) for x in df_clean[bed_col].dropna().unique()])
-                    default_b_idx = min(2, len(unique_b) - 1)
-                    with f_c2:
-                        input_data[bed_col] = st.selectbox(
-                            "Bedrooms (BHK)",
-                            options=unique_b,
-                            index=default_b_idx
-                        )
-
-                if bath_col:
-                    unique_ba = sorted([int(x) for x in df_clean[bath_col].dropna().unique()])
-                    with f_c3:
-                        input_data[bath_col] = st.selectbox(
-                            "Bathrooms",
-                            options=unique_ba,
-                            index=min(1, len(unique_ba) - 1)
-                        )
-
-                if loc_col:
-                    unique_l = sorted(df_clean[loc_col].dropna().unique().tolist())
-                    with f_c1:
-                        input_data[loc_col] = st.selectbox(
-                            "Location",
-                            options=unique_l
-                        )
-
-                if yr_col:
-                    col_series_y = df_clean[yr_col].dropna()
-                    if not col_series_y.empty:
-                        data_min_y = int(col_series_y.min())
-                        data_max_y = int(col_series_y.max())
-                        year_min = max(1800, data_min_y - 10)
-                        year_max = max(year_min + 5, max(data_max_y + 5, 2030))
-                        default_y = int(col_series_y.median())
-                    else:
-                        year_min, year_max, default_y = 1950, 2030, 2018
-                    default_y = max(year_min, min(year_max, default_y))
-                    with f_c2:
-                        input_data[yr_col] = st.number_input(
-                            "Year Built",
-                            min_value=year_min,
-                            max_value=year_max,
-                            value=default_y,
-                            step=1
-                        )
-
-                if park_col:
-                    unique_p = sorted(df_clean[park_col].dropna().unique().tolist())
-                    with f_c3:
-                        input_data[park_col] = st.selectbox(
-                            "Parking",
-                            options=unique_p
-                        )
-
-                if furn_col:
-                    unique_f = sorted(df_clean[furn_col].dropna().unique().tolist())
-                    with f_c1:
-                        input_data[furn_col] = st.selectbox(
-                            "Furnishing",
-                            options=unique_f
-                        )
-
-                # Extra columns if present
-                handled_set = {a_col, bed_col, bath_col, loc_col, yr_col, park_col, furn_col}
-                extra_cols = [f for f in all_features if f not in handled_set]
-                for idx, feat in enumerate(extra_cols):
-                    target_sub = [f_c1, f_c2, f_c3][(idx + 1) % 3]
-                    with target_sub:
-                        if pd.api.types.is_numeric_dtype(df_clean[feat]):
-                            input_data[feat] = st.number_input(feat, value=float(df_clean[feat].median()))
-                        else:
-                            input_data[feat] = st.selectbox(feat, options=sorted(df_clean[feat].dropna().unique().tolist()))
-
-                st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
-                predict_submit = safe_form_submit_button("🔮 Predict House Price", width="stretch")
-
-            # Requirement 8: Prediction Result with Implied Rate per Sqft & 10th-90th percentile tree range
-            if predict_submit:
-                try:
-                    pred_price, range_low, range_high = predict_house_price_with_interval(pipeline, input_data, all_features)
-                    formatted_price = format_inr(pred_price)
-
-                    # Implied rate per sqft
-                    rate_chips_html = ""
-                    user_area = input_data.get(a_col) if a_col else None
-                    if user_area and float(user_area) > 0:
-                        rate_per_sqft = pred_price / float(user_area)
-                        rate_chips_html += f"""
-                        <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 8px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px;">
-                            <span style="font-size: 0.85rem; color: #1e3a8a; font-weight: 600;">Implied Rate: <b>₹ {rate_per_sqft:,.0f}/sqft</b></span>
-                        </div>
-                        """
-
-                    # Expected tree range
-                    if range_low is not None and range_high is not None and range_high >= range_low:
-                        range_chips_html = f"""
-                        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px; margin-left: 8px;">
-                            <span style="font-size: 0.85rem; color: #065f46; font-weight: 600;">Expected Range (10th–90th%): <b>{format_inr(range_low)} – {format_inr(range_high)}</b></span>
-                        </div>
-                        """
-                        rate_chips_html += range_chips_html
-
-                    st.markdown(f"""
-                    <div class="prediction-hero-card">
-                        <div class="pred-label">ESTIMATED HOUSE PRICE</div>
-                        <div class="pred-value">{formatted_price}</div>
-                        <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px 0;">
-                            {rate_chips_html}
-                        </div>
-                        <div class="pred-sub">Raw Exact Valuation: ₹ {pred_price:,.0f}</div>
-                        <div style="display: flex; justify-content: center; gap: 24px; margin-top: 14px; flex-wrap: wrap;">
-                            <span style="font-size: 0.85rem; color: #475569;"><b>Model:</b> {model_name_disp}</span>
-                            <span style="font-size: 0.85rem; color: #475569;"><b>R² Score:</b> {metrics['r2']:.3f}</span>
-                            <span style="font-size: 0.85rem; color: #475569;"><b>MAE:</b> {format_inr(metrics['mae'])}</span>
-                            <span style="font-size: 0.85rem; color: #475569;"><b>RMSE:</b> {format_inr(metrics['rmse'])}</span>
-                        </div>
+            # Helper: Render the Prediction Result Card
+            def render_prediction_result_card(pred_price, range_low, range_high, user_area):
+                formatted_price = format_inr(pred_price)
+                rate_chips_html = ""
+                if user_area and float(user_area) > 0:
+                    rate_per_sqft = pred_price / float(user_area)
+                    rate_chips_html += f"""
+                    <div style="background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 8px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px;">
+                        <span style="font-size: 0.85rem; color: #1e3a8a; font-weight: 600;">Implied Rate: <b>₹ {rate_per_sqft:,.0f}/sqft</b></span>
                     </div>
-                    """, unsafe_allow_html=True)
-                except Exception:
-                    # Fallback safely to single price
-                    try:
-                        pred_price = predict_single_house_price(pipeline, input_data, all_features)
-                        formatted_price = format_inr(pred_price)
-                        st.markdown(f"""
-                        <div class="prediction-hero-card">
-                            <div class="pred-label">ESTIMATED HOUSE PRICE</div>
-                            <div class="pred-value">{formatted_price}</div>
-                            <div class="pred-sub">Raw Exact Valuation: ₹ {pred_price:,.0f}</div>
-                        </div>
-                        """, unsafe_allow_html=True)
-                    except Exception:
-                        st.error("Error computing house price prediction.")
+                    """
 
-            # Feature Importance
-            if len(feature_names) > 0 and len(importances) > 0:
-                with st.expander("📊 View Model Factors Driving House Price", expanded=False):
-                    fig_fi = plot_feature_importance(feature_names, importances)
-                    render_chart(fig_fi)
+                if range_low is not None and range_high is not None and range_high >= range_low:
+                    range_chips_html = f"""
+                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px; margin-left: 8px;">
+                        <span style="font-size: 0.85rem; color: #065f46; font-weight: 600;">Expected Range (10th–90th%): <b>{format_inr(range_low)} – {format_inr(range_high)}</b></span>
+                    </div>
+                    """
+                    rate_chips_html += range_chips_html
+
+                st.markdown(f"""
+                <div class="prediction-hero-card">
+                    <div class="pred-label">ESTIMATED HOUSE PRICE</div>
+                    <div class="pred-value">{formatted_price}</div>
+                    <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px 0;">
+                        {rate_chips_html}
+                    </div>
+                    <div class="pred-sub">Raw Exact Valuation: ₹ {pred_price:,.0f}</div>
+                    <div style="display: flex; justify-content: center; gap: 24px; margin-top: 14px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #475569;"><b>Model:</b> {model_name_disp}</span>
+                        <span style="font-size: 0.85rem; color: #475569;"><b>R² Score:</b> {metrics.get('r2', 0):.3f}</span>
+                        <span style="font-size: 0.85rem; color: #475569;"><b>MAE:</b> {format_inr(metrics.get('mae', 0))}</span>
+                        <span style="font-size: 0.85rem; color: #475569;"><b>RMSE:</b> {format_inr(metrics.get('rmse', 0))}</span>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Helper: Render What-If Sensitivity Simulator Section
+            def render_what_if_analysis(base_input_data):
+                try:
+                    base_price, df_scenarios, df_locations = generate_what_if_scenarios(
+                        pipeline, base_input_data, all_features, df_clean, col_mapping
+                    )
+
+                    st.markdown("<h4 style='color: #0f172a !important; font-weight: 700; margin: 20px 0 6px 0;'>What-If: how would the price change?</h4>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='color: #475569 !important; font-size: 0.9rem; margin-bottom: 14px;'>Baseline valuation: <b>{format_inr(base_price)}</b>. Simulating marginal price movements when adjusting individual property specifications.</p>", unsafe_allow_html=True)
+
+                    if not df_scenarios.empty:
+                        w_c1, w_c2 = st.columns([1, 1])
+                        with w_c1:
+                            df_disp = df_scenarios.copy()
+                            df_disp["New price"] = df_disp["New Price"].apply(format_inr)
+                            df_disp["Change (₹)"] = df_disp["Change (₹)"].apply(lambda x: ("+" if x > 0 else "") + format_inr(x))
+                            df_disp["Change (%)"] = df_disp["Change (%)"].apply(lambda x: f"{x:+.1f}%")
+                            render_dataframe(df_disp[["Scenario", "New price", "Change (₹)", "Change (%)"]], height=260)
+
+                        with w_c2:
+                            colors = ['#10b981' if c >= 0 else '#ef4444' for c in df_scenarios["Change (₹)"]]
+                            fig_bar = go.Figure(go.Bar(
+                                x=df_scenarios["Change (₹)"],
+                                y=df_scenarios["Scenario"],
+                                orientation="h",
+                                marker_color=colors,
+                                customdata=df_scenarios["Change (%)"],
+                                hovertemplate="<b>%{y}</b><br>Change: ₹%{x:,.0f}<br>Impact: %{customdata:+.1f}%<extra></extra>"
+                            ))
+                            fig_bar.update_layout(
+                                title="<b>Valuation Impact by Scenario (₹)</b>",
+                                xaxis_title="Valuation Change (₹)",
+                                yaxis=dict(autorange="reversed"),
+                                height=260,
+                                margin=dict(l=20, r=20, t=40, b=20),
+                                template="plotly_white"
+                            )
+                            render_chart(fig_bar)
+                    else:
+                        st.info("No primary parameter adjustments available within the dataset boundaries.")
+
+                    # Location Impact expander
+                    if not df_locations.empty:
+                        with st.expander("📍 Move to another location (compare geographic impact)", expanded=False):
+                            df_loc_disp = df_locations.copy()
+                            df_loc_disp["New price"] = df_loc_disp["New Price"].apply(format_inr)
+                            df_loc_disp["Change (₹)"] = df_loc_disp["Change (₹)"].apply(lambda x: ("+" if x > 0 else "") + format_inr(x))
+                            df_loc_disp["Change (%)"] = df_loc_disp["Change (%)"].apply(lambda x: f"{x:+.1f}%")
+                            render_dataframe(df_loc_disp[["Location", "New price", "Change (₹)", "Change (%)"]], height=250)
+
+                    # Price vs Area sensitivity curve
+                    curve_res = generate_price_vs_area_curve(pipeline, base_input_data, all_features, df_clean, col_mapping)
+                    if curve_res:
+                        area_points, curve_preds, curr_a, curr_p = curve_res
+                        fig_curve = go.Figure()
+                        fig_curve.add_trace(go.Scatter(
+                            x=area_points,
+                            y=curve_preds,
+                            mode="lines+markers",
+                            name="Valuation Trend",
+                            line=dict(color="#2563eb", width=3),
+                            marker=dict(size=6, color="#1d4ed8"),
+                            hovertemplate="Area: %{x:,.0f} sqft<br>Price: ₹%{y:,.0f}<extra></extra>"
+                        ))
+                        fig_curve.add_trace(go.Scatter(
+                            x=[curr_a],
+                            y=[curr_p],
+                            mode="markers",
+                            name="Current Property Area",
+                            marker=dict(size=14, color="#f59e0b", symbol="diamond", line=dict(color="#ffffff", width=2)),
+                            hovertemplate=f"Current Selection: {curr_a:,.0f} sqft<br>Valuation: {format_inr(curr_p)}<extra></extra>"
+                        ))
+                        fig_curve.update_layout(
+                            title="<b>Price vs Area</b><br><span style='font-size:12px;color:#64748b;'>Model predicted price sensitivity across 5th–95th percentile area (other inputs fixed)</span>",
+                            xaxis_title="Area (Square Feet)",
+                            yaxis_title="Estimated Price (₹)",
+                            height=350,
+                            margin=dict(l=20, r=20, t=50, b=30),
+                            template="plotly_white",
+                            showlegend=True
+                        )
+                        render_chart(fig_curve)
+
+                    st.caption("Estimates come from the trained model and reflect patterns in the loaded dataset. They are not a formal valuation.")
+                except Exception as e:
+                    st.warning("What-If simulation could not be rendered for this property configuration.")
+
+            # Create the 3 required subtabs
+            pred_subtab_single, pred_subtab_whatif, pred_subtab_batch = st.tabs([
+                "Single Valuation",
+                "What-If",
+                "Batch Valuation"
+            ])
+
+            # -------------------------------------------------------------
+            # SUBTAB 1: Single Valuation
+            # -------------------------------------------------------------
+            with pred_subtab_single:
+                with st.form("clean_prediction_form"):
+                    st.markdown("<h5 style='color: #0f172a !important; font-weight: 700; margin-bottom: 12px;'>Enter Property Specifications</h5>", unsafe_allow_html=True)
+                    f_c1, f_c2, f_c3 = st.columns(3)
+                    input_data = {}
+
+                    if a_col:
+                        col_series_a = df_clean[a_col].dropna()
+                        if not col_series_a.empty:
+                            data_min_a = float(col_series_a.min())
+                            data_max_a = float(col_series_a.max())
+                            area_min = max(1, int(data_min_a * 0.8))
+                            area_max = max(area_min + 100, int(data_max_a * 1.2))
+                            default_a = int(col_series_a.median())
+                        else:
+                            area_min, area_max, default_a = 100, 20000, 1500
+                        default_a = max(area_min, min(area_max, default_a))
+                        with f_c1:
+                            input_data[a_col] = st.number_input(
+                                "Area (Square Feet)",
+                                min_value=area_min,
+                                max_value=area_max,
+                                value=default_a,
+                                step=50,
+                                help="Total carpet or super built-up area in sqft"
+                            )
+
+                    if bed_col:
+                        unique_b = sorted([int(x) for x in df_clean[bed_col].dropna().unique()])
+                        default_b_idx = min(2, len(unique_b) - 1)
+                        with f_c2:
+                            input_data[bed_col] = st.selectbox(
+                                "Bedrooms (BHK)",
+                                options=unique_b,
+                                index=default_b_idx
+                            )
+
+                    if bath_col:
+                        unique_ba = sorted([int(x) for x in df_clean[bath_col].dropna().unique()])
+                        with f_c3:
+                            input_data[bath_col] = st.selectbox(
+                                "Bathrooms",
+                                options=unique_ba,
+                                index=min(1, len(unique_ba) - 1)
+                            )
+
+                    if loc_col:
+                        unique_l = sorted(df_clean[loc_col].dropna().unique().tolist())
+                        with f_c1:
+                            input_data[loc_col] = st.selectbox(
+                                "Location",
+                                options=unique_l
+                            )
+
+                    if yr_col:
+                        col_series_y = df_clean[yr_col].dropna()
+                        if not col_series_y.empty:
+                            data_min_y = int(col_series_y.min())
+                            data_max_y = int(col_series_y.max())
+                            year_min = max(1800, data_min_y - 10)
+                            year_max = max(year_min + 5, max(data_max_y + 5, 2030))
+                            default_y = int(col_series_y.median())
+                        else:
+                            year_min, year_max, default_y = 1950, 2030, 2018
+                        default_y = max(year_min, min(year_max, default_y))
+                        with f_c2:
+                            input_data[yr_col] = st.number_input(
+                                "Year Built",
+                                min_value=year_min,
+                                max_value=year_max,
+                                value=default_y,
+                                step=1
+                            )
+
+                    if park_col:
+                        unique_p = sorted(df_clean[park_col].dropna().unique().tolist())
+                        with f_c3:
+                            input_data[park_col] = st.selectbox(
+                                "Parking",
+                                options=unique_p
+                            )
+
+                    if furn_col:
+                        unique_f = sorted(df_clean[furn_col].dropna().unique().tolist())
+                        with f_c1:
+                            input_data[furn_col] = st.selectbox(
+                                "Furnishing",
+                                options=unique_f
+                            )
+
+                    # Extra columns if present
+                    handled_set = {a_col, bed_col, bath_col, loc_col, yr_col, park_col, furn_col}
+                    extra_cols = [f for f in all_features if f not in handled_set]
+                    for idx, feat in enumerate(extra_cols):
+                        target_sub = [f_c1, f_c2, f_c3][(idx + 1) % 3]
+                        with target_sub:
+                            if pd.api.types.is_numeric_dtype(df_clean[feat]):
+                                input_data[feat] = st.number_input(feat, value=float(df_clean[feat].median()))
+                            else:
+                                input_data[feat] = st.selectbox(feat, options=sorted(df_clean[feat].dropna().unique().tolist()))
+
+                    st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
+                    predict_submit = safe_form_submit_button("🔮 Predict House Price", width="stretch")
+
+                # Handle form submission and persist into session_state
+                if predict_submit:
+                    try:
+                        pred_price, range_low, range_high = predict_house_price_with_interval(pipeline, input_data, all_features)
+                        st.session_state["saved_prediction_input"] = dict(input_data)
+                        st.session_state["saved_predicted_price"] = pred_price
+                        st.session_state["saved_range_low"] = range_low
+                        st.session_state["saved_range_high"] = range_high
+                        st.session_state["saved_user_area"] = input_data.get(a_col) if a_col else None
+                    except Exception:
+                        try:
+                            pred_price = predict_single_house_price(pipeline, input_data, all_features)
+                            st.session_state["saved_prediction_input"] = dict(input_data)
+                            st.session_state["saved_predicted_price"] = pred_price
+                            st.session_state["saved_range_low"] = None
+                            st.session_state["saved_range_high"] = None
+                            st.session_state["saved_user_area"] = input_data.get(a_col) if a_col else None
+                        except Exception:
+                            st.error("Error computing house price prediction.")
+
+                # Render persistent result card if a prediction exists
+                if "saved_predicted_price" in st.session_state and st.session_state.get("saved_prediction_input") is not None:
+                    render_prediction_result_card(
+                        st.session_state["saved_predicted_price"],
+                        st.session_state.get("saved_range_low"),
+                        st.session_state.get("saved_range_high"),
+                        st.session_state.get("saved_user_area")
+                    )
+
+                    # Also render What-If section below result card
+                    render_what_if_analysis(st.session_state["saved_prediction_input"])
+
+                # Feature Importance expander
+                if len(feature_names) > 0 and len(importances) > 0:
+                    with st.expander("📊 View Model Factors Driving House Price", expanded=False):
+                        fig_fi = plot_feature_importance(feature_names, importances)
+                        render_chart(fig_fi)
+
+            # -------------------------------------------------------------
+            # SUBTAB 2: What-If Sensitivity Simulator
+            # -------------------------------------------------------------
+            with pred_subtab_whatif:
+                if "saved_prediction_input" in st.session_state and st.session_state.get("saved_prediction_input") is not None:
+                    render_what_if_analysis(st.session_state["saved_prediction_input"])
+                else:
+                    st.info("💡 Generate a valuation in the **Single Valuation** tab to analyze a custom listing, or explore the baseline property below.")
+                    default_baseline = {}
+                    for feat in all_features:
+                        if pd.api.types.is_numeric_dtype(df_clean[feat]):
+                            default_baseline[feat] = float(df_clean[feat].dropna().median())
+                        else:
+                            modes = df_clean[feat].dropna().mode()
+                            default_baseline[feat] = str(modes[0]) if not modes.empty else "Unknown"
+                    render_what_if_analysis(default_baseline)
+
+            # -------------------------------------------------------------
+            # SUBTAB 3: Batch Valuation
+            # -------------------------------------------------------------
+            with pred_subtab_batch:
+                st.markdown("<h4 style='color: #0f172a !important; font-weight: 700; margin: 10px 0 4px 0;'>Batch Property Valuation Engine</h4>", unsafe_allow_html=True)
+                st.markdown("<p style='color: #475569 !important; font-size: 0.9rem; margin-bottom: 14px;'>Upload a portfolio of unpriced properties to predict valuations, confidence intervals, and rate per sqft in bulk.</p>", unsafe_allow_html=True)
+
+                # Download CSV template
+                template_df = df_clean[all_features].head(3).copy()
+                template_csv = template_df.to_csv(index=False)
+                st.download_button(
+                    label="📥 Download CSV Template",
+                    data=template_csv,
+                    file_name="batch_valuation_template.csv",
+                    mime="text/csv",
+                    help="Download template CSV with expected property feature columns and sample records."
+                )
+
+                st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+
+                batch_file = st.file_uploader(
+                    "Upload CSV or Excel for Batch Valuation",
+                    type=["csv", "xlsx", "xls"],
+                    key="batch_valuation_file_uploader",
+                    help="Supports CSV and Excel files. Alternative column names like sqft, beds, baths, city are automatically recognized."
+                )
+
+                if batch_file is not None:
+                    df_batch_raw = None
+                    try:
+                        if batch_file.name.endswith((".xlsx", ".xls")):
+                            df_batch_raw = pd.read_excel(batch_file)
+                        else:
+                            df_batch_raw = pd.read_csv(batch_file)
+                    except Exception as e:
+                        st.error(f"Failed to read file: {str(e)}")
+
+                    if df_batch_raw is not None:
+                        if df_batch_raw.empty:
+                            st.warning("The uploaded file is empty. Please upload a file with property records.")
+                        else:
+                            # Align columns
+                            df_aligned, missing_req, mapped_dict = align_batch_columns(df_batch_raw, all_features, col_mapping)
+                            if missing_req:
+                                st.error(f"Missing required feature columns: **{', '.join(missing_req)}**. Please ensure your dataset includes these attributes or download the template.")
+                            else:
+                                # Row limit: hard limit of 5000 rows
+                                if len(df_aligned) > 5000:
+                                    st.warning(f"⚠️ Uploaded file contains {len(df_aligned):,} rows. Processing the first 5,000 rows only to preserve system performance.")
+                                    df_aligned = df_aligned.iloc[:5000].copy()
+
+                                # Missing values imputation
+                                missing_cells = int(df_aligned[all_features].isnull().sum().sum())
+                                for feat in all_features:
+                                    if pd.api.types.is_numeric_dtype(df_clean[feat]):
+                                        med = float(df_clean[feat].dropna().median())
+                                        df_aligned[feat] = pd.to_numeric(df_aligned[feat], errors='coerce').fillna(med)
+                                    else:
+                                        modes = df_clean[feat].dropna().mode()
+                                        mode_v = str(modes[0]) if not modes.empty else "Unknown"
+                                        df_aligned[feat] = df_aligned[feat].fillna(mode_v).astype(str)
+
+                                # Count unknown categories
+                                unknown_cat_count = 0
+                                for feat in all_features:
+                                    if not pd.api.types.is_numeric_dtype(df_clean[feat]):
+                                        known_vals = set(df_clean[feat].dropna().astype(str).unique())
+                                        unseen = ~df_aligned[feat].astype(str).isin(known_vals)
+                                        unknown_cat_count += int(unseen.sum())
+
+                                # Validation report metrics
+                                st.markdown("<p style='font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin: 12px 0 6px 0;'>Validation Report</p>", unsafe_allow_html=True)
+                                v_c1, v_c2, v_c3 = st.columns(3)
+                                v_c1.metric("Rows Validated", f"{len(df_aligned):,}")
+                                v_c2.metric("Imputed Missing Cells", f"{missing_cells:,}")
+                                v_c3.metric("Unseen Category Cells", f"{unknown_cat_count:,}")
+
+                                if missing_cells > 0:
+                                    st.info(f"ℹ️ Imputed {missing_cells:,} missing cell(s) with baseline training medians and modes.")
+                                if unknown_cat_count > 0:
+                                    st.info(f"ℹ️ Detected {unknown_cat_count:,} cell(s) with categories unseen during training. The valuation engine handled them smoothly.")
+
+                                # Vectorized prediction
+                                try:
+                                    df_valued = batch_predict_house_prices(pipeline, df_aligned, all_features, area_col=a_col)
+
+                                    st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+                                    b_m1, b_m2, b_m3 = st.columns(3)
+                                    b_m1.metric("Properties Valued", f"{len(df_valued):,}")
+                                    b_m2.metric("Average Estimated Price", format_inr(df_valued["Predicted_Price"].mean()))
+                                    b_m3.metric("Total Portfolio Value", format_inr(df_valued["Predicted_Price"].sum()))
+
+                                    st.markdown("<h5 style='color: #0f172a; font-weight: 700; margin-top: 14px;'>Valuation Output Table</h5>", unsafe_allow_html=True)
+                                    render_dataframe(df_valued, height=360)
+
+                                    csv_export = df_valued.to_csv(index=False)
+                                    st.download_button(
+                                        label="📥 Download Valued Properties CSV",
+                                        data=csv_export,
+                                        file_name="batch_valuation_results.csv",
+                                        mime="text/csv",
+                                        help="Export the batch results with predicted valuations, intervals, and rates."
+                                    )
+                                except Exception as e:
+                                    st.error("Error computing batch valuation.")
+
 
 # =============================================================================
 # TAB 4: DATA EXPLORER
