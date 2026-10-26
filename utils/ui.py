@@ -20,21 +20,96 @@ def inject_custom_css():
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        /* Hide Streamlit Header Elements: Deploy button and 3-dots menu */
+        /* Hide Streamlit Deploy button and 3-dots menu, keeping Header & Toolbar intact for Sidebar controls */
         #MainMenu,
         [data-testid="stDeployButton"],
-        [data-testid="stToolbar"],
+        [data-testid="stToolbarActions"],
         [data-testid="stDecoration"],
         header [data-testid="stDeployButton"],
         header #MainMenu,
-        header [data-testid="stToolbarActions"],
-        header [data-testid="stToolbar"] {
+        header [data-testid="stToolbarActions"] {
             visibility: hidden !important;
             display: none !important;
             height: 0 !important;
             width: 0 !important;
             opacity: 0 !important;
             pointer-events: none !important;
+        }
+
+        /* Header and Toolbar: Keep transparent, allow interactions */
+        header[data-testid="stHeader"] {
+            background: transparent !important;
+        }
+
+        /* Allow interactions on toolbar */
+        [data-testid="stToolbar"] {
+            visibility: visible !important;
+            display: flex !important;
+            opacity: 1 !important;
+        }
+
+        /* Expand sidebar button (floating at top-left when sidebar is collapsed) */
+        [data-testid="stExpandSidebarButton"],
+        [data-testid="stSidebarCollapsedControl"] {
+            visibility: visible !important;
+            display: flex !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            z-index: 999999 !important;
+            position: fixed !important;
+            top: 14px !important;
+            left: 14px !important;
+        }
+
+        [data-testid="stExpandSidebarButton"] button,
+        [data-testid="stSidebarCollapsedControl"] button {
+            color: #1e3a8a !important;
+            background: #ffffff !important;
+            border: 1.5px solid #3b82f6 !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+            padding: 6px 10px !important;
+            min-height: 36px !important;
+            min-width: 36px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+        }
+        [data-testid="stExpandSidebarButton"] button:hover,
+        [data-testid="stSidebarCollapsedControl"] button:hover {
+            background: #eff6ff !important;
+            border-color: #1d4ed8 !important;
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+            transform: scale(1.05) !important;
+        }
+        [data-testid="stExpandSidebarButton"] button svg,
+        [data-testid="stExpandSidebarButton"] button span,
+        [data-testid="stSidebarCollapsedControl"] button svg,
+        [data-testid="stSidebarCollapsedControl"] button span {
+            color: #1d4ed8 !important;
+            fill: #1d4ed8 !important;
+        }
+
+        /* Collapse sidebar button (shown inside sidebar header when sidebar is open) */
+        [data-testid="stSidebarCollapseButton"] {
+            visibility: visible !important;
+            display: flex !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        [data-testid="stSidebarCollapseButton"] button {
+            color: #cbd5e1 !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+        }
+        [data-testid="stSidebarCollapseButton"] button:hover {
+            background: rgba(37, 99, 235, 0.4) !important;
+            color: #ffffff !important;
+            border-color: #3b82f6 !important;
         }
 
         /* App Background & Base Contrast */

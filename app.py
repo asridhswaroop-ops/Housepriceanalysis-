@@ -141,23 +141,98 @@ st.set_page_config(
 # Inject Clean Professional CSS
 inject_custom_css()
 
-# Hide Deploy button and Three-Dots Menu directly from app.py for immediate hot-reload
+# Hide Deploy button and Three-Dots Menu while keeping Sidebar controls intact
 st.markdown("""
 <style>
     #MainMenu,
     [data-testid="stDeployButton"],
-    [data-testid="stToolbar"],
+    [data-testid="stToolbarActions"],
     [data-testid="stDecoration"],
     header [data-testid="stDeployButton"],
     header #MainMenu,
-    header [data-testid="stToolbarActions"],
-    header [data-testid="stToolbar"] {
+    header [data-testid="stToolbarActions"] {
         visibility: hidden !important;
         display: none !important;
         height: 0 !important;
         width: 0 !important;
         opacity: 0 !important;
         pointer-events: none !important;
+    }
+
+    /* Header and Toolbar: Keep transparent, allow interactions */
+    header[data-testid="stHeader"] {
+        background: transparent !important;
+    }
+
+    /* Allow interactions on toolbar */
+    [data-testid="stToolbar"] {
+        visibility: visible !important;
+        display: flex !important;
+        opacity: 1 !important;
+    }
+
+    /* Expand sidebar button (floating at top-left when sidebar is collapsed) */
+    [data-testid="stExpandSidebarButton"],
+    [data-testid="stSidebarCollapsedControl"] {
+        visibility: visible !important;
+        display: flex !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 999999 !important;
+        position: fixed !important;
+        top: 14px !important;
+        left: 14px !important;
+    }
+
+    [data-testid="stExpandSidebarButton"] button,
+    [data-testid="stSidebarCollapsedControl"] button {
+        color: #1e3a8a !important;
+        background: #ffffff !important;
+        border: 1.5px solid #3b82f6 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+        padding: 6px 10px !important;
+        min-height: 36px !important;
+        min-width: 36px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+    }
+    [data-testid="stExpandSidebarButton"] button:hover,
+    [data-testid="stSidebarCollapsedControl"] button:hover {
+        background: #eff6ff !important;
+        border-color: #1d4ed8 !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+        transform: scale(1.05) !important;
+    }
+    [data-testid="stExpandSidebarButton"] button svg,
+    [data-testid="stExpandSidebarButton"] button span,
+    [data-testid="stSidebarCollapsedControl"] button svg,
+    [data-testid="stSidebarCollapsedControl"] button span {
+        color: #1d4ed8 !important;
+        fill: #1d4ed8 !important;
+    }
+
+    /* Collapse sidebar button (shown inside sidebar header when sidebar is open) */
+    [data-testid="stSidebarCollapseButton"] {
+        visibility: visible !important;
+        display: flex !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    [data-testid="stSidebarCollapseButton"] button {
+        color: #cbd5e1 !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        border-radius: 8px !important;
+        transition: all 0.2s ease !important;
+    }
+    [data-testid="stSidebarCollapseButton"] button:hover {
+        background: rgba(37, 99, 235, 0.4) !important;
+        color: #ffffff !important;
+        border-color: #3b82f6 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -638,17 +713,21 @@ with tab_prediction:
                             df_disp["New price"] = df_disp["New Price"].apply(format_inr)
                             df_disp["Change (₹)"] = df_disp["Change (₹)"].apply(lambda x: ("+" if x > 0 else "") + format_inr(x))
                             df_disp["Change (%)"] = df_disp["Change (%)"].apply(lambda x: f"{x:+.1f}%")
-                            render_dataframe(df_disp[["Scenario", "New price", "Change (₹)", "Change (%)"]], height=260)
+                            render_dataframe(df_disp[["Scenario", "New price", "Change (₹)", "Change (%)", "Impact"]], height=260)
+                            st.caption("Effects are averaged over similar properties in the dataset. Small changes under 0.5% are within the model's noise.")
 
                         with w_c2:
-                            colors = ['#10b981' if c >= 0 else '#ef4444' for c in df_scenarios["Change (₹)"]]
+                            colors = [
+                                '#94a3b8' if abs(pct) < 0.5 else ('#10b981' if c >= 0 else '#ef4444')
+                                for c, pct in zip(df_scenarios["Change (₹)"], df_scenarios["Change (%)"])
+                            ]
                             fig_bar = go.Figure(go.Bar(
                                 x=df_scenarios["Change (₹)"],
                                 y=df_scenarios["Scenario"],
                                 orientation="h",
                                 marker_color=colors,
-                                customdata=df_scenarios["Change (%)"],
-                                hovertemplate="<b>%{y}</b><br>Change: ₹%{x:,.0f}<br>Impact: %{customdata:+.1f}%<extra></extra>"
+                                customdata=list(zip(df_scenarios["Change (%)"], df_scenarios["Impact"])),
+                                hovertemplate="<b>%{y}</b><br>Change: ₹%{x:,.0f}<br>Impact: %{customdata[0]:+.1f}% (%{customdata[1]})<extra></extra>"
                             ))
                             fig_bar.update_layout(
                                 title="<b>Valuation Impact by Scenario (₹)</b>",

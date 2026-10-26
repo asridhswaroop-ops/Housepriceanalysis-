@@ -355,16 +355,16 @@ def generate_what_if_scenarios(
 ) -> tuple[float, pd.DataFrame, pd.DataFrame]:
     """
     Builds What-If sensitivity scenarios by modifying one attribute at a time.
-    Re-predicts with the trained machine-learning model.
+    Averages effects over 200 random real rows from the dataset (fixed random_state=42)
+    to prevent single-row tree noise from misleading users.
     Returns:
         base_price: float
-        df_scenarios: DataFrame with columns ['Scenario', 'New Price', 'Change (₹)', 'Change (%)']
+        df_scenarios: DataFrame with columns ['Scenario', 'New Price', 'Change (₹)', 'Change (%)', 'Impact']
         df_locations: DataFrame with columns ['Location', 'New Price', 'Change (₹)', 'Change (%)']
     """
     from utils.data_processing import find_column
 
     base_price = float(predict_single_house_price(pipeline, base_input, feature_cols))
-    scenario_inputs = []
 
     a_col = col_mapping.get("area") or find_column(df_clean, ["Area", "area", "Sqft", "Square Feet"])
     bed_col = col_mapping.get("bedrooms") or find_column(df_clean, ["Bedrooms", "bedroom", "Beds", "bhk"])
@@ -374,6 +374,31 @@ def generate_what_if_scenarios(
     yr_col = col_mapping.get("year_built") or find_column(df_clean, ["Year Built", "year_built", "YearBuilt", "Year"])
     loc_col = col_mapping.get("location") or find_column(df_clean, ["Location", "location", "City", "Locality"])
 
+    # Sample 200 random real rows with fixed random_state=42
+    n_sample = min(200, len(df_clean))
+    sampled_df = df_clean.sample(n=n_sample, random_state=42).copy()
+
+    # User-chosen features to set on the sampled rows
+    user_chosen_cols = [
+        c for c in [loc_col, a_col, bed_col, bath_col, yr_col, park_col, furn_col]
+        if c and c in base_input and c in sampled_df.columns
+    ]
+
+    # Baseline DataFrame: user values for chosen features, sampled row's own values for any other features
+    df_baseline = sampled_df.copy()
+    for col in user_chosen_cols:
+        df_baseline[col] = base_input[col]
+
+    for col in feature_cols:
+        if col not in df_baseline.columns:
+            df_baseline[col] = np.nan
+
+    # Vectorized baseline prediction for all 200 rows
+    base_preds_200 = np.array(pipeline.predict(df_baseline[feature_cols]), dtype=float)
+
+    # Candidate scenarios: (name, changed_col, changed_val)
+    scenario_candidates = []
+
     # 1. +200 sqft area
     if a_col and a_col in base_input and a_col in df_clean.columns:
         try:
@@ -381,9 +406,7 @@ def generate_what_if_scenarios(
             max_a = float(df_clean[a_col].dropna().max())
             new_a = min(curr_a + 200, max_a)
             if new_a > curr_a:
-                alt = dict(base_input)
-                alt[a_col] = new_a
-                scenario_inputs.append(("+200 sqft area", alt))
+                scenario_candidates.append(("+200 sqft area", a_col, new_a))
         except Exception:
             pass
 
@@ -394,9 +417,7 @@ def generate_what_if_scenarios(
             max_b = int(df_clean[bed_col].dropna().max())
             new_b = min(curr_b + 1, max_b)
             if new_b > curr_b:
-                alt = dict(base_input)
-                alt[bed_col] = new_b
-                scenario_inputs.append(("+1 bedroom", alt))
+                scenario_candidates.append(("+1 bedroom", bed_col, new_b))
         except Exception:
             pass
 
@@ -407,9 +428,7 @@ def generate_what_if_scenarios(
             max_ba = int(df_clean[bath_col].dropna().max())
             new_ba = min(curr_ba + 1, max_ba)
             if new_ba > curr_ba:
-                alt = dict(base_input)
-                alt[bath_col] = new_ba
-                scenario_inputs.append(("+1 bathroom", alt))
+                scenario_candidates.append(("+1 bathroom", bath_col, new_ba))
         except Exception:
             pass
 
@@ -421,9 +440,7 @@ def generate_what_if_scenarios(
                 unique_p = df_clean[park_col].dropna().unique().tolist()
                 pos_vals = [v for v in unique_p if str(v).strip().lower() in ["yes", "1", "true", "available", "y"]]
                 target_p = pos_vals[0] if pos_vals else "Yes"
-                alt = dict(base_input)
-                alt[park_col] = target_p
-                scenario_inputs.append(("Add parking", alt))
+                scenario_candidates.append(("Add parking", park_col, target_p))
         except Exception:
             pass
 
@@ -441,9 +458,7 @@ def generate_what_if_scenarios(
                 target_f = furn_matches[0]
 
             if target_f is not None and str(target_f) != str(base_input[furn_col]):
-                alt = dict(base_input)
-                alt[furn_col] = target_f
-                scenario_inputs.append(("Upgrade furnishing one level", alt))
+                scenario_candidates.append(("Upgrade furnishing one level", furn_col, target_f))
         except Exception:
             pass
 
@@ -454,24 +469,32 @@ def generate_what_if_scenarios(
             max_yr = min(int(df_clean[yr_col].dropna().max()), 2026)
             new_yr = min(curr_yr + 5, max_yr)
             if new_yr > curr_yr:
-                alt = dict(base_input)
-                alt[yr_col] = new_yr
-                scenario_inputs.append(("Newer build (+5 years)", alt))
+                scenario_candidates.append(("Newer build (+5 years)", yr_col, new_yr))
         except Exception:
             pass
 
-    # Predict scenarios
+    # Vectorized evaluation of each scenario over the 200 sampled rows
     scenario_rows = []
-    for name, alt_data in scenario_inputs:
+    for name, change_col, change_val in scenario_candidates:
         try:
-            new_p = float(predict_single_house_price(pipeline, alt_data, feature_cols))
-            diff = new_p - base_price
-            pct = (diff / base_price * 100) if base_price > 0 else 0.0
+            df_scen = df_baseline.copy()
+            df_scen[change_col] = change_val
+            scen_preds_200 = np.array(pipeline.predict(df_scen[feature_cols]), dtype=float)
+
+            diffs_200 = scen_preds_200 - base_preds_200
+            pct_diffs_200 = np.where(base_preds_200 > 0, (diffs_200 / base_preds_200) * 100.0, 0.0)
+
+            avg_diff = float(np.mean(diffs_200))
+            avg_pct = float(np.mean(pct_diffs_200))
+            impact = "Meaningful" if abs(avg_pct) >= 0.5 else "Negligible"
+
+            new_price = base_price + avg_diff
             scenario_rows.append({
                 "Scenario": name,
-                "New Price": new_p,
-                "Change (₹)": diff,
-                "Change (%)": pct
+                "New Price": new_price,
+                "Change (₹)": avg_diff,
+                "Change (%)": avg_pct,
+                "Impact": impact
             })
         except Exception:
             continue
@@ -480,7 +503,7 @@ def generate_what_if_scenarios(
     if not df_scenarios.empty:
         df_scenarios = df_scenarios.sort_values(by="Change (₹)", ascending=False).reset_index(drop=True)
 
-    # 7. Move to another location (one row per other location)
+    # 7. Move to another location (kept as is)
     loc_rows = []
     if loc_col and loc_col in base_input and loc_col in df_clean.columns:
         try:
@@ -504,6 +527,8 @@ def generate_what_if_scenarios(
     df_locations = pd.DataFrame(loc_rows)
     if not df_locations.empty:
         df_locations = df_locations.sort_values(by="Change (₹)", ascending=False).reset_index(drop=True)
+
+    return base_price, df_scenarios, df_locations
 
     return base_price, df_scenarios, df_locations
 
