@@ -343,3 +343,38 @@ def plot_feature_importance(feature_names: list, importances: np.ndarray) -> go.
         coloraxis_showscale=False
     )
     return style_figure_layout(fig, height=360)
+
+
+def plot_loan_amortization_donut(principal: float, total_interest: float) -> go.Figure:
+    """
+    Renders an interactive Plotly donut chart comparing Principal Loan vs Total Interest.
+    """
+    p_val = max(0.0, float(principal))
+    i_val = max(0.0, float(total_interest))
+
+    if p_val == 0 and i_val == 0:
+        fig = go.Figure()
+        fig.add_annotation(text="No loan data to display", showarrow=False, font=dict(size=14))
+        return style_figure_layout(fig, height=280)
+
+    labels = ["Principal Loan", "Total Interest"]
+    values = [p_val, i_val]
+    colors = ["#2563eb", "#f59e0b"]
+
+    fig = go.Figure(data=[go.Pie(
+        labels=labels,
+        values=values,
+        hole=0.58,
+        marker=dict(colors=colors, line=dict(color="#ffffff", width=2)),
+        textinfo="label+percent",
+        hovertemplate="<b>%{label}</b><br>Amount: ₹%{value:,.0f}<br>Share: %{percent}<extra></extra>"
+    )])
+    fig.update_layout(
+        title="<b>Loan Payment Breakdown</b>",
+        height=280,
+        margin=dict(l=15, r=15, t=40, b=15),
+        legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5),
+        template=CHART_THEME
+    )
+    return fig
+

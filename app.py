@@ -21,6 +21,7 @@ from utils.data_processing import (
 from utils.prediction import (
     align_batch_columns,
     batch_predict_house_prices,
+    calculate_mortgage_emi,
     generate_price_vs_area_curve,
     generate_what_if_scenarios,
     predict_house_price_with_interval,
@@ -36,6 +37,7 @@ from utils.visualization import (
     plot_bedrooms_vs_price,
     plot_correlation_heatmap,
     plot_feature_importance,
+    plot_loan_amortization_donut,
     plot_price_by_location,
     plot_price_distribution,
 )
@@ -696,6 +698,99 @@ with tab_prediction:
                 </div>
                 """, unsafe_allow_html=True)
 
+            # Helper: Render Monthly EMI & Home Loan Calculator
+            def render_emi_calculator(property_price, is_standalone=False):
+                try:
+                    default_val = max(100000, int(property_price))
+                    header_title = "🏦 Monthly EMI & Home Loan Calculator"
+                    header_sub = "Interactive loan repayment estimator based on this property valuation" if not is_standalone else "Estimate your monthly mortgage payments and total interest"
+
+                    st.markdown(f"<h4 style='color: #0f172a !important; font-weight: 700; margin: 4px 0 2px 0;'>{header_title}</h4>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='color: #475569 !important; font-size: 0.88rem; margin: 0 0 14px 0;'>{header_sub}</p>", unsafe_allow_html=True)
+
+                    e_c1, e_c2 = st.columns([1, 1])
+                    with e_c1:
+                        prop_val = st.number_input(
+                            "Property Valuation (₹)",
+                            min_value=100000,
+                            max_value=1000000000,
+                            value=default_val,
+                            step=50000,
+                            key=f"emi_val_{'standalone' if is_standalone else 'result'}",
+                            help="Total price of the property to be financed"
+                        )
+                        dp_pct = st.slider(
+                            "Down Payment (%)",
+                            min_value=5,
+                            max_value=50,
+                            value=20,
+                            step=1,
+                            key=f"emi_dp_{'standalone' if is_standalone else 'result'}",
+                            help="Upfront payment from personal funds"
+                        )
+                        rate_pct = st.slider(
+                            "Annual Interest Rate (%)",
+                            min_value=6.0,
+                            max_value=15.0,
+                            value=8.5,
+                            step=0.1,
+                            key=f"emi_rate_{'standalone' if is_standalone else 'result'}",
+                            help="Prevailing home loan annual interest rate"
+                        )
+                        tenure_yr = st.slider(
+                            "Loan Tenure (Years)",
+                            min_value=5,
+                            max_value=30,
+                            value=20,
+                            step=1,
+                            key=f"emi_tenure_{'standalone' if is_standalone else 'result'}",
+                            help="Total duration for mortgage repayment"
+                        )
+
+                    emi_data = calculate_mortgage_emi(prop_val, dp_pct, rate_pct, tenure_yr)
+
+                    with e_c2:
+                        m1, m2 = st.columns(2)
+                        with m1:
+                            st.markdown(f"""
+                            <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 12px 14px; text-align: center; margin-bottom: 10px;">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em;">Monthly EMI</div>
+                                <div style="font-size: 1.55rem; font-weight: 800; color: #1d4ed8; margin: 3px 0;">{format_inr(emi_data['monthly_emi'])}</div>
+                                <div style="font-size: 0.75rem; color: #64748b;">per month ({tenure_yr} yrs @ {rate_pct}%)</div>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        with m2:
+                            st.markdown(f"""
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; text-align: center; margin-bottom: 10px;">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Down Payment</div>
+                                <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 3px 0;">{format_inr(emi_data['down_payment_amount'])}</div>
+                                <div style="font-size: 0.75rem; color: #64748b;">{dp_pct}% upfront funding</div>
+                            </div>
+                            """, unsafe_allow_html=True)
+
+                        m3, m4 = st.columns(2)
+                        with m3:
+                            st.markdown(f"""
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; text-align: center;">
+                                <div style="font-size: 0.70rem; font-weight: 700; color: #475569; text-transform: uppercase;">Principal Loan</div>
+                                <div style="font-size: 1.15rem; font-weight: 800; color: #0f172a;">{format_inr(emi_data['principal'])}</div>
+                            </div>
+                            """, unsafe_allow_html=True)
+                        with m4:
+                            st.markdown(f"""
+                            <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 10px; padding: 10px 12px; text-align: center;">
+                                <div style="font-size: 0.70rem; font-weight: 700; color: #92400e; text-transform: uppercase;">Total Interest</div>
+                                <div style="font-size: 1.15rem; font-weight: 800; color: #b45309;">{format_inr(emi_data['total_interest'])}</div>
+                            </div>
+                            """, unsafe_allow_html=True)
+
+                        fig_donut = plot_loan_amortization_donut(emi_data["principal"], emi_data["total_interest"])
+                        render_chart(fig_donut)
+
+                        st.caption(f"Total repayment over {tenure_yr} years: **{format_inr(emi_data['total_payment'])}** (Principal + Interest).")
+                except Exception:
+                    st.warning("EMI calculation could not be completed for this valuation.")
+
             # Helper: Render What-If Sensitivity Simulator Section
             def render_what_if_analysis(base_input_data):
                 try:
@@ -930,8 +1025,16 @@ with tab_prediction:
                         st.session_state.get("saved_user_area")
                     )
 
+                    # Monthly EMI & Home Loan Calculator
+                    with st.container(border=True):
+                        render_emi_calculator(st.session_state["saved_predicted_price"], is_standalone=False)
+
                     # Also render What-If section below result card
                     render_what_if_analysis(st.session_state["saved_prediction_input"])
+                else:
+                    default_p = float(df_clean[p_col].median()) if p_col and p_col in df_clean.columns else 7500000.0
+                    with st.expander("🏦 Plan Home Financing & EMI (Standalone Estimator)", expanded=False):
+                        render_emi_calculator(default_p, is_standalone=True)
 
                 # Feature Importance expander
                 if len(feature_names) > 0 and len(importances) > 0:

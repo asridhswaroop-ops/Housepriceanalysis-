@@ -674,3 +674,88 @@ def batch_predict_house_prices(
 
     return df_result
 
+
+def calculate_mortgage_emi(
+    property_price: float,
+    down_payment_pct: float = 20.0,
+    annual_interest_rate: float = 8.5,
+    tenure_years: int = 20
+) -> dict:
+    """
+    Calculates monthly mortgage EMI, down payment, total interest, and total repayment breakdown.
+
+    Formula:
+        EMI = P * r * (1 + r)^n / ((1 + r)^n - 1)
+        where:
+            P = Principal loan amount (Property Price - Down Payment)
+            r = Monthly interest rate (Annual rate / 12 / 100)
+            n = Total tenure in months (Years * 12)
+    """
+    try:
+        price = max(0.0, float(property_price))
+        dp_pct = max(0.0, min(99.0, float(down_payment_pct)))
+        down_payment_amount = price * (dp_pct / 100.0)
+        principal = max(0.0, price - down_payment_amount)
+
+        annual_rate = max(0.0, float(annual_interest_rate))
+        tenure_yr = max(1, int(tenure_years))
+        tenure_mo = tenure_yr * 12
+
+        if principal <= 0.0:
+            return {
+                "property_price": price,
+                "down_payment_pct": dp_pct,
+                "down_payment_amount": down_payment_amount,
+                "principal": 0.0,
+                "annual_interest_rate": annual_rate,
+                "tenure_years": tenure_yr,
+                "tenure_months": tenure_mo,
+                "monthly_emi": 0.0,
+                "total_interest": 0.0,
+                "total_payment": 0.0,
+                "interest_ratio_pct": 0.0,
+            }
+
+        if annual_rate == 0.0:
+            emi = principal / tenure_mo
+            total_payment = principal
+            total_interest = 0.0
+        else:
+            r = (annual_rate / 100.0) / 12.0
+            factor = (1.0 + r) ** tenure_mo
+            emi = principal * r * factor / (factor - 1.0)
+            total_payment = emi * tenure_mo
+            total_interest = max(0.0, total_payment - principal)
+
+        interest_ratio = (total_interest / principal) * 100.0 if principal > 0 else 0.0
+
+        return {
+            "property_price": price,
+            "down_payment_pct": dp_pct,
+            "down_payment_amount": down_payment_amount,
+            "principal": principal,
+            "annual_interest_rate": annual_rate,
+            "tenure_years": tenure_yr,
+            "tenure_months": tenure_mo,
+            "monthly_emi": emi,
+            "total_interest": total_interest,
+            "total_payment": total_payment,
+            "interest_ratio_pct": interest_ratio,
+        }
+    except Exception as e:
+        return {
+            "property_price": float(property_price) if property_price else 0.0,
+            "down_payment_pct": float(down_payment_pct) if down_payment_pct else 0.0,
+            "down_payment_amount": 0.0,
+            "principal": 0.0,
+            "annual_interest_rate": 8.5,
+            "tenure_years": 20,
+            "tenure_months": 240,
+            "monthly_emi": 0.0,
+            "total_interest": 0.0,
+            "total_payment": 0.0,
+            "interest_ratio_pct": 0.0,
+            "error": str(e),
+        }
+
+
